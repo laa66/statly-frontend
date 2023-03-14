@@ -1,0 +1,83 @@
+.section-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.nav-item {
+    border-radius: 8px;
+    color: #b3b3b3;
+    margin: 25px 25px 50px 25px;
+    padding: 10px;
+    font-size: 21px;
+}
+
+.nav-range-item {
+    border-radius: 8px;
+    margin: 25px 1px 50px 25px;
+    padding: 10px;
+    font-size: 21px;
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #1db954;
+}
+
+.nav-item:hover, .nav-range-item:hover {
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #1db954;
+    box-shadow: #1db954 0 1px 20px;
+    transition-duration: .1s;
+}
+
+.dashboard-image {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.dashboard-title {
+    color: white;
+    font-size: 26px;
+    padding-bottom: 50px;
+}
+
+.dashboard-content {
+    color: #b3b3b3;
+    text-align: center;
+    font-size: 21px;
+}
+
+.dashboard-list {
+    display: inline-block;
+    text-align: left;
+}
+
+.dashboard-list-item {
+    font-size: 26px;
+    margin: 20px;
+}
+
+.dashboard-description {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.image-position {
+    margin-right: 15px;
+}
+
+.panel {
+    margin-bottom: 100px;
+}
+
+@media (min-width: 768px) {
+    .iphone-button {
+      padding: 0 1.2rem;
+    }
+  }

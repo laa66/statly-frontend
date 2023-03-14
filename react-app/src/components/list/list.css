@@ -1,0 +1,95 @@
+.list-container {
+    font-size: 16px;
+}
+
+.track-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+}
+
+.list {
+    color: #b3b3b3;
+    width: 100%;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+.col {
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.col-first {
+    font-size: 21px;
+    text-align: center;
+}
+
+.col-fourth {
+    text-align: right;
+}
+
+.artist-container {
+    text-align: center;
+    color: #b3b3b3;
+}
+
+.artist-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.artist-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 82px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.artist-description {
+    margin-top: 5px;
+}
+
+.stats {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats-score {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.stats-item {
+    text-align: center;
+}
+
+.stats-bar {
+    width: 70px;
+    height: 160px;
+    background-color: #1db954;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+}
+
+.stats-bar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: var(--percentage);
+    left: 0;
+    right: 0;
+    background-color: black;
+}

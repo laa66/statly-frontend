@@ -1,0 +1,30 @@
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.header-logged {
+    padding: 20px;
+}
+
+.header-content {
+    text-align: center;
+    color: #535353;
+    font-size: 26px;
+}
+
+.user-image {
+    border-radius: 50%;
+    float: right;
+    opacity: 90%;
+}
+
+.user-image:hover {
+    box-shadow: white 0 1px 15px;
+    transition-duration: .1s;
+}
+
+.dropdown-menu {
+    color: #b3b3b3;
+    background-color: #212121;
+}
