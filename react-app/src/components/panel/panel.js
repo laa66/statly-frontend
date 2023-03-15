@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './panel.css';
 import Dashboard from '../dashboard/dashboard';
 import Track from '../track/track';
@@ -6,26 +5,22 @@ import Artist from "../artist/artist";
 import Genre from "../genre/genre";
 import Mainstream from "../mainstream/mainstream";
 import History from "../history/history";
+import Account from "../account/account";
+
+import { Route, Routes } from "react-router-dom";
 
 function Panel() {
-    const [active, setActive] = useState("dashboard");
     return (
         <div className="panel">
-            <nav className="container section-nav">
-                <ul className="nav">
-                    <li className="nav-item" onClick={() => setActive("topTrack")}>Top tracks</li>
-                    <li className="nav-item" onClick={() => setActive("topArtist")}>Top artists</li>
-                    <li className="nav-item" onClick={() => setActive("topGenre")}>Top genres</li>
-                    <li className="nav-item" onClick={() => setActive("mainstream")}>Mainsteram score</li>
-                    <li className="nav-item" onClick={() => setActive("history")}>Recently played</li>
-                </ul>
-            </nav>
-            {active === "dashboard" && <Dashboard/>}
-            {active === "topTrack" && <Track/>}
-            {active === "topArtist" && <Artist/>}
-            {active === "history" && <History/>}
-            {active === "topGenre" && <Genre/>}
-            {active === "mainstream" && <Mainstream/>}
+            <Routes>
+                <Route index element={<Dashboard/>}/>
+                <Route path="/track/top" element={<Track/>}/>
+                <Route path="/artist/top" element={<Artist/>}/>
+                <Route path="/user/history" element={<History/>}/>
+                <Route path="/genre/top" element={<Genre/>}/>
+                <Route path="/user/score" element={<Mainstream/>}/>
+                <Route path="/user/account" element={<Account/>}/>
+            </Routes>
         </div>
     );
 }

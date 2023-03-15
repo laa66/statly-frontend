@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from '../header/header';
+
 import Panel from '../panel/panel';
 
 import concert from '../../resources/concert.jpg';
@@ -10,16 +10,14 @@ import tracks from '../../resources/tracks.jpg';
 import iphone from '../../resources/iphone.png';
 
 import './slider.css';
-import './home.css';
+import './body.css';
 
-function Home() {
+function Body() {
     const [active, setActive] = useState("home");
 
     return (
         <div>
-            <Header/>
-            {active === "home" && 
-                <div className="home">
+            {active === "home" && <div className="home">
                     <div className="container section-title">
                         <p>Your Spotify statistics on-demand</p>
                     </div>
@@ -71,11 +69,9 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
-            }
-
+                </div>}
             {active === "panel" && <Panel/>}
         </div>
     );
 }
-export default Home;
+export default Body;

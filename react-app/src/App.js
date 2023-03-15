@@ -1,10 +1,13 @@
-import Home from './components/home/Home';
-import Footer from './components/footer/footer'
+import Body from './components/body/Body';
+import Footer from './components/footer/footer';
+import Header from './components/header/header';
+
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Header/>
+      <Body/>
       <Footer/>
     </div>
   );

@@ -28,3 +28,12 @@
     color: #b3b3b3;
     background-color: #212121;
 }
+
+.link-item {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.link-item:hover {
+    color: inherit;
+}
