@@ -1,0 +1,60 @@
+.section-option {
+    color: #b3b3b3;
+    font-size: 21px;
+}
+
+.option-first {
+    border-radius: 8px;
+    padding: 50px 50px 50px 50px;
+    box-shadow: #1db954 0 1px 30px;
+    transition-duration: .1s;
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+.option-second {
+    border-radius: 8px;
+    padding: 50px 50px 50px 50px;
+    box-shadow: #1db954 0 1px 30px;
+    transition-duration: .1s;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+.button-back {
+    border-radius: 8px;
+    padding: 10px 40px 10px 40px;
+    font-size: 21px;
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #1db954;
+}
+
+.button-delete {
+    border-radius: 8px;
+    padding: 10px 40px 10px 40px;
+    font-size: 21px;
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #DC0000;
+}
+
+.button-back:hover {
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #1db954;
+    box-shadow: #1db954 0 1px 20px;
+    transition-duration: .1s;
+}
+
+.button-delete:hover {
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #DC0000;
+    box-shadow: #DC0000 0 1px 20px;
+    transition-duration: .1s;
+}

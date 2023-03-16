@@ -12,14 +12,18 @@ function Header() {
         <div>
             {active === "loggedOut" &&
             <div className="container header">
-                <img src={logo} alt="logo" width="150px" height="49px"/>
+                <Link to="/">
+                    <img src={logo} alt="logo" width="150px" height="49px"/>
+                </Link>
             </div>
             }
             {active === "logged" && 
             <div className="container header-logged">
                 <div className="row">
                     <div className="col-sm">
-                        <img src={logo} alt="logo" width="150px" height="49px"/>
+                        <Link to="/dashboard" className="link-item">
+                            <img src={logo} alt="logo" width="150px" height="49px"/>
+                        </Link>
                     </div>
                     <div className="col-sm header-content">
                         Hello, max.sclz94

@@ -14,6 +14,7 @@ function Panel() {
         <div className="panel">
             <Routes>
                 <Route index element={<Dashboard/>}/>
+                <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/track/top" element={<Track/>}/>
                 <Route path="/artist/top" element={<Artist/>}/>
                 <Route path="/user/history" element={<History/>}/>

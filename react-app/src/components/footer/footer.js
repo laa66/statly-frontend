@@ -1,6 +1,7 @@
 import './footer.css'
 import '../body/body.css';
 import logo from '../../resources/logo.png';
+import { Link } from 'react-router-dom';
 
 function footer() {
     return (
@@ -11,8 +12,12 @@ function footer() {
                 <div className="col">
                     <ul>
                         <li className="footer-title">Statly</li>
+                        <Link to="/" className="link-item">
                         <li>Home</li>
+                        </Link>
+                        <Link to="/" className="link-item">
                         <li>Statly</li>
+                        </Link>
                     </ul>
                 </div>
                 <div className="col">
