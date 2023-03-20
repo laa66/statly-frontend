@@ -1,24 +1,23 @@
-import { useState } from "react";
 import './header.css';
 import logo from '../../resources/logo.png';
 import userImage from '../../resources/testuserimage.jpg';
 import { Link } from 'react-router-dom';
 
 function Header() {
-
-    const [active] = useState("logged");
-
     return (
         <div>
-            {active === "loggedOut" &&
             <div className="container header">
                 <Link to="/">
                     <img src={logo} alt="logo" width="150px" height="49px"/>
                 </Link>
             </div>
-            }
-            {active === "logged" && 
-            <div className="container header-logged">
+        </div>
+    );
+}
+
+function HeaderLogged() {
+    return (
+        <div className="container header-logged">
                 <div className="row">
                     <div className="col-sm">
                         <Link to="/dashboard" className="link-item">
@@ -60,9 +59,11 @@ function Header() {
                 </ul>
             </nav>
             </div>
-            }
-        </div>
     );
 }
 
-export default Header;
+const exportedObject = {
+    Header, HeaderLogged
+}
+
+export default exportedObject;

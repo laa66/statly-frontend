@@ -8,6 +8,7 @@ import playlists from '../../resources/playlists.jpg';
 import score from '../../resources/score.jpg';
 import tracks from '../../resources/tracks.jpg';
 import iphone from '../../resources/iphone.png';
+import HeaderState from '../header/header';
 
 import './slider.css';
 import './body.css';
@@ -17,7 +18,9 @@ function Body() {
 
     return (
         <div>
-            {active === "home" && <div className="home">
+            {active === "home" &&
+             <div className="home">
+                <HeaderState.Header/>
                     <div className="container section-title">
                         <p>Your Spotify statistics on-demand</p>
                     </div>
@@ -70,7 +73,7 @@ function Body() {
                         </div>
                     </div>
                 </div>}
-            {active === "panel" && <Panel/>}
+            {active === "panel" && <div><HeaderState.HeaderLogged/><Panel/></div>}
         </div>
     );
 }
