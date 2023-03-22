@@ -49,6 +49,7 @@
 }
 
 .artist-text {
+    text-shadow: -2px 0 #535353, 0 2px #535353, 2px 0 #535353, 0 -2px #535353;
     position: absolute;
     top: 40%;
     left: 50%;

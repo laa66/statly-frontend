@@ -91,25 +91,23 @@ function Mainstream() {
     );
 }
 
-function HistoryList() {
+function HistoryList({list}) {
     return (
         <div className="container">
             <div className="list-container">
                 <table class="list">
-                    <tbody>
-                        <tr className="list-row">
-                            <th className="col-first">1</th>
-                            <td><img className="track-img" src={test} alt={"test"}/><b>Title</b></td>
-                            <td className="col-third">Artists</td>
-                            <td className="col-fourth">Played at</td>
-                        </tr>
-                        <tr className="list-row">
-                            <th className="col-first">2</th>
-                            <td><img className="track-img" src={test} alt={"test"}/><b>Title</b></td>
-                            <td className="col-third">Artists</td>
-                            <td className="col-fourth">Played at</td>
-                        </tr>
-                    </tbody>
+                    {list.map((data, index) => {
+                        return(
+                        <tbody key={data + index}>
+                            <tr>
+                                <th className="col-first">{index+1}</th>
+                                <td><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></td>
+                                <td className="col-third">{data.track.artists.map((artist, i, arr) => {
+                                    return (i + 1 === arr.length ? artist.name : artist.name + ", ")
+                                })}</td>
+                                <td className="col-fourth">{new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(Date.parse(data.played_at))}</td>
+                            </tr>
+                    </tbody>)})}
                 </table>
             </div>
         </div>

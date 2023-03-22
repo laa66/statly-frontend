@@ -67,13 +67,14 @@ function ImageMainstream() {
     );
 }
 
-function ImageRecently() {
+function ImageRecently({list}) {
     return (
         <div className="container">
             <div className="image-container">
-                <img className="img1" src={test} alt={"first"} width={"150px"} height={"150px"}/>
-                <img className="img2" src={test} alt={"second"} width={"150px"} height={"150px"}/>
-                <img className="img3" src={test} alt={"third"} width={"150px"} height={"150px"}/>
+                {list.slice(0,3).map((data, i, arr) => {
+                    return(
+                        i + 1 === arr.length ? <img className="img3" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img className="img1" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
+                    )})}
             </div>
             <div className="image-description">
                 <p>Never miss a beat. </p>
