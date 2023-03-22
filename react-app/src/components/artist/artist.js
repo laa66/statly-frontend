@@ -1,13 +1,34 @@
 import Image from '../image/image';
 import List from '../list/list';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { fetchArtistShort, fetchArtistMedium, fetchArtistLong } from './fetchArtist';
 
 function Artist() {
     const [active, setActive] = useState('short');
 
+    const [short, setShort] = useState([]);
+    const [medium, setMedium] = useState([]);
+    const [long, setLong] = useState([]);
+
+    useEffect(() => {
+        fetchArtistShort().then((data) => {
+            setShort(data.items);
+        }).catch((err) => {console.log(err.message)})}, []);
+
+    useEffect(() => {
+        fetchArtistMedium().then((data) => {
+            setMedium(data.items);
+       }).catch((err) => {console.log(err.message)})}, []);
+
+    useEffect(() => {
+        fetchArtistLong().then((data) => {
+            setLong(data.items);
+       }).catch((err) => {console.log(err.message)})}, []);
+
     return (
         <div>
-            <Image.ImageArtist/>
+            <Image.ImageArtist list={long}/>
             <nav className="container section-nav">
                 <ul className="nav">
                     <li className="nav-range-item" onClick={() => setActive('short')} style={{"font-size":"16px"}}>4 weeks</li>
@@ -15,9 +36,9 @@ function Artist() {
                     <li className="nav-range-item" onClick={() => setActive('long')} style={{"font-size":"16px"}}>All time</li>
                 </ul>
             </nav>
-            {active === 'short' && <List.ArtistList/>}
-            {active === 'medium' && <List.ArtistList/>}
-            {active === 'long' && <List.ArtistList/>}
+            {active === 'short' && <List.ArtistList list={short}/>}
+            {active === 'medium' && <List.ArtistList list={medium}/>}
+            {active === 'long' && <List.ArtistList list={long}/>}
         </div>
     );
 }

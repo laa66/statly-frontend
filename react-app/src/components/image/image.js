@@ -1,13 +1,14 @@
 import test from '../../resources/testuserimage.jpg';
 import './image.css';
 
-function ImageTrack() {
+function ImageTrack({list}) {
     return (
         <div className="container">
             <div className="image-container">
-                <img className="img1" src={test} alt={"first"} width={"150px"} height={"150px"}/>
-                <img className="img2" src={test} alt={"second"} width={"150px"} height={"150px"}/>
-                <img className="img3" src={test} alt={"third"} width={"150px"} height={"150px"}/>
+                {list.slice(0,3).map((data, i, arr) => {
+                    return(
+                        i + 1 === arr.length ? <img className="img3" src={data.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img className="img1" src={data.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
+                    )})}
             </div>
             <div className="image-description">
                 <p>Discover your favorite tracks with ease.</p>
@@ -17,13 +18,14 @@ function ImageTrack() {
     );
 }
 
-function ImageArtist() {
+function ImageArtist({list}) {
     return (
         <div className="container">
             <div className="image-container">
-                <img className="img1" src={test} alt={"first"} width={"150px"} height={"150px"}/>
-                <img className="img2" src={test} alt={"second"} width={"150px"} height={"150px"}/>
-                <img className="img3" src={test} alt={"third"} width={"150px"} height={"150px"}/>
+            {list.slice(0,3).map((data, i, arr) => {
+                    return(
+                        i + 1 === arr.length ? <img className="img3" src={data.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img className="img1" src={data.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
+                    )})}
             </div>
             <div className="image-description">
                 <p>Explore your musical taste.</p>

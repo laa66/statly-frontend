@@ -1,87 +1,41 @@
 import test from '../../resources/testuserimage.jpg';
 import './list.css';
 
-function TrackList() {
+function TrackList({list}) {
     return (
         <div className="container">
             <div className="list-container">
-                <table class="list">
-                    <tbody>
-                        <tr className="list-row">
-                            <th className="col-first">1</th>
-                            <td><img className="track-img" src={test} alt={"test"}/><b>Title</b></td>
-                            <td className="col-third">Artists</td>
-                            <td className="col-fourth">Option</td>
-                        </tr>
-                        <tr className="list-row">
-                            <th className="col-first">2</th>
-                            <td><img className="track-img" src={test} alt={"test"}/><b>Title</b></td>
-                            <td className="col-third">Artists</td>
-                            <td className="col-fourth">Option</td>
-                        </tr>
-                    </tbody>
+                <table className="list">
+                    {list.map((data, index) => {
+                        return(
+                        <tbody key={data + index}>
+                            <tr>
+                                <th className="col-first">{index+1}</th>
+                                <td><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></td>
+                                <td className="col-third">{data.artists.map((artist, i, arr) => {
+                                    return (i + 1 === arr.length ? artist.name : artist.name + ", ")
+                                })}</td>
+                                <td className="col-fourth">Option</td>
+                            </tr>
+                    </tbody>)})}
                 </table>
             </div>
         </div>
     );
 }
 
-function ArtistList() {
+function ArtistList({list}) {
     return (
         <div className="container artist-container">
             <div className="row row-cols-5">
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">1</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">2</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">3</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">4</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">5</div>
-                    <div className="artist-description">Need</div>
-                </div>
-            </div>
-            <div className="row row-cols-5">
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">1</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">2</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">3</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">4</div>
-                    <div className="artist-description">Need</div>
-                </div>
-                <div className="col">
-                    <img className="artist-img" src={test} alt={"test"}/>
-                    <div className="artist-text">5</div>
-                    <div className="artist-description">Need</div>
-                </div>
+                {list.map((data, index) => {
+                  return(
+                    <div className="col list-row">
+                        <img className="artist-img" src={data.images[1].url} alt={"test"}/>
+                        <div className="artist-text">{index+1}</div>
+                        <div className="artist-description"><b>{data.name}</b></div>
+                    </div>
+                  )})}
             </div>
         </div>
     );

@@ -1,7 +1,3 @@
-import { useState } from "react";
-
-import Panel from '../panel/panel';
-
 import concert from '../../resources/concert.jpg';
 import genres from '../../resources/genres.jpg';
 import playlists from '../../resources/playlists.jpg';
@@ -10,16 +6,26 @@ import tracks from '../../resources/tracks.jpg';
 import iphone from '../../resources/iphone.png';
 import HeaderState from '../header/header';
 
+import '../panel/panel.css';
+import Dashboard from '../dashboard/dashboard';
+import Track from '../track/track';
+import Artist from "../artist/artist";
+import Genre from "../genre/genre";
+import Mainstream from "../mainstream/mainstream";
+import History from "../history/history";
+import Account from "../account/account";
+
+import { Route, Routes } from "react-router-dom";
+
 import './slider.css';
 import './body.css';
 
 function Body() {
-    const [active, setActive] = useState("home");
 
     return (
         <div>
-            {active === "home" &&
-             <div className="home">
+            <Routes>
+                <Route index element={<div className="home">
                 <HeaderState.Header/>
                     <div className="container section-title">
                         <p>Your Spotify statistics on-demand</p>
@@ -68,12 +74,19 @@ function Body() {
                             </div>
                             <div className="col-sm">
                                 <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
-                                <button className="iphone-button button-position" onClick={() => setActive("panel")}>Login with Spotify</button>
+                                <button className="iphone-button button-position" onClick={() => window.location.href='http://localhost:8080/api/auth'}>Login with Spotify</button>
                             </div>
                         </div>
                     </div>
-                </div>}
-            {active === "panel" && <div><HeaderState.HeaderLogged/><Panel/></div>}
+                </div>}/>
+                <Route path="/dashboard" element={<div className="panel"><HeaderState.HeaderLogged/><Dashboard/></div>}/>
+                <Route path="/track/top" element={<div className="panel"><HeaderState.HeaderLogged/><Track/></div>}/>
+                <Route path="/artist/top" element={<div className="panel"><HeaderState.HeaderLogged/><Artist/></div>}/>
+                <Route path="/user/history" element={<div className="panel"><HeaderState.HeaderLogged/><History/></div>}/>
+                <Route path="/genre/top" element={<div className="panel"><HeaderState.HeaderLogged/><Genre/></div>}/>
+                <Route path="/user/score" element={<div className="panel"><HeaderState.HeaderLogged/><Mainstream/></div>}/>
+                <Route path="/user/account" element={<div className="panel"><HeaderState.HeaderLogged/><Account/></div>}/>
+            </Routes>
         </div>
     );
 }

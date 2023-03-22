@@ -5,7 +5,11 @@ import score from '../../resources/score.png';
 import history from '../../resources/history.png';
 import genre from '../../resources/genre.png';
 
+import React from 'react';
+
 function Dashboard() {
+
+
     return (
         <div className="container">
                 <div className="dashboard-image">
