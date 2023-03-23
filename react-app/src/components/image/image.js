@@ -1,4 +1,4 @@
-import test from '../../resources/testuserimage.jpg';
+import vinyl from '../../resources/vinyl.png'
 import './image.css';
 
 function ImageTrack({list}) {
@@ -38,11 +38,6 @@ function ImageArtist({list}) {
 function ImageGenre() {
     return (
         <div className="container">
-            <div className="image-container">
-                <img className="img1" src={test} alt={"first"} width={"150px"} height={"150px"}/>
-                <img className="img2" src={test} alt={"second"} width={"150px"} height={"150px"}/>
-                <img className="img3" src={test} alt={"third"} width={"150px"} height={"150px"}/>
-            </div>
             <div className="image-description">
                 <p>Discover the breadth of your musical interests. </p>
                 <p>Our Top Genres section highlights the genres you listen to most frequently, so you can explore new artists and tracks within those genres.</p>
@@ -55,9 +50,9 @@ function ImageMainstream() {
     return (
         <div className="container">
             <div className="image-container">
-                <img className="img1" src={test} alt={"first"} width={"150px"} height={"150px"}/>
-                <img className="img2" src={test} alt={"second"} width={"150px"} height={"150px"}/>
-                <img className="img3" src={test} alt={"third"} width={"150px"} height={"150px"}/>
+                <img className="img1" src={vinyl} alt={"first"} width={"200px"} height={"200px"}/>
+                <img className="img2" src={vinyl} alt={"second"} width={"200px"} height={"200px"}/>
+                <img className="img3" src={vinyl} alt={"third"} width={"200px"} height={"200px"}/>
             </div>
             <div className="image-description">
                 <p>See how your musical taste stacks up.</p>

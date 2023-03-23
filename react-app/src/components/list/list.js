@@ -1,5 +1,5 @@
-import test from '../../resources/testuserimage.jpg';
 import './list.css';
+import React from 'react';
 
 function TrackList({list}) {
     return (
@@ -41,49 +41,29 @@ function ArtistList({list}) {
     );
 }
 
-function GenreList() {
+function GenreList({list}) {
     return (
-        <div className="container">
-            <div className="stats">
-                <div className="stats-item">
-                    <span className="stats-percentage">20</span>
-                    <div className="stats-bar" style={{"--percentage":"67%"}}></div>
-                    <span className="genre">Rap</span>
+        <div className="genre-bar-chart container">
+            {list.map((item, i) => (
+                <div className="genre-container">
+                    <div>{item.score + "%"}</div>
+                    <div className="genre-bar" style={{"--percentage":String(item.score + "%")}}/>
+                    <div className="genre-label">{item.genre}</div>
                 </div>
-                <div className="stats-item">
-                    <span className="stats-percentage">10</span>
-                    <div className="stats-bar" style={{"--percentage":"50%"}}></div>
-                    <span className="genre">Rap</span>
-                </div>
-                <div className="stats-item">
-                    <span className="stats-percentage">5</span>
-                    <div className="stats-bar" style={{"--percentage":"13%"}}></div>
-                    <span className="genre">Rap</span>
-                </div>
-                <div className="stats-item">
-                    <span className="stats-percentage">2</span>
-                    <div className="stats-bar" style={{"--percentage":"7%"}}></div>
-                    <span className="genre">Rap</span>
-                </div>
-                <div className="stats-item">
-                    <span className="stats-percentage">1</span>
-                    <div className="stats-bar" style={{"--percentage":"2%"}}></div>
-                    <span className="genre">Rap</span>
-                </div>
-            </div>
+            ))}
         </div>
     );
 }
 
-function Mainstream() {
+function Mainstream({score}) {
     return (
         <div className="container">
             <div className="score-container">
                 <div className="stats-score">
                     <div className="stats-item">
-                        <span className="stats-percentage">20</span>
-                        <div className="stats-bar" style={{"--percentage":"67%"}}></div>
-                        <span className="genre">Score</span>
+                        <span>{score.score}</span>
+                        <div className="stats-bar" style={{"--percentage":String(score.score + "%")}}></div>
+                        <span>Score</span>
                     </div>
                 </div>
             </div>

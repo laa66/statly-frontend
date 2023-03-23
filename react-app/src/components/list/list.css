@@ -64,9 +64,10 @@
 }
 
 .stats {
-    color: white;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .stats-score {
@@ -97,4 +98,51 @@
     left: 0;
     right: 0;
     background-color: black;
+}
+
+.genre-bar-chart {
+    color: #b3b3b3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  .genre-container {
+    text-align: center; 
+}
+  
+.genre-bar {
+    text-align: center;
+    width: 70px;
+    height: 160px;
+    background-color: #1db954;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.genre-bar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: var(--percentage);
+    left: 0;
+    right: 0;
+    background-color: black;
+}
+  
+.genre-label {
+    height: 60px;
+    margin-bottom: 5px;
+    inline-size: 80px;
+    overflow-wrap: break-word;
+}
+  
+.genre-percent {
+    font-size: 12px;
 }
