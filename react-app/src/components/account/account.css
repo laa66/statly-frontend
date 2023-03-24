@@ -12,6 +12,12 @@
     margin-right: 100px;
 }
 
+.option-first:hover {
+    transform: scale(1.05) perspective(1px);
+    box-shadow: #1db954 0 1px 50px;
+    cursor: pointer;
+}
+
 .option-second {
     border-radius: 8px;
     padding: 50px 50px 50px 50px;
@@ -19,6 +25,12 @@
     transition-duration: .1s;
     margin-left: 100px;
     margin-right: 200px;
+}
+
+.option-second:hover {
+    transform: scale(1.05) perspective(1px);
+    box-shadow: #1db954 0 1px 50px;
+    cursor: pointer;
 }
 
 .button-back {

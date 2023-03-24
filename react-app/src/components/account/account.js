@@ -8,7 +8,7 @@ function Account() {
     return (
         <div className="container">
             <div className="row section-option">
-                <div className="col option-first">
+                <div className="col option-first" onClick={() => {window.location.href="https://www.spotify.com/us/account/overview/"}}>
                     <p style={{"color":"#1db954"}}>Manage Spotify account</p>
                     <p style={{"fontSize":"18px"}}>Continue to Spotify</p>
                 </div>
@@ -18,7 +18,7 @@ function Account() {
                 </div>
             </div>
             <div style={{"textAlign":"center", "margin-top":"80px"}}>
-                <button className="button-delete" onClick={() => navigate(-1)}>Delete account</button>
+                <a href="http://localhost:3000" style={{color:"#b50202"}}>I want to delete my Statly account</a>
             </div>
             <div style={{"textAlign":"center", "margin-top":"30px"}}>
                 <button className="button-back" onClick={() => navigate(-1)}>Back</button>

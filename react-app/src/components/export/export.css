@@ -4,3 +4,13 @@
     margin-top: 100px;
     text-align: center;
 }
+
+.nav-range-item:active {
+    background-color: #212121;
+    box-shadow: #212121 0 1px 20px;
+}
+
+.nav-range-item:focus {
+    background-color: #212121;
+    box-shadow: #212121 0 1px 20px;
+}

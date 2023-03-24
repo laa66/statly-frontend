@@ -2,6 +2,7 @@ import Image from '../image/image';
 import List from '../list/list';
 import Export from '../export/export'
 import { fetchTrackShort, fetchTrackMedium, fetchTrackLong } from './fetchTrack';
+import { postTrackShort, postTrackMedium, postTrackLong } from '../track/postTrack';
 
 import { useEffect, useState } from 'react';
 
@@ -41,9 +42,9 @@ function Track() {
             {active === 'medium' && <List.TrackList list={medium}/>}
             {active === 'long' && <List.TrackList list={long}/>}
 
-            {active === 'short' && <Export/>}
-            {active === 'medium' && <Export/>}
-            {active === 'long' && <Export/>}
+            {active === 'short' && <Export postTrack={postTrackShort}/>}
+            {active === 'medium' && <Export postTrack={postTrackMedium}/>}
+            {active === 'long' && <Export postTrack={postTrackLong}/>}
         </div>
     );
 }
