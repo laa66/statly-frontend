@@ -1,7 +1,6 @@
 import Image from '../image/image';
 import List from '../list/list';
 import { fetchHistory } from './fetchHistory';
-
 import { useEffect, useState } from 'react';
 
 function History() {

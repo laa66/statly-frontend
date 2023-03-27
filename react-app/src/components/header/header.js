@@ -1,7 +1,7 @@
 import './header.css';
 import logo from '../../resources/logo.png';
-import userImage from '../../resources/testuserimage.jpg';
 import { Link } from 'react-router-dom';
+import { logOut } from '../logOut/logOut';
 
 function Header() {
     return (
@@ -25,16 +25,16 @@ function HeaderLogged() {
                         </Link>
                     </div>
                     <div className="col-sm header-content">
-                        Hello, max.sclz94
+                        Hello, {localStorage.getItem('username')}
                     </div>
                         <div className="col-sm">
                             <div class="dropdown">
-                            <img className="user-image" src={userImage} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"/>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                                <li><h6 class="dropdown-header">Username</h6></li>
+                            <img className="user-image" src={localStorage.getItem('imageUrl')} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"/>
+                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                                <li><h6 className="dropdown-header">{localStorage.getItem('username')}</h6></li>
                                 <li className="dropdown-item"><Link to="/user/account" className="link-item">Account</Link></li>
-                                <li><hr class="dropdown-divider"/></li>
-                                <li><a class="dropdown-item" href="localhost:3000">Sign out</a></li>
+                                <li><hr className="dropdown-divider"/></li>
+                                <li className="dropdown-item" onClick={logOut}><Link to="/" className="link-item">Sign Out</Link></li>
                             </ul>
                         </div>
                     </div>

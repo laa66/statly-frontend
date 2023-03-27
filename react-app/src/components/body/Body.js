@@ -14,6 +14,7 @@ import Genre from "../genre/genre";
 import Mainstream from "../mainstream/mainstream";
 import History from "../history/history";
 import Account from "../account/account";
+import Callback from '../callback/callback';
 
 import { Route, Routes } from "react-router-dom";
 
@@ -79,6 +80,7 @@ function Body() {
                         </div>
                     </div>
                 </div>}/>
+                <Route path="/callback" element={<div><HeaderState.Header/><Callback/></div>}/>
                 <Route path="/dashboard" element={<div className="panel"><HeaderState.HeaderLogged/><Dashboard/></div>}/>
                 <Route path="/track/top" element={<div className="panel"><HeaderState.HeaderLogged/><Track/></div>}/>
                 <Route path="/artist/top" element={<div className="panel"><HeaderState.HeaderLogged/><Artist/></div>}/>
