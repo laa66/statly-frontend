@@ -27,7 +27,7 @@ function Genre() {
        }).catch((err) => {console.log(err.message)})}, []);
 
     return (
-        <div>
+        <div className="panel">
             <Image.ImageGenre/>
             <nav className="container section-nav">
                 <ul className="nav">

@@ -27,7 +27,7 @@ function Mainstream() {
        }).catch((err) => {console.log(err.message)})}, []);
 
     return (
-        <div>
+        <div className="panel">
             <Image.ImageMainstream/>
             <nav className="container section-nav">
                 <ul className="nav">

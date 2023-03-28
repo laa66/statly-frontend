@@ -6,8 +6,9 @@ function Account() {
     const navigate = useNavigate();
 
     return (
-        <div className="container">
+        <div className="container panel">
             <div className="row section-option">
+                <h5 style={{marginBottom:"70px", color:"#1db954"}}>Here you can check your Spotify account settings and also delete your account in Statly-app.</h5>
                 <div className="col option-first" onClick={() => {window.location.href="https://www.spotify.com/us/account/overview/"}}>
                     <p style={{"color":"#1db954"}}>Manage Spotify account</p>
                     <p style={{"fontSize":"18px"}}>Continue to Spotify</p>
@@ -20,8 +21,8 @@ function Account() {
             <div style={{"textAlign":"center", "margin-top":"80px"}}>
                 <a href="http://localhost:3000" style={{color:"#b50202"}}>I want to delete my Statly account</a>
             </div>
-            <div style={{"textAlign":"center", "margin-top":"30px"}}>
-                <button className="button-back" onClick={() => navigate(-1)}>Back</button>
+            <div style={{marginTop:"30px", display:"flex", justifyContent:"center"}}>
+                <div className="button-back" onClick={() => navigate(-1)} style={{textAlign:"center"}}>Back</div>
             </div>
         </div>
     );

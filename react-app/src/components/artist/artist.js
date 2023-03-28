@@ -27,7 +27,7 @@ function Artist() {
        }).catch((err) => {console.log(err.message)})}, []);
 
     return (
-        <div>
+        <div className="panel">
             <Image.ImageArtist list={long}/>
             <nav className="container section-nav">
                 <ul className="nav">

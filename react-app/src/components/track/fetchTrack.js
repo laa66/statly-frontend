@@ -8,7 +8,7 @@ export const fetchTrackMedium = () =>  fetch('http://localhost:8080/api/top/trac
     credentials: 'include'
 }).then((response) => response.json());
 
-export const fetchTrackLong = () =>  fetch('http://localhost:8080/api/top/tracks?range=long', {
+export const fetchTrackLong = () => fetch('http://localhost:8080/api/top/tracks?range=long', {
     method: 'GET',
     credentials: 'include'
 }).then((response) => response.json());

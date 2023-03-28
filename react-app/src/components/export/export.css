@@ -1,8 +1,13 @@
 .export-section {
     font-size: 21px;
     color: #b3b3b3;
-    margin-top: 100px;
+    margin-top: 80px;
     text-align: center;
+}
+
+.export-button {
+    justify-content: center;
+    display: flex;
 }
 
 .nav-range-item:active {

@@ -12,7 +12,7 @@ function History() {
         }).catch((err) => {console.log(err.message)})}, []);
 
     return (
-        <div>
+        <div className="panel">
             <Image.ImageRecently list={history}/>
             <List.HistoryList list={history}/>
         </div>
