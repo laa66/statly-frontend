@@ -10,6 +10,24 @@
     display: flex;
 }
 
+.check-playlist-button {
+    border-radius: 8px;
+    margin: 25px 1px 50px 25px;
+    padding: 10px;
+    font-size: 21px;
+    cursor: pointer;
+    color: black;
+    border: line;
+    background-color: #1db954;
+    box-shadow: #1db954 0 1px 30px;
+    transition-duration: .1s;
+}
+
+.check-playlist-button:hover {
+    box-shadow: #1db954 0 1px 50px;
+    transition-duration: 1s;
+}
+
 .nav-range-item:active {
     background-color: #212121;
     box-shadow: #212121 0 1px 20px;
