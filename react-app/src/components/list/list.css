@@ -2,6 +2,17 @@
     font-size: 16px;
 }
 
+.track-row {
+    border-radius: 10px;
+}
+
+.track-row:hover {
+    cursor: pointer;
+    background-color: #212121;
+    box-shadow: #212121 0 0 20px;
+    transition-duration: 0.6s;
+}
+
 .track-img {
     border-radius: 50%;
     width: 50px;
@@ -15,6 +26,7 @@
 }
 
 .list-row {
+    cursor: pointer;
     margin-bottom: 50px;
 }
 
@@ -46,6 +58,12 @@
     border-radius: 50%;
     width: 200px;
     height: 200px;
+}
+
+.artist-img:hover, .artist-img:active {
+    box-shadow: #b3b3b3 0 0 50px;
+    transition-duration: 0.3s;
+    transform: scale(1.05) perspective(1px);
 }
 
 .artist-text {

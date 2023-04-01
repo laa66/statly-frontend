@@ -8,7 +8,7 @@ function TrackList({list}) {
                 <table className="list">
                     {list.map((data, index) => {
                         return(
-                        <tbody key={data + index}>
+                        <tbody className="track-row" key={data + index} onClick={() => {window.location.href=data.external_urls.spotify}}>
                             <tr>
                                 <th className="col-first">{index+1}</th>
                                 <td><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></td>
@@ -30,7 +30,7 @@ function ArtistList({list}) {
             <div className="row row-cols-5">
                 {list.map((data, index) => {
                   return(
-                    <div className="col list-row">
+                    <div className="col list-row" onClick={() => {window.location.href=data.external_urls.spotify}}>
                         <img className="artist-img" src={data.images[1].url} alt={"test"}/>
                         <div className="artist-text">{index+1}</div>
                         <div className="artist-description"><b>{data.name}</b></div>
@@ -78,7 +78,7 @@ function HistoryList({list}) {
                 <table class="list">
                     {list.map((data, index) => {
                         return(
-                        <tbody key={data + index}>
+                        <tbody className="track-row" key={data + index} onClick={() => {window.location.href=data.track.external_urls.spotify}}>
                             <tr>
                                 <th className="col-first">{index+1}</th>
                                 <td><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></td>
