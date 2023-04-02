@@ -27,7 +27,7 @@ function Mainstream() {
        }).catch((err) => {console.log(err.message)})}, []);
 
     return (
-        <div className="panel">
+        <div className="panel animate-fade">
             <Image.ImageMainstream/>
             <nav className="container section-nav">
                 <ul className="nav">

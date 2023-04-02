@@ -29,7 +29,7 @@ function Track() {
        }).catch((err) => {console.log(err.message)})}, []);
     
     return (
-        <div className="panel">
+        <div className="panel animate-fade">
             <Image.ImageTrack list={long}/>
             <nav className="container section-nav">
                 <ul className="nav">

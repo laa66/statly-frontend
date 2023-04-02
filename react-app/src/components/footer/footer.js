@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function footer() {
     return (
-        <div className="container-fluid footer">
+        <div className="container-fluid footer animate-fade">
         <div className="container section-description">
             <div className="container-fluid">
             <div class="row">

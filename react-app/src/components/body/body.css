@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Poppins:wght@400&display=swap');
+
 .section {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -11,6 +14,9 @@
     color: #535353;
     font-size: 26px;
     text-align: center;
+    font-family: 'Goldman', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .section-description {
@@ -38,7 +44,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 36px;
+    font-size: 32px;
   }
 
 .row {
@@ -88,8 +94,12 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   transform: translate(-50%, -50%);
-  
+}
 
+.logo-position {
+    position: absolute;
+    top: 20%;
+    left: 37%;
 }
 
 .button-position {

@@ -19,7 +19,7 @@ function Export({postTrack}) {
             <div className="export-button">
                 {showButton && <div className="nav-range-item" style={{width:"20%", height:"90%"}} onClick={toggleButton}>Create playlist</div>}
                 {!showButton && <div className="check-playlist-button" style={{width:"20%", height:"90%", fontWeight:"400"}}
-                onClick={() => {window.location.href=playlist.external_urls.spotify}}>Check playlist</div>}
+                onClick={() => {window.open(playlist.external_urls.spotify, "_blank", "noreferrer")}}>Check playlist</div>}
             </div>
             <div>
                 <p>Take your music with you wherever you go.</p> 

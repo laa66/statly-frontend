@@ -7,7 +7,7 @@ import genre from '../../resources/genre.png';
 
 function Dashboard() {
     return (
-        <div className="container panel">
+        <div className="container panel animate-fade">
                 <div className="dashboard-image">
                     <img src={dashboard} alt={"dashboard"} width={"70px"} height={"70px"}/>
                 </div>

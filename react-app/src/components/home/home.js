@@ -4,10 +4,11 @@ import playlists from '../../resources/playlists.jpg';
 import score from '../../resources/score.jpg';
 import tracks from '../../resources/tracks.jpg';
 import iphone from '../../resources/iphone.png';
+import spotifylogo from '../../resources/Spotify_logo.png';
 
 export function Home() {
     return (
-        <div>
+        <div className="animate-fade">
             <div className="container section-title">
                         <p>Your Spotify statistics on-demand</p>
                     </div>
@@ -55,6 +56,7 @@ export function Home() {
                             </div>
                             <div className="col-sm">
                                 <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
+                                <img className="logo-position" src={spotifylogo} alt="spotifylogo" width={"157px"} height={"47px"}/>
                                 <button className="iphone-button button-position" onClick={() => window.location.href='http://localhost:8080/api/auth'}>Login with Spotify</button>
                             </div>
                         </div>

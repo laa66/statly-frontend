@@ -27,13 +27,13 @@ function Artist() {
        }).catch((err) => {console.log(err.message)})}, []);
 
     return (
-        <div className="panel">
+        <div className="panel animate-fade">
             <Image.ImageArtist list={long}/>
-            <nav className="container section-nav">
+            <nav className="container">
                 <ul className="nav">
-                    <li className="nav-range-item" onClick={() => setActive('short')} style={{"font-size":"16px"}}>4 weeks</li>
-                    <li className="nav-range-item" onClick={() => setActive('medium')} style={{"font-size":"16px"}}>6 months</li>
-                    <li className="nav-range-item" onClick={() => setActive('long')} style={{"font-size":"16px"}}>All time</li>
+                    <li className="nav-range-item" onClick={() => setActive('short')} style={{fontSize:"16px"}}>4 weeks</li>
+                    <li className="nav-range-item" onClick={() => setActive('medium')} style={{fontSize:"16px"}}>6 months</li>
+                    <li className="nav-range-item" onClick={() => setActive('long')} style={{fontSize:"16px"}}>All time</li>
                 </ul>
             </nav>
             {active === 'short' && <List.ArtistList list={short}/>}

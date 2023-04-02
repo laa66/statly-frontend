@@ -8,14 +8,14 @@ function TrackList({list}) {
                 <table className="list">
                     {list.map((data, index) => {
                         return(
-                        <tbody className="track-row" key={data + index} onClick={() => {window.location.href=data.external_urls.spotify}}>
+                        <tbody className="track-row" key={data + index} onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
                             <tr>
-                                <th className="col-first">{index+1}</th>
+                                <th className="col-first" style={{width:"4%"}}>{index+1}</th>
                                 <td><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></td>
-                                <td className="col-third">{data.artists.map((artist, i, arr) => {
+                                <td className="col-third" style={{width:"50%"}}>{data.artists.map((artist, i, arr) => {
                                     return (i + 1 === arr.length ? artist.name : artist.name + ", ")
                                 })}</td>
-                                <td className="col-fourth">Option</td>
+                                <td className="col-fourth" style={{width:"3%"}}>Option</td>
                             </tr>
                     </tbody>)})}
                 </table>
@@ -30,7 +30,7 @@ function ArtistList({list}) {
             <div className="row row-cols-5">
                 {list.map((data, index) => {
                   return(
-                    <div className="col list-row" onClick={() => {window.location.href=data.external_urls.spotify}}>
+                    <div className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
                         <img className="artist-img" src={data.images[1].url} alt={"test"}/>
                         <div className="artist-text">{index+1}</div>
                         <div className="artist-description"><b>{data.name}</b></div>
@@ -78,7 +78,7 @@ function HistoryList({list}) {
                 <table class="list">
                     {list.map((data, index) => {
                         return(
-                        <tbody className="track-row" key={data + index} onClick={() => {window.location.href=data.track.external_urls.spotify}}>
+                        <tbody className="track-row" key={data + index} onClick={() => {window.open(data.track.external_urls.spotify, "_blank", "noreferrer")}}>
                             <tr>
                                 <th className="col-first">{index+1}</th>
                                 <td><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></td>
