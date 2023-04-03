@@ -5,62 +5,113 @@ import score from '../../resources/score.jpg';
 import tracks from '../../resources/tracks.jpg';
 import iphone from '../../resources/iphone.png';
 import spotifylogo from '../../resources/Spotify_logo.png';
+import './home.css'
+
+import { useRef, useState } from 'react';
+import { postBetaUser } from './postBetaUser';
+
 
 export function Home() {
+    const beta = useRef(null);
+    const executeScroll = () => beta.current.scrollIntoView();
+    const [showConfirmation, setShowConfirmation] = useState("Register");
+    
+    const toggleConfirmation = () => {
+        setShowConfirmation("Thank you!");
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        var username = event.target.username.value;
+        var email = event.target.email.value;
+        postBetaUser(username, email);
+    }
+
     return (
         <div className="animate-fade">
             <div className="container section-title">
-                        <p>Your Spotify statistics on-demand</p>
-                    </div>
-                    <div className="container section">
-                        <div className="content">
-                            <div className="slides">
-                                <div className="slide-content">
-                                    <img className="image" src={tracks} alt={"tracks"} width={"600px"} height={"300px"} />
-                                    <div className="centered">Your Top tracks</div>
-                                </div>
-                                <div className="slide-content">
-                                    <img className="image" src={concert} alt={"concert"} width={"600px"} height={"300px"} />
-                                    <div className="centered">Your Top artists</div>
-                                </div>
-                                <div className="slide-content">
-                                    <img className="image" src={score} alt={"concert"} width={"600px"} height={"300px"} />
-                                    <div className="centered">Mainstream score</div>
-                                </div>
-                                <div className="slide-content">
-                                    <img className="image" src={genres} alt={"concert"} width={"600px"} height={"300px"} />
-                                    <div className="centered">Your Top genres</div>
-                                </div>
-                                <div className="slide-content">
-                                    <img className="image" src={playlists} alt={"concert"} width={"600px"} height={"300px"} />
-                                    <div className="centered">Export playlists</div>
-                                </div>
-                            </div>
+                <p>Your Spotify statistics on-demand</p>
+            </div>
+            <div className="container section">
+                <div className="content">
+                    <div className="slides">
+                        <div className="slide-content">
+                            <img className="image" src={tracks} alt={"tracks"} width={"600px"} height={"300px"} />
+                            <div className="centered">Your Top tracks</div>
+                        </div>
+                        <div className="slide-content">
+                            <img className="image" src={concert} alt={"concert"} width={"600px"} height={"300px"} />
+                            <div className="centered">Your Top artists</div>
+                        </div>
+                        <div className="slide-content">
+                            <img className="image" src={score} alt={"concert"} width={"600px"} height={"300px"} />
+                            <div className="centered">Mainstream score</div>
+                        </div>
+                        <div className="slide-content">
+                            <img className="image" src={genres} alt={"concert"} width={"600px"} height={"300px"} />
+                            <div className="centered">Your Top genres</div>
+                        </div>
+                        <div className="slide-content">
+                            <img className="image" src={playlists} alt={"concert"} width={"600px"} height={"300px"} />
+                            <div className="centered">Export playlists</div>
                         </div>
                     </div>
-                    <div className="container section-two">
-                        <div className="row">
-                            <div className="col-sm">
-                                <div className="container section-description">
-                                    <p className="section-two-title">Tired of waiting for Spotify Wrapped?</p>
-                                    <p>Discover your musical taste with our Spotify-powered app!</p>
-                                    <p>Our app seamlessly integrates with Spotify API to bring you a
-                                        comprehensive view of your music preferences.</p>
-                                    <p>With different features you can discover new music and curate
-                                        personalized playlists.</p>
-                                    <p> With an intuitive design and seamless integration, you can immerse yourself
-                                        in your music like never before.</p>
-                                    <hr />
-                                    <p className="iphone-text">Login with your Spotify account to see your Top tracks, artists and more!</p>
-                                </div>
-                            </div>
-                            <div className="col-sm">
-                                <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
-                                <img className="logo-position" src={spotifylogo} alt="spotifylogo" width={"157px"} height={"47px"}/>
-                                <button className="iphone-button button-position" onClick={() => window.location.href='http://localhost:8080/api/auth'}>Login with Spotify</button>
-                            </div>
+                </div>
+            </div>
+            <div className="container section-two">
+                <div className="row">
+                    <div className="col-sm">
+                        <div className="container section-description">
+                            <p className="section-two-title">Tired of waiting for Spotify Wrapped?</p>
+                            <p>Discover your musical taste with our Spotify-powered app!</p>
+                            <p>Our app seamlessly integrates with Spotify API to bring you a
+                                comprehensive view of your music preferences.</p>
+                            <p>With different features you can discover new music and curate
+                                personalized playlists.</p>
+                            <p> With an intuitive design and seamless integration, you can immerse yourself
+                                in your music like never before.</p>
+                            <hr />
+                            <p className="iphone-text">Login with your Spotify account to see your Top tracks, artists and more!</p>
                         </div>
                     </div>
+                    <div className="col-sm">
+                        <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
+                        <img className="logo-position" src={spotifylogo} alt="spotifylogo" width={"157px"} height={"47px"} />
+                        <button className="iphone-button button-position" onClick={() => window.location.href = 'http://localhost:8080/api/auth'}>Login with Spotify</button>
+                        <button className="iphone-button-2 button-position-2" onClick={executeScroll}>Join Beta</button>
+                    </div>
+                </div>
+            </div>
+            <div className="container test-section" ref={beta}>
+            <h1 className="test-section-title">Sign up as a beta-tester!</h1>
+            <div className="row">
+                <div className="col test-section-description-1">
+                    <p> Please provide your Spotify username and email to register for testing our web application</p>
+                    <div className="wrapper-form">
+                        <form onSubmit={handleSubmit} autoComplete="off">
+                            <div className="mb-3">
+                                <input type="text" className="form-control" id="username" name="username" aria-describedby="email-help" placeholder="Username" />
+                            </div>
+                            <div className="mb-3">
+                                <input type="email" className="form-control" id="email" name="email" placeholder="Email address" />
+                                <div id="email-help" className="form-text">We'll never share your data with anyone else.</div>
+                            </div>
+                            <button type="submit" className="register-button" onClick={toggleConfirmation}>{showConfirmation}</button>
+                        </form>
+                    </div> 
+                </div>
+                <div className="col test-section-description-2">
+                    <p style={{fontSize:"21px", textAlign:"center"}}>Important note</p>
+                    <hr/>
+                    <span style={{fontSize:"16px"}}>
+                    <p>To access our Spotify-powered web application, please register with your Spotify username and email address that are associated with your Spotify account.</p>
+                    <p>This is necessary because we use the basic version of the Spotify API and need to add testers to our Spotify developer panel in order to grant them access to our application.
+                          Once you register, your access will be assigned within 15 minutes, and you will receive a confirmation email with instructions on how to get started.</p>
+                    <p>Thank you for your interest in testing our application and helping us improve our service!</p>
+                    </span>
+                </div>
+            </div>
+        </div>
         </div>
     );
 }

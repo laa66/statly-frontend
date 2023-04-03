@@ -10,4 +10,5 @@ export const logOut = () => {
         'X-XSRF-TOKEN': csrfToken
     }
     }).then((response) => response.json());
+   
 }
