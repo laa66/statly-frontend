@@ -1,0 +1,45 @@
+.dashboard-image {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.dashboard-title {
+    color: white;
+    font-size: 26px;
+    padding-bottom: 50px;
+}
+
+.dashboard-content {
+    color: #b3b3b3;
+    text-align: center;
+    font-size: 21px;
+}
+
+.dashboard-list {
+    display: inline-block;
+    text-align: left;
+}
+
+.dashboard-list-item {
+    font-size: 26px;
+    margin: 20px;
+}
+
+.dashboard-description {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.image-position {
+    margin-right: 15px;
+}
+
+.col-description {
+    margin-left: 80px;
+}
+
+@media (max-width: 1000px) {
+    .col-description {
+        margin-left: 0;
+    }
+}

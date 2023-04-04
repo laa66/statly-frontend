@@ -8,7 +8,7 @@ function footer() {
         <div className="container-fluid footer animate-fade">
         <div className="container section-description">
             <div className="container-fluid">
-            <div class="row">
+            <div className="row" id="footer-row">
                 <div className="col">
                     <ul>
                         <li className="footer-title">Statly</li>
@@ -34,7 +34,7 @@ function footer() {
                         <li>Terms</li>
                     </ul>
                 </div>
-                <div className="col">
+                <div className="col" id="col-empty">
                 
                 </div>
                 <div className="col">

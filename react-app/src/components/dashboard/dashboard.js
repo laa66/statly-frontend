@@ -5,6 +5,8 @@ import score from '../../resources/score.png';
 import history from '../../resources/history.png';
 import genre from '../../resources/genre.png';
 
+import './dashboard.css';
+
 function Dashboard() {
     return (
         <div className="container panel animate-fade">
@@ -14,14 +16,14 @@ function Dashboard() {
                 <div className="dashboard-content">
                     <p className="dashboard-title">Welcome to your personalized music dashboard!</p>
                     <div className="row">
-                        <div className="col" style={{marginLeft:"80px"}}>
+                        <div className="col-lg col-description">
                             <p>With our Spotify-powered app, you can view your
                                 music preferences at a glance. Intuitive design and seamless integration with Spotify
                                 API make it easy to stay connected to your musical taste and stay on top of the
                                 latest hits. </p>
                             <p>You can also export a playlist made of your favorite songs with Statly using <span style={{color:"#1db954"}}>Spotify API.</span></p>
                         </div>
-                        <div className="col">
+                        <div className="col-lg">
                             <p style={{color:"#1db954"}}>Our dashboard features options
                                 for showing your:</p>
                             <div>

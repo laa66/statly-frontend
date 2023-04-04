@@ -91,10 +91,18 @@
   transform: translate(-50%, -50%);
 }
 
+.iphone-logo {
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transform: translate(-50%, -50%);
+}
+
 .logo-position {
     position: absolute;
-    top: 20%;
-    left: 37%;
+    top: 25%;
+    left: 50%;
 }
 
 .button-position {
@@ -139,6 +147,66 @@
 .iphone-button:hover {
   box-shadow: #1db954 0 1px 30px;
   transition-duration: .1s;
+}
+
+@media (max-width: 600px) {
+    .section {
+        display: none;
+    }
+
+    .section-two {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .logo-position {
+        top: 15%;
+    }
+    
+    .button-position {
+        top: 35%;
+    }
+
+    .button-position-2 {
+        top: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo-position {
+        top: 10%;
+    }
+    
+    .button-position {
+        top: 28%;
+    }
+
+    .button-position-2 {
+        top: 40%;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-title {
+        font-size: 18px;
+    }
+
+    .logo-position {
+        top: 15%;
+    }
+    
+    .button-position {
+        top: 45%;
+    }
+
+    .button-position-2 {
+        top: 65%;
+    }
+
+    .iphone-button-2 {
+        padding: 0 3.6rem;
+    }
 }
 
 @media (min-width: 768px) {

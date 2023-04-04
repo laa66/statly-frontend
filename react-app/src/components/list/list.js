@@ -11,7 +11,7 @@ function TrackList({list}) {
                         <tbody className="track-row" key={data + index} onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
                             <tr>
                                 <th className="col-first" style={{width:"4%"}}>{index+1}</th>
-                                <td><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></td>
+                                <td><div className="col-second"><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></div></td>
                                 <td className="col-third" style={{width:"50%"}}>{data.artists.map((artist, i, arr) => {
                                     return (i + 1 === arr.length ? artist.name : artist.name + ", ")
                                 })}</td>

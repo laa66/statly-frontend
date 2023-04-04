@@ -24,3 +24,14 @@ ul {
 li {
     font-size: 14px;
 }
+
+@media (max-width: 600px) {
+    #col-empty {
+        display: none;
+    }
+
+    #footer-row {
+        justify-content: center;
+        display: flex;
+    }
+}
