@@ -2,8 +2,6 @@ import { getConfiguration } from "../../config";
 
 const url = getConfiguration().apiUrl;
 
-alert(url);
-
 export const fetchTrackShort = () =>  fetch(url + '/api/top/tracks?range=short', {
     method: 'GET',
     credentials: 'include'
