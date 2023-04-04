@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { getConfiguration } from "../../config";
 
 import './account.css';
 
 function Account() {
     const navigate = useNavigate();
+    const url = getConfiguration().apiUrl;
 
     return (
         <div className="container panel">
@@ -19,7 +21,7 @@ function Account() {
                 </div>
             </div>
             <div style={{"textAlign":"center", "margin-top":"80px"}}>
-                <a href="http://localhost:3000" style={{color:"#b50202"}}>I want to delete my Statly account</a>
+                <a href={url} style={{color:"#b50202"}}>I want to delete my Statly account</a>
             </div>
             <div style={{marginTop:"30px", display:"flex", justifyContent:"center"}}>
                 <div className="button-back" onClick={() => navigate(-1)} style={{textAlign:"center"}}>Back</div>

@@ -1,7 +1,10 @@
+import { getConfiguration } from "../../config";
+
 //eslint-disable-next-line
 const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+const url = getConfiguration().apiUrl;
 
-export const postBetaUser = (username, email) => fetch('http://localhost:8080/api/join', {
+export const postBetaUser = (username, email) => fetch(url + '/api/join', {
     method: 'POST',
     credentials: 'include',
     headers: {
