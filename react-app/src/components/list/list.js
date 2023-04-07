@@ -8,9 +8,9 @@ function TrackList({list}) {
                 <table className="list">
                     {list.map((data, index) => {
                         return(
-                        <tbody className="track-row" key={data + index} onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
-                            <tr>
-                                <th className="col-first" style={{width:"4%"}}>{index+1}</th>
+                        <tbody key={data + index} onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
+                            <tr className="track-row">
+                                <th className="col-first" style={{width:"3%"}}>{index+1}</th>
                                 <td><div className="col-second"><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></div></td>
                                 <td className="col-third" style={{width:"50%"}}>{data.artists.map((artist, i, arr) => {
                                     return (i + 1 === arr.length ? artist.name : artist.name + ", ")
@@ -27,7 +27,7 @@ function TrackList({list}) {
 function ArtistList({list}) {
     return (
         <div className="container artist-container">
-            <div className="row row-cols-5">
+            <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
                 {list.map((data, index) => {
                   return(
                     <div className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
@@ -44,13 +44,17 @@ function ArtistList({list}) {
 function GenreList({list}) {
     return (
         <div className="genre-bar-chart container">
+            <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
             {list.map((item, i) => (
-                <div className="genre-container">
-                    <div>{item.score + "%"}</div>
-                    <div className="genre-bar" style={{"--percentage":String(item.score + "%")}}/>
-                    <div className="genre-label">{item.genre}</div>
+                <div className="col">
+                    <div className="genre-container">
+                        <div class="genre-percentage">{item.score + "%"}</div>
+                        <div className="genre-bar" style={{"--percentage":String(item.score + "%")}}/>
+                        <div className="genre-label">{item.genre}</div>
+                    </div>
                 </div>
             ))}
+            </div>
         </div>
     );
 }
@@ -78,10 +82,10 @@ function HistoryList({list}) {
                 <table class="list">
                     {list.map((data, index) => {
                         return(
-                        <tbody className="track-row" key={data + index} onClick={() => {window.open(data.track.external_urls.spotify, "_blank", "noreferrer")}}>
-                            <tr>
+                        <tbody key={data + index} onClick={() => {window.open(data.track.external_urls.spotify, "_blank", "noreferrer")}}>
+                            <tr className="track-row">
                                 <th className="col-first">{index+1}</th>
-                                <td><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></td>
+                                <td><div className="col-second"><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></div></td>
                                 <td className="col-third">{data.track.artists.map((artist, i, arr) => {
                                     return (i + 1 === arr.length ? artist.name : artist.name + ", ")
                                 })}</td>

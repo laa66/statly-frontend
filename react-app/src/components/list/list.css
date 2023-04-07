@@ -19,8 +19,9 @@
     }
 }
 
-.track-row {
-    border-radius: 10px;
+tr.track-row>td {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
 }
 
 .track-row:hover {
@@ -137,7 +138,6 @@
 
 .genre-bar-chart {
     color: #b3b3b3;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -145,7 +145,9 @@
   }
 
   .genre-container {
-    text-align: center; 
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
   
 .genre-bar {
@@ -172,12 +174,15 @@
 }
   
 .genre-label {
+    position: absolute;
     height: 60px;
     margin-bottom: 5px;
     inline-size: 80px;
     overflow-wrap: break-word;
+    top: 100%;
 }
   
-.genre-percent {
-    font-size: 12px;
+.genre-percentage {
+    bottom: 100%;
+    position: absolute;
 }
