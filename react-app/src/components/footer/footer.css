@@ -4,6 +4,18 @@
     background-color: #0f0f0f;
 }
 
+@media (max-width: 508px) {
+    #footer-logo {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 383px) {
+    #footer-logo {
+        margin-top: 16px;
+    }
+}
+
 .footer-title {
     color: white;
     font-size: 16px;

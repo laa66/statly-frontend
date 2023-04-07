@@ -167,6 +167,8 @@ tr.track-row>td {
     content: '';
     position: absolute;
     top: 0;
+    border: black;
+    border-style: solid 0.1rem;
     bottom: var(--percentage);
     left: 0;
     right: 0;
@@ -185,4 +187,8 @@ tr.track-row>td {
 .genre-percentage {
     bottom: 100%;
     position: absolute;
+}
+
+.genre-col {
+    margin-bottom: 90px;
 }

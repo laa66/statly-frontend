@@ -50,9 +50,9 @@ function ImageMainstream() {
     return (
         <div className="container">
             <div className="image-container">
-                <img className="img1" src={vinyl} alt={"first"} width={"200px"} height={"200px"}/>
-                <img className="img2" src={vinyl} alt={"second"} width={"200px"} height={"200px"}/>
-                <img className="img3" src={vinyl} alt={"third"} width={"200px"} height={"200px"}/>
+                <img className="img1" src={vinyl} alt={"first"} width={"150px"} height={"150px"}/>
+                <img className="img2" src={vinyl} alt={"second"} width={"150x"} height={"150px"}/>
+                <img className="img3" src={vinyl} alt={"third"} width={"150px"} height={"150px"}/>
             </div>
             <div className="image-description">
                 <p>See how your musical taste stacks up.</p>

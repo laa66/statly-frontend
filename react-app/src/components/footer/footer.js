@@ -37,7 +37,7 @@ function footer() {
                 <div className="col" id="col-empty">
                 
                 </div>
-                <div className="col">
+                <div className="col" id="footer-logo">
                     <img src={logo} alt={"logo"} width={"100px"} height={"33px"}/>
                 </div>
                 <div className="footer-copyright">

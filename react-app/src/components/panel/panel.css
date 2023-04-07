@@ -19,6 +19,12 @@
     }
 }
 
+@media (max-width: 992px) {
+    .nav-item {
+        font-size: 19px;
+    }
+}
+
 .nav-range-item {
     border-radius: 8px;
     margin: 25px 12px 50px 12px;

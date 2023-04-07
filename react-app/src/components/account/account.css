@@ -9,8 +9,8 @@
     padding: 50px 50px 50px 50px;
     box-shadow: #1db954 0 1px 30px;
     transition-duration: .1s;
-    margin-left: 200px;
-    margin-right: 100px;
+    margin-bottom: 60px;
+    
 }
 
 .option-first:hover {
@@ -19,25 +19,17 @@
     cursor: pointer;
 }
 
-.option-second {
-    border-radius: 8px;
-    padding: 50px 50px 50px 50px;
-    box-shadow: #1db954 0 1px 30px;
-    transition-duration: .1s;
-    margin-left: 100px;
-    margin-right: 200px;
-}
-
-.option-second:hover {
-    transform: scale(1.05) perspective(1px);
-    box-shadow: #1db954 0 1px 50px;
-    cursor: pointer;
+@media (min-width: 1199px) {
+    .option-first {
+        margin-bottom: 60px;
+        margin-left: 35%;
+        max-width: 30%;
+    }
 }
 
 .button-back {
-    width: 15%;
     border-radius: 8px;
-    padding: 10px 40px 10px 40px;
+    padding: 10px 90px 10px 90px;
     font-size: 21px;
     cursor: pointer;
     color: black;

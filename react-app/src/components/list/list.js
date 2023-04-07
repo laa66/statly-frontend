@@ -44,9 +44,9 @@ function ArtistList({list}) {
 function GenreList({list}) {
     return (
         <div className="genre-bar-chart container">
-            <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
+            <div className="row row-cols-md-1 row-cols-md-2 row-cols-md-3 row-cols-md-4 row-cols-md-5">
             {list.map((item, i) => (
-                <div className="col">
+                <div className="col genre-col">
                     <div className="genre-container">
                         <div class="genre-percentage">{item.score + "%"}</div>
                         <div className="genre-bar" style={{"--percentage":String(item.score + "%")}}/>
