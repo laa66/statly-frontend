@@ -57,3 +57,9 @@
 .link-item:hover {
     color: inherit;
 }
+
+.dropdown-link-item:active {
+    text-decoration: inherit;
+    color: black;
+    background-color: #1db954;
+}

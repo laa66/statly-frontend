@@ -32,9 +32,9 @@ function HeaderLogged() {
                             <img className="user-image" src={localStorage.getItem('imageUrl')} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"/>
                             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                                 <li><h6 className="dropdown-header">{localStorage.getItem('username')}</h6></li>
-                                <li className="dropdown-item"><Link to="/user/account" className="link-item">Account</Link></li>
+                                <li className="dropdown-item dropdown-link-item"><Link to="/user/account" className="link-item">Account</Link></li>
                                 <li><hr className="dropdown-divider"/></li>
-                                <li className="dropdown-item" onClick={logOut}><Link to="/" className="link-item">Sign Out</Link></li>
+                                <li className="dropdown-item dropdown-link-item" onClick={logOut}><Link to="/" className="link-item">Sign Out</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ function HeaderLogged() {
                             </li>
                         </ul>
                     </div>
-                    <a class="navbar-brand" style={{color:"#535353", marginLeft:"3%"}}> Hello, {localStorage.getItem('username')}</a>
+                    <div class="navbar-brand" style={{color:"#535353", marginLeft:"3%"}}> Hello, {localStorage.getItem('username')}</div>
                 </div>
             </nav>
             </div>

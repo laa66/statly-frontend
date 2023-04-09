@@ -18,7 +18,7 @@ function Export({postTrack}) {
             {!showButton && <div style={{color:"#535353"}}>Playlist created and exported to your <span style={{color:"#1db954"}}>Spotify account!</span></div>}
             <div className="export-button">
                 {showButton && <div className="nav-range-item create-button" onClick={toggleButton}>Create playlist</div>}
-                {!showButton && <div className="check-playlist-button" style={{width:"20%", height:"90%", fontWeight:"400"}}
+                {!showButton && <div className="check-playlist-button" style={{height:"90%", fontWeight:"400"}}
                 onClick={() => {window.open(playlist.external_urls.spotify, "_blank", "noreferrer")}}>Check playlist</div>}
             </div>
             <div>

@@ -5,7 +5,7 @@ const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;
 const url = getConfiguration().apiUrl;
 
 
-export const postTrackShort = () =>  fetch(url + '/api/playlist/create?range=short', {
+export const postTrackShort = () => fetch(url + '/api/playlist/create?range=short', {
     method: 'POST',
     credentials: 'include',
     headers: {

@@ -38,13 +38,10 @@
 }
 
 .button-delete {
-    border-radius: 8px;
-    padding: 10px 40px 10px 40px;
-    font-size: 21px;
+    width: 20%;
+    color: #b50202;
+    text-decoration: underline;
     cursor: pointer;
-    color: black;
-    border: line;
-    background-color: #DC0000;
 }
 
 .button-back:hover {
@@ -57,10 +54,6 @@
 }
 
 .button-delete:hover {
+    color: #1db954;
     cursor: pointer;
-    color: black;
-    border: line;
-    background-color: #DC0000;
-    box-shadow: #DC0000 0 1px 20px;
-    transition-duration: .1s;
 }

@@ -88,11 +88,11 @@ export function Home() {
             <h1 className="test-section-title">Sign up as a beta-tester!</h1>
             <div className="row">
                 <div className="col test-section-description-1">
-                    <p> Please provide your Spotify username and email to register for testing our web application</p>
+                    <p>Please provide full name and email associated with your Spotify account</p>
                     <div className="wrapper-form">
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="mb-3">
-                                <input type="text" className="form-control" id="username" name="username" aria-describedby="email-help" placeholder="Username" />
+                                <input type="text" className="form-control" id="username" name="username" aria-describedby="email-help" placeholder="Full name" />
                             </div>
                             <div className="mb-3">
                                 <input type="email" className="form-control" id="email" name="email" placeholder="Email address" />
@@ -106,7 +106,7 @@ export function Home() {
                     <p style={{fontSize:"21px", textAlign:"center"}}>Important note</p>
                     <hr/>
                     <span style={{fontSize:"16px"}}>
-                    <p>To access our Spotify-powered web application, please register with your Spotify username and email address that are associated with your Spotify account.</p>
+                    <p>To access our Spotify-powered web application, please register with your full name and Spotify email address that are associated with your Spotify account.</p>
                     <p>This is necessary because we use the basic version of the Spotify API and need to add testers to our Spotify developer panel in order to grant them access to our application.
                           Once you register, your access will be assigned within 15 minutes, and you will receive a confirmation email with instructions on how to get started.</p>
                     <p>Thank you for your interest in testing our application and helping us improve our service!</p>

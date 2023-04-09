@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { getConfiguration } from "../../config";
+import { deleteAccount } from "./deleteAccount";
 
 import './account.css';
 
 function Account() {
     const navigate = useNavigate();
-    const url = getConfiguration().apiUrl;
+
+    const handleDelete = () => {
+        deleteAccount();
+        window.open('/');
+    }
 
     return (
         <div className="container panel" style={{textAlign:"center"}}>
@@ -16,8 +20,8 @@ function Account() {
                     <p style={{"fontSize":"21px"}}>Continue to Spotify</p>
                 </div>
             </div>
-            <div style={{"textAlign":"center", "margin-top":"80px"}}>
-                <a href={url} style={{color:"#b50202"}}>I want to delete my Statly account</a>
+            <div style={{display:"flex", justifyContent:"center", marginTop:"80px"}}>
+                <div className="button-delete" onClick={() => handleDelete()}>I want to delete my Statly account</div>
             </div>
             <div style={{marginTop:"30px", display:"flex", justifyContent:"center"}}>
                 <div className="button-back" onClick={() => navigate(-1)} style={{textAlign:"center"}}>Back</div>
