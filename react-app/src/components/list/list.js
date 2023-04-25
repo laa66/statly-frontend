@@ -1,5 +1,8 @@
 import './list.css';
 import React from 'react';
+import dot from '../../resources/icon-dot.png';
+import triangleUp from '../../resources/icon-triangle-up.png';
+import triangleDown from '../../resources/icon-triangle-down.png';
 
 function TrackList({list}) {
     return (
@@ -9,13 +12,47 @@ function TrackList({list}) {
                     {list.map((data, index) => {
                         return(
                         <tbody key={data + index} onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
-                            <tr className="track-row">
+                            <tr className="track-row" title={'rank ' + (data.difference === null ? 'not available' : data.difference)}>
                                 <th className="col-first" style={{width:"3%"}}>{index+1}</th>
                                 <td><div className="col-second"><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></div></td>
                                 <td className="col-third" style={{width:"50%"}}>{data.artists.map((artist, i, arr) => {
                                     return (i + 1 === arr.length ? artist.name : artist.name + ", ")
                                 })}</td>
-                                <td className="col-fourth" style={{width:"3%"}}>Option</td>
+                                <td className="col-number">
+                                    <span className="compare-number">{
+                                        (() => {
+                                            if (data.difference > 0) {
+                                                return (<div>{'+' + data.difference}</div>)
+                                            }
+                                            else if (data.difference < 0) {
+                                                return (
+                                                    <div>{data.difference}</div>
+                                                )
+                                            }
+                                        })()
+                                    }</span>
+                                </td>
+                                <td className="col-fourth" style={{width:"3%"}}>{
+                                        (() => {
+                                            if (data.difference === null) {
+                                                return (<div />)
+                                            }
+                                            else if (data.difference === 0) {
+                                                return (
+                                                    <img src={dot} className="compare-icon" alt='dot' width={'15px'} height={'15px'}/>
+                                                )
+                                            } else if (data.difference > 0) {
+                                                return (
+                                                    <img src={triangleUp} className="compare-icon" alt='up' width={'15px'} height={'15px'} />
+                                                )
+                                            } else {
+                                                return (
+                                                    <img src={triangleDown} className="compare-icon" alt='down' width={'15px'} height={'15px'}></img>
+                                                )
+                                            }
+                                        })()
+                                    }
+                                </td>
                             </tr>
                     </tbody>)})}
                 </table>
@@ -30,11 +67,30 @@ function ArtistList({list}) {
             <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
                 {list.map((data, index) => {
                   return(
-                    <div className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
+                    <div title={'rank ' + (data.difference === null ? 'not available' : data.difference)} className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
                         <img className="artist-img" src={data.images[1].url} alt={"test"}/>
                         <div className="artist-text">{index+1}</div>
-                        <div className="artist-description"><b>{data.name}</b></div>
-                    </div>
+                          <div className="artist-description"><b>{
+                              (() => {
+                                  if (data.difference === null) {
+                                      return (<div>{data.name}</div>)
+                                  }
+                                  else if (data.difference === 0) {
+                                      return (
+                                          <div>{data.name + ' '}<img src={dot} alt='dot' width={'15px'} height={'15px'} /></div>
+                                      )
+                                  } else if (data.difference > 0) {
+                                      return (
+                                          <div>{data.name + ' '}<img src={triangleUp} alt='dot' width={'15px'} height={'15px'} /></div>
+                                      )
+                                  } else {
+                                      return (
+                                          <div>{data.name + ' '}<img src={triangleDown} alt='dot' width={'15px'} height={'15px'} /></div>
+                                      )
+                                  }
+                              })()
+                          }</b></div>
+                      </div>
                   )})}
             </div>
         </div>
@@ -46,10 +102,30 @@ function GenreList({list}) {
         <div className="genre-bar-chart container">
             <div className="row row-cols-md-1 row-cols-md-2 row-cols-md-3 row-cols-md-4 row-cols-md-5">
             {list.map((item, i) => (
-                <div className="col genre-col">
+                <div title={'rank ' + (item.difference === null ? 'not available' : item.difference)} className="col genre-col">
                     <div className="genre-container">
-                        <div class="genre-percentage">{item.score + "%"}</div>
-                        <div className="genre-bar" style={{"--percentage":String(item.score + "%")}}/>
+                        <div className="genre-compare">{
+                                        (() => {
+                                            if (item.difference === null) {
+                                                return (<div />)
+                                            }
+                                            else if (item.difference === 0) {
+                                                return (
+                                                    <img src={dot} alt='dot' width={'15px'} height={'15px'} />
+                                                )
+                                            } else if (item.difference > 0) {
+                                                return (
+                                                    <img src={triangleUp} alt='up' width={'15px'} height={'15px'} />
+                                                )
+                                            } else {
+                                                return (
+                                                    <img src={triangleDown} alt='down' width={'15px'} height={'15px'}></img>
+                                                )
+                                            }
+                                        })()
+                                    }</div>
+                        <div className="genre-percentage">{item.score + "%"}</div>
+                        <div className="genre-bar" style={{"--percentage": String(item.score + "%")}}/>
                         <div className="genre-label">{item.genre}</div>
                     </div>
                 </div>
@@ -62,6 +138,26 @@ function GenreList({list}) {
 function Mainstream({score}) {
     return (
         <div className="container">
+            <div style={{display:'flex', justifyContent:'center'}}>{
+                                        (() => {
+                                            if (score.difference === null) {
+                                                return (<div />)
+                                            }
+                                            else if (score.difference === 0) {
+                                                return (
+                                                    <img src={dot} alt='dot' width={'15px'} height={'15px'} />
+                                                )
+                                            } else if (score.difference > 0) {
+                                                return (
+                                                    <img src={triangleDown} alt='down' width={'15px'} height={'15px'} />
+                                                )
+                                            } else {
+                                                return (
+                                                    <img src={triangleUp} alt='up' width={'15px'} height={'15px'}></img>
+                                                )
+                                            }
+                                        })()
+                                    }</div>
             <div className="score-container">
                 <div className="stats-score">
                     <div className="stats-item">

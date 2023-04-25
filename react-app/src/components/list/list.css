@@ -7,7 +7,7 @@
         font-size: 14px;
     }
 
-    .col-fourth {
+    .col-number {
         display: none;
     }
 
@@ -19,16 +19,25 @@
     }
 }
 
+.compare-icon {
+    margin-right: 25%;
+}
+
+.compare-number {
+    color: #121212;
+}
+
 tr.track-row>td {
     padding-top: 0.3em;
     padding-bottom: 0.3em;
 }
 
-.track-row:hover {
+.track-row:hover * {
     cursor: pointer;
     background-color: #212121;
     box-shadow: #212121 0 0 20px;
     transition-duration: 0.6s;
+    color: #b3b3b3;
 }
 
 .track-img {
@@ -137,6 +146,7 @@ tr.track-row>td {
 }
 
 .genre-bar-chart {
+    margin-top: 2%;
     color: #b3b3b3;
     flex-direction: row;
     justify-content: space-between;
@@ -182,6 +192,11 @@ tr.track-row>td {
     inline-size: 80px;
     overflow-wrap: break-word;
     top: 100%;
+}
+
+.genre-compare {
+    bottom: 115%;
+    position: absolute;
 }
   
 .genre-percentage {
