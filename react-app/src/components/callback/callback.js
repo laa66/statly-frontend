@@ -6,8 +6,12 @@ function Callback() {
 
     useEffect(() => {
         if (localStorage.getItem('username') === null && localStorage.getItem('imageUrl') === null) {
+            if (params.has('ext')) {
+                let url = params.get('url').split('profilepic/?asid=')[1];
+                localStorage.setItem('imageUrl', 'https://graph.facebook.com/' + url + '/picture')
+            } else localStorage.setItem('imageUrl', params.get('url'));
+            
             localStorage.setItem('username', params.get('name'));
-            localStorage.setItem('imageUrl', params.get('url'));
             localStorage.setItem('userLogged', true);
         }
     });

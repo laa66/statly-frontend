@@ -35,7 +35,7 @@ function TrackList({list}) {
                                 <td className="col-fourth" style={{width:"3%"}}>{
                                         (() => {
                                             if (data.difference === null) {
-                                                return (<div />)
+                                                return (<img src={dot} className="compare-icon" alt='dot' width={'15px'} height={'15px'}/>)
                                             }
                                             else if (data.difference === 0) {
                                                 return (
@@ -73,7 +73,7 @@ function ArtistList({list}) {
                           <div className="artist-description"><b>{
                               (() => {
                                   if (data.difference === null) {
-                                      return (<div>{data.name}</div>)
+                                      return (<div>{data.name + ' '}<img src={dot} alt='dot' width={'15px'} height={'15px'} /></div>)
                                   }
                                   else if (data.difference === 0) {
                                       return (
@@ -181,11 +181,11 @@ function HistoryList({list}) {
                         <tbody key={data + index} onClick={() => {window.open(data.track.external_urls.spotify, "_blank", "noreferrer")}}>
                             <tr className="track-row">
                                 <th className="col-first">{index+1}</th>
-                                <td><div className="col-second"><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></div></td>
+                                <td style={{width:"42%"}}><div className="col-second"><img className="track-img" src={data.track.album.images[2].url} alt={"test"}/><b>{data.track.name}</b></div></td>
                                 <td className="col-third">{data.track.artists.map((artist, i, arr) => {
                                     return (i + 1 === arr.length ? artist.name : artist.name + ", ")
                                 })}</td>
-                                <td className="col-fourth">{new Intl.DateTimeFormat('en-US', 
+                                <td className="col-fourth" id="time-col">{new Intl.DateTimeFormat('en-US', 
                                 {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'})
                                 .format(Date.parse(new Date(data.played_at).toLocaleString("en-US", {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone})))}</td>
                             </tr>

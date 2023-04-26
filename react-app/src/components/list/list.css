@@ -11,6 +11,10 @@
         display: none;
     }
 
+    #time-col {
+        display: none;
+    }
+
     .col-second {
         width: 200px;
         white-space: nowrap;

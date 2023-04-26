@@ -79,7 +79,7 @@ export function Home() {
                     <div className="col-sm">
                         <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
                         <img className="iphone-logo logo-position" src={spotifylogo} alt="spotifylogo" width={"157px"} height={"47px"} />
-                        <button className="iphone-button button-position" onClick={() => window.location.href = url + '/api/auth'}>Login with Spotify</button>
+                        <button className="iphone-button button-position" onClick={() => window.location.href = url + '/user/auth'}>Login with Spotify</button>
                         <button className="iphone-button-2 button-position-2" onClick={executeScroll}>Join Beta</button>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { getConfiguration } from "../../config";
 const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 const url = getConfiguration().apiUrl;
 
-export const postBetaUser = (username, email) => fetch(url + '/api/join', {
+export const postBetaUser = (username, email) => fetch(url + '/user/beta/join', {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -13,7 +13,7 @@ export const postBetaUser = (username, email) => fetch(url + '/api/join', {
         'X-XSRF-TOKEN': csrfToken
     },
     body: JSON.stringify({
-        username: username,
+        fullName: username,
         email: email
     })
 }).then((response) => response.json());

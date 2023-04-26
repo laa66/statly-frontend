@@ -1,14 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import { deleteAccount } from "./deleteAccount";
+import { logOut } from '../logOut/logOut';
+import { Link } from "react-router-dom";
 
 import './account.css';
 
 function Account() {
     const navigate = useNavigate();
 
+    const sleep = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+      );
+
     const handleDelete = () => {
         deleteAccount();
-        window.open('/');
+        sleep(2000).then(() => {
+            logOut()
+        });
     }
 
     return (
@@ -21,7 +29,7 @@ function Account() {
                 </div>
             </div>
             <div style={{display:"flex", justifyContent:"center", marginTop:"80px"}}>
-                <div className="button-delete" onClick={() => handleDelete()}>I want to delete my Statly account</div>
+                <div className="button-delete" onClick={() => handleDelete()}><Link to="/" className="link-item">I want to delete my Statly account</Link></div>
             </div>
             <div style={{marginTop:"30px", display:"flex", justifyContent:"center"}}>
                 <div className="button-back" onClick={() => navigate(-1)} style={{textAlign:"center"}}>Back</div>
