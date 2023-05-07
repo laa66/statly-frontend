@@ -17,6 +17,7 @@ export function Home() {
     const beta = useRef(null);
     const executeScroll = () => beta.current.scrollIntoView();
     const [showConfirmation, setShowConfirmation] = useState("Register");
+    const [disable, setDisable] = useState(false);
     
     const toggleConfirmation = () => {
         setShowConfirmation("Thank you!");
@@ -27,6 +28,7 @@ export function Home() {
         var username = event.target.username.value;
         var email = event.target.email.value;
         postBetaUser(username, email);
+        setDisable(true);
     }
 
     return (
@@ -98,7 +100,8 @@ export function Home() {
                                 <input type="email" className="form-control" id="email" name="email" placeholder="Email address" />
                                 <div id="email-help" className="form-text">We'll never share your data with anyone else.</div>
                             </div>
-                            <button type="submit" className="register-button" onClick={toggleConfirmation}>{showConfirmation}</button>
+                            <button type="submit" className="register-button" 
+                            onClick={toggleConfirmation} disabled={disable} style={disable ? {opacity:'0.7'} : null}>{showConfirmation}</button>
                         </form>
                     </div> 
                 </div>

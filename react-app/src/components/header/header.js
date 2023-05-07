@@ -2,6 +2,7 @@ import './header.css';
 import logo from '../../resources/logo.png';
 import { Link } from 'react-router-dom';
 import { logOut } from '../logOut/logOut';
+import { getConfiguration } from '../../config';
 
 function Header() {
     return (
@@ -32,6 +33,7 @@ function HeaderLogged() {
                             <img className="user-image" src={localStorage.getItem('imageUrl')} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"/>
                             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                                 <li><h6 className="dropdown-header">{localStorage.getItem('username')}</h6></li>
+                                {localStorage.getItem('username') === getConfiguration().roleUsername ? <li className="dropdown-item dropdown-link-item"><Link to="/admin/beta" className="link-item">Control panel</Link></li> : null}
                                 <li className="dropdown-item dropdown-link-item"><Link to="/user/account" className="link-item">Account</Link></li>
                                 <li><hr className="dropdown-divider"/></li>
                                 <li className="dropdown-item dropdown-link-item" onClick={logOut}><Link to="/" className="link-item">Sign Out</Link></li>

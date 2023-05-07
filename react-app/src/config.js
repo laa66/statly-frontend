@@ -1,10 +1,11 @@
 const serverVars = {
-    apiUrl: 'https://statly-rest-api.onrender.com'
+    apiUrl: 'https://statly-rest-api.onrender.com',
+    roleUsername: 'max.sclz94'
   };
   
   const localVars = {
     apiUrl: 'http://localhost:8080',
-  
+    roleUsername: 'max.sclz94'
   };
   
   export function getConfiguration() {

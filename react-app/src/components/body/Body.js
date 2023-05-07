@@ -10,7 +10,9 @@ import History from "../history/history";
 import Account from "../account/account";
 import Callback from '../callback/callback';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import AdminRoute from '../AdminRoute/AdminRoute';
 import { Home } from '../home/home';
+import Beta from '../beta/beta';
 
 import { Route, Routes } from "react-router-dom";
 
@@ -31,6 +33,7 @@ function Body() {
                 <Route path="/genre/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Genre/></PrivateRoute>}/>
                 <Route path="/user/score" element={<PrivateRoute><HeaderState.HeaderLogged/><Mainstream/></PrivateRoute>}/>
                 <Route path="/user/account" element={<PrivateRoute><HeaderState.HeaderLogged/><Account/></PrivateRoute>}/>
+                <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
             </Routes>
         </div>
     );
