@@ -25,9 +25,7 @@ function TrackList({list}) {
                                                 return (<div>{'+' + data.difference}</div>)
                                             }
                                             else if (data.difference < 0) {
-                                                return (
-                                                    <div>{data.difference}</div>
-                                                )
+                                                return (<div>{data.difference}</div>)
                                             }
                                         })()
                                     }</span>

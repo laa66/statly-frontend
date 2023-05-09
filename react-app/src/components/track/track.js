@@ -41,10 +41,12 @@ function Track() {
             {active === 'short' && <List.TrackList list={short}/>}
             {active === 'medium' && <List.TrackList list={medium}/>}
             {active === 'long' && <List.TrackList list={long}/>}
+            
 
             {active === 'short' && <Export postTrack={postTrackShort}/>}
             {active === 'medium' && <Export postTrack={postTrackMedium}/>}
             {active === 'long' && <Export postTrack={postTrackLong}/>}
+            
         </div>
     );
 }
