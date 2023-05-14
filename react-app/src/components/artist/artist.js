@@ -10,10 +10,12 @@ function Artist() {
     const [short, setShort] = useState([]);
     const [medium, setMedium] = useState([]);
     const [long, setLong] = useState([]);
+    const [date, setDate] = useState([]);
 
     useEffect(() => {
         fetchArtistShort().then((data) => {
             setShort(data.items);
+            setDate(data.date);
         }).catch((err) => {console.log(err.message)})}, []);
 
     useEffect(() => {
@@ -28,7 +30,7 @@ function Artist() {
 
     return (
         <div className="panel animate-fade">
-            <Image.ImageArtist list={long}/>
+            <Image.ImageArtist list={long} date={date}/>
             <nav className="container">
                 <ul className="nav">
                     <li className="nav-range-item" onClick={() => setActive('short')} style={{fontSize:"16px"}}>4 weeks</li>

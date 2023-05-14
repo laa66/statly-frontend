@@ -1,7 +1,7 @@
 import vinyl from '../../resources/vinyl.png'
 import './image.css';
 
-function ImageTrack({list}) {
+function ImageTrack({list, date}) {
     return (
         <div className="container">
             <div className="image-container">
@@ -13,13 +13,13 @@ function ImageTrack({list}) {
             <div className="image-description">
                 <p>Discover your favorite tracks with ease.</p>
                 <p>Our Top Tracks section highlights your most-played tracks, so you can keep the music going.</p>
-                <p className='arrows-description'>The arrows show the change in the tracks ranking over time.</p>
+                <p className='arrows-description'>The arrows show the change in the tracks ranking since your last visit on {date}.</p>
             </div>
         </div>
     );
 }
 
-function ImageArtist({list}) {
+function ImageArtist({list, date}) {
     return (
         <div className="container">
             <div className="image-container">
@@ -31,25 +31,25 @@ function ImageArtist({list}) {
             <div className="image-description">
                 <p>Explore your musical taste.</p>
                 <p>Our Top Artist section showcases your most-played artists, so you can dive deeper into their catalog and discover new tracks.</p>
-                <p className='arrows-description'>The arrows show the change in the artists ranking over time.</p>
+                <p className='arrows-description'>The arrows show the change in the artists ranking since your last visit on {date}.</p>
             </div>
         </div>
     );
 }
 
-function ImageGenre() {
+function ImageGenre({date}) {
     return (
         <div className="container">
             <div className="image-description">
                 <p>Discover the breadth of your musical interests. </p>
                 <p>Our Top Genres section highlights the genres you listen to most frequently, so you can explore new artists and tracks within those genres.</p>
-                <p className='arrows-description'>The arrows show the change in the genres ranking over time.</p>
+                <p className='arrows-description'>The arrows show the change in the genres ranking since your last visit on {date}.</p>
             </div>
         </div>
     );
 }
 
-function ImageMainstream() {
+function ImageMainstream({date}) {
     return (
         <div className="container">
             <div className="image-container">
@@ -60,7 +60,7 @@ function ImageMainstream() {
             <div className="image-description">
                 <p>See how your musical taste stacks up.</p>
                 <p>Our Mainstream score section calculates your listening habits and compares them to the mainstream, so you can see how eclectic your taste is.</p>
-                <p className='arrows-description'>The arrows show the change in user mainstream score over time.</p>
+                <p className='arrows-description'>The arrows show the change in user mainstream score since your last visit on {date}.</p>
             </div>
         </div>
     );

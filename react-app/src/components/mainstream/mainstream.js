@@ -10,10 +10,12 @@ function Mainstream() {
     const [short, setShort] = useState([]);
     const [medium, setMedium] = useState([]);
     const [long, setLong] = useState([]);
+    const [date, setDate] = useState([]);
 
     useEffect(() => {
         fetchMainstreamShort().then((data) => {
             setShort(data);
+            setDate(data.date);
         }).catch((err) => {console.log(err.message)})}, []);
 
     useEffect(() => {
@@ -28,7 +30,7 @@ function Mainstream() {
 
     return (
         <div className="panel animate-fade">
-            <Image.ImageMainstream/>
+            <Image.ImageMainstream date={date}/>
             <nav className="container section-nav">
                 <ul className="nav">
                     <li className="nav-range-item" onClick={() => setActive('short')} style={{"font-size":"16px"}}>4 weeks</li>

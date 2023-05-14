@@ -12,10 +12,12 @@ function Track() {
     const [short, setShort] = useState([]);
     const [medium, setMedium] = useState([]);
     const [long, setLong] = useState([]);
+    const [date, setDate] = useState([]);
 
     useEffect(() => {
         fetchTrackShort().then((data) => {
             setShort(data.items);
+            setDate(data.date);
         }).catch((err) => {console.log(err.message)})}, []);
 
     useEffect(() => {
@@ -27,10 +29,10 @@ function Track() {
         fetchTrackLong().then((data) => {
             setLong(data.items);
        }).catch((err) => {console.log(err.message)})}, []);
-    
+
     return (
         <div className="panel animate-fade">
-            <Image.ImageTrack list={long}/>
+            <Image.ImageTrack list={short} date={date}/>
             <nav className="container section-nav">
                 <ul className="nav">
                     <li className="nav-range-item" onClick={() => setActive('short')} style={{"font-size":"16px"}}>4 weeks</li>
