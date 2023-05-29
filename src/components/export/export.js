@@ -1,18 +1,27 @@
 import { useState } from 'react';
+
+import Error from '../error/error';
 import './export.css';
 
 function Export({postTrack}) {
 
     const [showButton, setShowButton] = useState(true);
     const [playlist, setPlaylist] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [status, setStatus] = useState();
 
     const toggleButton = () => {
         setShowButton(!showButton);
         postTrack().then((data) => {
             setPlaylist(data);
-        }).catch((err) =>{console.log(err.message)});
+        }).catch((err) =>{
+            setHasError(true);
+            setStatus(err.message)
+            console.log(err);
+        });
     }
 
+    if (hasError) return (<div><Error code={status}/></div>)
     return (
         <div className="container export-section">
             {!showButton && <div style={{color:"#535353"}}>Playlist created and exported to your <span style={{color:"#1db954"}}>Spotify account!</span></div>}

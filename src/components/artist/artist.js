@@ -1,5 +1,7 @@
 import Image from '../image/image';
 import List from '../list/list';
+import Error from '../error/error';
+
 import { useEffect, useState } from 'react';
 
 import { fetchArtistShort, fetchArtistMedium, fetchArtistLong } from './fetchArtist';
@@ -11,23 +13,38 @@ function Artist() {
     const [medium, setMedium] = useState([]);
     const [long, setLong] = useState([]);
     const [date, setDate] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [status, setStatus] = useState();
 
     useEffect(() => {
         fetchArtistShort().then((data) => {
             setShort(data.items);
             setDate(data.date);
-        }).catch((err) => {console.log(err.message)})}, []);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
 
     useEffect(() => {
         fetchArtistMedium().then((data) => {
             setMedium(data.items);
-       }).catch((err) => {console.log(err.message)})}, []);
+       }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+    })}, []);
 
     useEffect(() => {
         fetchArtistLong().then((data) => {
             setLong(data.items);
-       }).catch((err) => {console.log(err.message)})}, []);
+       }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+    })}, []);
 
+    if (hasError) return (<div><Error code={status}/></div>)
     return (
         <div className="panel animate-fade">
             <Image.ImageArtist list={long} date={date}/>

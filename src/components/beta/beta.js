@@ -1,4 +1,5 @@
 import './beta.css'
+import Error from '../error/error';
 
 import { fetchBetaUsers } from './fetchBeta';
 import { useEffect, useState } from 'react';
@@ -7,22 +8,35 @@ import { deleteBetaUsers } from  './deleteBetaUsers';
 
 function Beta() {
     const [data, setData] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [status, setStatus] = useState();
 
     const handleDelete = () => {
-        deleteBetaUsers();
+        deleteBetaUsers().catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+        });
         setData([]);
     }
     
     const handleSubmit = (name, email, date) => {
-        postUserNotification(name, email, date);
+        postUserNotification(name, email, date).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+        });
     }
 
     useEffect(() => {
         fetchBetaUsers().then((data) => {
             setData(data);
-        }).catch((err) => {console.log(err.message)})
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message)
+        })
     }, []);
 
+    if (hasError) return (<div><Error code={status}/></div>)
     return (
         <div>
             <div className='container'>

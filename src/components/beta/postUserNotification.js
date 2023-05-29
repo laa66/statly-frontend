@@ -17,4 +17,6 @@ export const postUserNotification = (name, mail, joinDate) => fetch(url + '/user
         email: mail,
         date: joinDate
     })
-}).then((response) => response.json());
+}).then((response) => {
+    if (response.status !== 204) throw new Error(response.status);
+});

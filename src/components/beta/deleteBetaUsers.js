@@ -11,8 +11,5 @@ export const deleteBetaUsers = () => fetch(url + '/user/beta/delete', {
         'X-XSRF-TOKEN': csrfToken
     }
 }).then(response => {
-    if (!response.ok) {
-        throw new Error('HTTP status ' + response.status);
-    }
-    return response.json();
+    if (response.status !== 204) throw new Error(response.status);
 });

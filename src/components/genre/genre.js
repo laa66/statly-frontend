@@ -1,5 +1,6 @@
 import Image from '../image/image';
 import List from '../list/list';
+import Error from '../error/error';
 
 import { useEffect, useState } from 'react';
 import { fetchGenreShort, fetchGenreMedium, fetchGenreLong } from './fetchGenre';
@@ -11,23 +12,38 @@ function Genre() {
     const [medium, setMedium] = useState([]);
     const [long, setLong] = useState([]);
     const [date, setDate] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [status, setStatus] = useState();
 
     useEffect(() => {
         fetchGenreShort().then((data) => {
             setShort(data.genres);
             setDate(data.date);
-        }).catch((err) => {console.log(err.message)})}, []);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
 
     useEffect(() => {
         fetchGenreMedium().then((data) => {
             setMedium(data.genres);
-       }).catch((err) => {console.log(err.message)})}, []);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
 
     useEffect(() => {
         fetchGenreLong().then((data) => {
             setLong(data.genres);
-       }).catch((err) => {console.log(err.message)})}, []);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
 
+    if (hasError) return (<div><Error code={status}/></div>);
     return (
         <div className="panel animate-fade">
             <Image.ImageGenre date={date}/>

@@ -11,7 +11,10 @@ export const postTrackShort = () => fetch(url + '/api/playlist/create?range=shor
     headers: {
         'X-XSRF-TOKEN': csrfToken
     }
-}).then((response) => response.json());
+}).then((response) => {
+    if (response.status !== 201) throw new Error(response.status);
+    return response.json();
+});
 
 export const postTrackMedium = () =>  fetch(url + '/api/playlist/create?range=medium', {
     method: 'POST',
@@ -19,7 +22,10 @@ export const postTrackMedium = () =>  fetch(url + '/api/playlist/create?range=me
     headers: {
         'X-XSRF-TOKEN': csrfToken
     }
-}).then((response) => response.json());
+}).then((response) => {
+    if (response.status !== 201) throw new Error(response.status);
+    return response.json();
+});
 
 export const postTrackLong = () =>  fetch(url + '/api/playlist/create?range=long', {
     method: 'POST',
@@ -27,4 +33,7 @@ export const postTrackLong = () =>  fetch(url + '/api/playlist/create?range=long
     headers: {
         'X-XSRF-TOKEN': csrfToken
     }
-}).then((response) => response.json());
+}).then((response) => {
+    if (response.status !== 201) throw new Error(response.status);
+    return response.json();
+});

@@ -1,5 +1,7 @@
 import Image from '../image/image';
 import List from '../list/list';
+import Error from '../error/error';
+
 import { useEffect, useState } from 'react';
 
 import { fetchMainstreamShort, fetchMainstreamMedium, fetchMainstreamLong } from './fetchMainstream';
@@ -11,23 +13,38 @@ function Mainstream() {
     const [medium, setMedium] = useState([]);
     const [long, setLong] = useState([]);
     const [date, setDate] = useState([]);
+    const [hasError, setHasError] = useState(false);
+    const [status, setStatus] = useState();
 
     useEffect(() => {
         fetchMainstreamShort().then((data) => {
             setShort(data);
             setDate(data.date);
-        }).catch((err) => {console.log(err.message)})}, []);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
 
     useEffect(() => {
         fetchMainstreamMedium().then((data) => {
             setMedium(data);
-       }).catch((err) => {console.log(err.message)})}, []);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
 
     useEffect(() => {
         fetchMainstreamLong().then((data) => {
             setLong(data);
-       }).catch((err) => {console.log(err.message)})}, []);
-
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
+    
+    if (hasError) return (<div><Error code={status}/></div>)
     return (
         <div className="panel animate-fade">
             <Image.ImageMainstream date={date}/>
