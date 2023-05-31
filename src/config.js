@@ -1,5 +1,5 @@
 const serverVars = {
-    apiUrl: 'https://statly-rest-api.onrender.com',
+    apiUrl: 'https://statly-backend-api-production.up.railway.app',
     roleUsername: 'max.sclz94'
   };
   

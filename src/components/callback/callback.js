@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 function Callback() {
-    const params = new URLSearchParams(window.location.search)
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
 
     useEffect(() => {
         if (localStorage.getItem('username') === null && localStorage.getItem('imageUrl') === null) {

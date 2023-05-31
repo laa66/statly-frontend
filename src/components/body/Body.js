@@ -24,7 +24,7 @@ function Body() {
     return (
         <div>
             <Routes>
-                <Route index element={<div className="home"><HeaderState.Header/><Home/></div>}/>
+                <Route path="/" element={<div className="home"><HeaderState.Header/><Home/></div>}/>
                 <Route path="/callback" element={<div><HeaderState.Header/><Callback/></div>}/>
                 <Route path="/dashboard" element={<PrivateRoute><HeaderState.HeaderLogged/><Dashboard/></PrivateRoute>}/>
                 <Route path="/track/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Track/></PrivateRoute>}/>
