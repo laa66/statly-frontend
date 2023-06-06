@@ -1,7 +1,8 @@
 import test from '../../resources/testuserimage.jpg';
 import './analysis.css'
+import IndicatorText from './indicatorText';
 
-function AnalysisIndicator() {
+function AnalysisIndicator({indicator1, indicator2, mainstream, boringness, tempo}) {
     return (
         <>
         <div className="container analysis-section">
@@ -11,14 +12,12 @@ function AnalysisIndicator() {
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
-                            <span className="analysis-name">Indicator 1</span>
+                            <span className="analysis-name">{indicator1}</span>
                             <p className="analysis-percentage">78%</p>
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p>
-                        Random section
-                        </p>
+                        <p><IndicatorText indicator={indicator1}/></p>
                     </div>
                 </div>
             </div>
@@ -26,13 +25,11 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p>
-                    Random section
-                    </p>
+                    <p><IndicatorText indicator={indicator2}/></p>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
-                            <span className="analysis-name">Indicator 2</span>
+                            <span className="analysis-name">{indicator2}</span>
                             <p className="analysis-percentage">78%</p>
                         </div>
                     </div>
@@ -54,9 +51,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p>
-                        Random section
-                        </p>
+                        <p><IndicatorText indicator={mainstream}/></p>
                     </div>
                 </div>
             </div>
@@ -64,9 +59,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p>
-                    Random section
-                    </p>
+                    <p><IndicatorText indicator={boringness}/></p>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -92,9 +85,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p>
-                        Random section
-                        </p>
+                        <p><IndicatorText indicator={tempo}/></p>
                     </div>
                 </div>
             </div>
