@@ -3,7 +3,8 @@ import React from 'react';
 import dot from '../../resources/icon-dot.png';
 import triangleUp from '../../resources/icon-triangle-up.png';
 import triangleDown from '../../resources/icon-triangle-down.png';
-import test from '../../resources/testuserimage.jpg';
+import AnalysisIndicator from '../analysis/analysisIndicator';
+import AnalysisPlaylist from '../analysis/analysisPlaylist';
 
 function TrackList({list}) {
     return (
@@ -137,100 +138,8 @@ function GenreList({list}) {
 function Analysis() {
     return (
         <div className="container analysis-container">
-            <div className="container analysis-section">
-                <div className="row">
-                    <div className="col-2">
-                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
-                    </div>
-                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <div style={{textAlign:"center"}}>
-                            <span style={{fontSize:"40px"}}>Indicator 1</span>
-                            <p style={{fontSize:"40px"}}>78%</p>
-                        </div>
-                    </div>
-                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                        <p>
-                        Random section
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <div className="container analysis-section">
-                <div className="row">
-                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <p>
-                    Random section
-                    </p>
-                    </div>
-                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <div style={{textAlign:"center"}}>
-                            <span style={{fontSize:"40px"}}>Indicator 2</span>
-                            <p style={{fontSize:"40px"}}>78%</p>
-                        </div>
-                    </div>
-                    <div className="col-2">
-                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <div className="container analysis-section">
-                <div className="row">
-                    <div className="col-2">
-                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
-                    </div>
-                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <div style={{textAlign:"center"}}>
-                            <span style={{fontSize:"40px"}}>Mainstream</span>
-                            <p style={{fontSize:"40px"}}>78%</p>
-                        </div>
-                    </div>
-                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                        <p>
-                        Random section
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <div className="container analysis-section">
-                <div className="row">
-                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <p>
-                    Random section
-                    </p>
-                    </div>
-                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <div style={{textAlign:"center"}}>
-                            <span style={{fontSize:"40px"}}>Boringness</span>
-                            <p style={{fontSize:"40px"}}>78%</p>
-                        </div>
-                    </div>
-                    <div className="col-2">
-                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <div className="container analysis-section">
-                <div className="row">
-                    <div className="col-2">
-                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
-                    </div>
-                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                    <div style={{textAlign:"center"}}>
-                            <span style={{fontSize:"40px"}}>Tempo</span>
-                            <p style={{fontSize:"40px"}}>78%</p>
-                        </div>
-                    </div>
-                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                        <p>
-                        Random section
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <AnalysisIndicator/>
+            <AnalysisPlaylist/>
         </div>
     );
 }
