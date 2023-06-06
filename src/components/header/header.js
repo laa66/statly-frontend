@@ -60,7 +60,7 @@ function HeaderLogged() {
                                 <Link to="/genre/top" className="link-item">Top genres</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/user/score" className="link-item">Mainstream score</Link>
+                                <Link to="/user/analysis" className="link-item">Library analysis</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/user/history" className="link-item">Recently played</Link>

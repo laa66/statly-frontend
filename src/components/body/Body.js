@@ -5,7 +5,7 @@ import Dashboard from '../dashboard/dashboard';
 import Track from '../track/track';
 import Artist from "../artist/artist";
 import Genre from "../genre/genre";
-import Mainstream from "../mainstream/mainstream";
+import Analysis from "../analysis/analysis";
 import History from "../history/history";
 import Account from "../account/account";
 import Callback from '../callback/callback';
@@ -31,7 +31,7 @@ function Body() {
                 <Route path="/artist/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Artist/></PrivateRoute>}/>
                 <Route path="/user/history" element={<PrivateRoute><HeaderState.HeaderLogged/><History/></PrivateRoute>}/>
                 <Route path="/genre/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Genre/></PrivateRoute>}/>
-                <Route path="/user/score" element={<PrivateRoute><HeaderState.HeaderLogged/><Mainstream/></PrivateRoute>}/>
+                <Route path="/user/analysis" element={<PrivateRoute><HeaderState.HeaderLogged/><Analysis/></PrivateRoute>}/>
                 <Route path="/user/account" element={<PrivateRoute><HeaderState.HeaderLogged/><Account/></PrivateRoute>}/>
                 <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
             </Routes>

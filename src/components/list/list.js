@@ -3,6 +3,7 @@ import React from 'react';
 import dot from '../../resources/icon-dot.png';
 import triangleUp from '../../resources/icon-triangle-up.png';
 import triangleDown from '../../resources/icon-triangle-down.png';
+import test from '../../resources/testuserimage.jpg';
 
 function TrackList({list}) {
     return (
@@ -133,35 +134,100 @@ function GenreList({list}) {
     );
 }
 
-function Mainstream({score}) {
+function Analysis() {
     return (
-        <div className="container">
-            <div style={{display:'flex', justifyContent:'center'}}>{
-                                        (() => {
-                                            if (score.difference === null) {
-                                                return (<div />)
-                                            }
-                                            else if (score.difference === 0) {
-                                                return (
-                                                    <img src={dot} alt='dot' width={'15px'} height={'15px'} />
-                                                )
-                                            } else if (score.difference > 0) {
-                                                return (
-                                                    <img src={triangleDown} alt='down' width={'15px'} height={'15px'} />
-                                                )
-                                            } else {
-                                                return (
-                                                    <img src={triangleUp} alt='up' width={'15px'} height={'15px'}></img>
-                                                )
-                                            }
-                                        })()
-                                    }</div>
-            <div className="score-container">
-                <div className="stats-score">
-                    <div className="stats-item">
-                        <span>{score.score}</span>
-                        <div className="stats-bar" style={{"--percentage":String(score.score + "%")}}></div>
-                        <span>Score</span>
+        <div className="container analysis-container">
+            <div className="container analysis-section">
+                <div className="row">
+                    <div className="col-2">
+                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
+                    </div>
+                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <div style={{textAlign:"center"}}>
+                            <span style={{fontSize:"40px"}}>Indicator 1</span>
+                            <p style={{fontSize:"40px"}}>78%</p>
+                        </div>
+                    </div>
+                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <p>
+                        Random section
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div className="container analysis-section">
+                <div className="row">
+                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <p>
+                    Random section
+                    </p>
+                    </div>
+                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <div style={{textAlign:"center"}}>
+                            <span style={{fontSize:"40px"}}>Indicator 2</span>
+                            <p style={{fontSize:"40px"}}>78%</p>
+                        </div>
+                    </div>
+                    <div className="col-2">
+                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div className="container analysis-section">
+                <div className="row">
+                    <div className="col-2">
+                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
+                    </div>
+                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <div style={{textAlign:"center"}}>
+                            <span style={{fontSize:"40px"}}>Mainstream</span>
+                            <p style={{fontSize:"40px"}}>78%</p>
+                        </div>
+                    </div>
+                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <p>
+                        Random section
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div className="container analysis-section">
+                <div className="row">
+                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <p>
+                    Random section
+                    </p>
+                    </div>
+                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <div style={{textAlign:"center"}}>
+                            <span style={{fontSize:"40px"}}>Boringness</span>
+                            <p style={{fontSize:"40px"}}>78%</p>
+                        </div>
+                    </div>
+                    <div className="col-2">
+                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div className="container analysis-section">
+                <div className="row">
+                    <div className="col-2">
+                        <center><img src={test} alt="test" width={'200px'} height={'200px'}/></center>
+                    </div>
+                    <div className="col-4" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                    <div style={{textAlign:"center"}}>
+                            <span style={{fontSize:"40px"}}>Tempo</span>
+                            <p style={{fontSize:"40px"}}>78%</p>
+                        </div>
+                    </div>
+                    <div className="col-6" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <p>
+                        Random section
+                        </p>
                     </div>
                 </div>
             </div>
@@ -195,7 +261,7 @@ function HistoryList({list}) {
 }
 
 const exportedObject = {
-    TrackList, ArtistList, GenreList, HistoryList, Mainstream
+    TrackList, ArtistList, GenreList, HistoryList, Analysis
 }
 
 export default exportedObject;

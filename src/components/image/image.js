@@ -1,4 +1,3 @@
-import vinyl from '../../resources/vinyl.png'
 import './image.css';
 
 function ImageTrack({list, date}) {
@@ -49,18 +48,12 @@ function ImageGenre({date}) {
     );
 }
 
-function ImageMainstream({date}) {
+function ImageAnalysis() {
     return (
         <div className="container">
-            <div className="image-container">
-                <img className="img1" src={vinyl} alt={"first"} width={"150px"} height={"150px"}/>
-                <img className="img2" src={vinyl} alt={"second"} width={"150x"} height={"150px"}/>
-                <img className="img3" src={vinyl} alt={"third"} width={"150px"} height={"150px"}/>
-            </div>
             <div className="image-description">
-                <p>See how your musical taste stacks up.</p>
-                <p>Our Mainstream score section calculates your listening habits and compares them to the mainstream, so you can see how eclectic your taste is.</p>
-                <p className='arrows-description'>The arrows show the change in user mainstream score since your last visit on {date}.</p>
+                <p style={{fontSize:"26px"}}>See how your musical taste stacks up.</p>
+                <p>Here, you can gain valuable insights and access various metrics that provide a deeper understanding of your musical preferences and characteristics.</p>
             </div>
         </div>
     );
@@ -84,7 +77,7 @@ function ImageRecently({list}) {
 }
 
 const exportedObject = {
-    ImageTrack, ImageArtist, ImageGenre, ImageMainstream, ImageRecently
+    ImageTrack, ImageArtist, ImageGenre, ImageAnalysis, ImageRecently
 };
 
 export default exportedObject;
