@@ -13,6 +13,11 @@ function IndicatorText({indicator}) {
                             Measures the intensity and activity level of your tracks. 
                             Higher values indicate more energetic and lively music.
                         </div>)
+                    } else if (indicator === 'danceability') {
+                        return (<div>
+                            A higher danceability score indicates that the music in your library has
+                             a strong rhythmic foundation and catchy beats.
+                        </div>)
                     } else if (indicator === 'instrumentalness') {
                         return (<div>
                              Indicates the likelihood of your tracks being instrumental without vocals. 
@@ -46,7 +51,7 @@ function IndicatorText({indicator}) {
                     } else if (indicator === 'mainstream') {
                         return (<div>
                             Mainstream score indicates how closely your music aligns with mainstream trends. 
-                            This score helps users understand the popularity or mainstream appeal of your music collection.
+                            This score helps you understand the popularity or mainstream appeal of your music collection.
                         </div>)
                     } else if (indicator === 'boringness') {
                         return (<div>
