@@ -4,7 +4,7 @@ import IndicatorText from './indicatorText';
 import Error from '../error/error';
 
 import { useEffect, useState } from 'react';
-import { fetchLibraryAnalysis } from './fetchLibraryAnalysis';
+import { fetchLibraryAnalysis } from './fetchAnalysis';
 
 function AnalysisIndicator() {
 
@@ -22,11 +22,10 @@ function AnalysisIndicator() {
             console.log(err.message);
         })}, []);
 
-    if (hasError) return (<div><Error code={status}/></div>)
+    if (hasError) return (<div><Error code={status}/></div>);
     return (
         <>
            <div className="container analysis-section">
-            {console.log(indicators.images?.[2].url)}
                 <div className="row">
                     <div className="col-2">
                         <center><img src={indicators.images?.[0].url} alt="test" width={'150px'} height={'150px'}/></center>

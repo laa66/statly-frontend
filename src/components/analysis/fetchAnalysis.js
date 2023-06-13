@@ -9,3 +9,11 @@ export const fetchLibraryAnalysis = () =>  fetch(url + '/api/analysis/library', 
     if (!response.ok) throw new Error(response.status);
     return response.json(); 
 });
+
+export const fetchUserPlaylists = () =>  fetch(url + '/api/playlist/all', {
+    method: 'GET',
+    credentials: 'include'
+}).then((response) => {
+    if (!response.ok) throw new Error(response.status);
+    return response.json(); 
+});

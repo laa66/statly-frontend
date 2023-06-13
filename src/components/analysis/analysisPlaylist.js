@@ -1,9 +1,26 @@
 import test from '../../resources/testuserimage.jpg';
 import './analysis.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { fetchUserPlaylists } from './fetchAnalysis';
+import Error from '../error/error';
 
 function AnalysisPlaylist() {
-    const [active, setActive] = useState('playlists');
+    const[playlists, setPlaylists] = useState([]);
+    const[active, setActive] = useState("playlists");
+
+    const[hasError, setHasError] = useState(false);
+    const[status, setStatus] = useState();
+
+    useEffect(() => {
+        fetchUserPlaylists().then((data) => {
+            setPlaylists(data);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        })}, []);
+
+    if (hasError) return (<div><Error code={status}/></div>);
 
     return (
         <div className="container playlist-container">
