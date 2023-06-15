@@ -67,7 +67,7 @@ function ArtistList({list}) {
             <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
                 {list.map((data, index) => {
                   return(
-                    <div title={'rank ' + (data.difference === null ? 'not available' : data.difference)} className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
+                    <div key={index} title={'rank ' + (data.difference === null ? 'not available' : data.difference)} className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
                         <img className="artist-img" src={data.images[1].url} alt={"test"}/>
                         <div className="artist-text">{index+1}</div>
                           <div className="artist-description"><b>{
@@ -102,7 +102,7 @@ function GenreList({list}) {
         <div className="genre-bar-chart container">
             <div className="row row-cols-md-1 row-cols-md-2 row-cols-md-3 row-cols-md-4 row-cols-md-5">
             {list.map((item, i) => (
-                <div title={'rank ' + (item.difference === null ? 'not available' : item.difference)} className="col genre-col">
+                <div key={i} title={'rank ' + (item.difference === null ? 'not available' : item.difference)} className="col genre-col">
                     <div className="genre-container">
                         <div className="genre-compare">{
                                         (() => {
@@ -148,7 +148,7 @@ function HistoryList({list}) {
     return (
         <div className="container">
             <div className="list-container">
-                <table class="list">
+                <table className="list">
                     {list.map((data, index) => {
                         return(
                         <tbody key={data + index} onClick={() => {window.open(data.track.external_urls.spotify, "_blank", "noreferrer")}}>

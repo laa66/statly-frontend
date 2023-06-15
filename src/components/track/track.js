@@ -52,9 +52,9 @@ function Track() {
             <Image.ImageTrack list={short} date={date}/>
             <nav className="container section-nav">
                 <ul className="nav">
-                    <li className="nav-range-item" onClick={() => setActive('short')} style={{"font-size":"16px"}}>4 weeks</li>
-                    <li className="nav-range-item" onClick={() => setActive('medium')} style={{"font-size":"16px"}}>6 months</li>
-                    <li className="nav-range-item" onClick={() => setActive('long')} style={{"font-size":"16px"}}>All time</li>
+                    <li className="nav-range-item" onClick={() => setActive('short')} style={{fontSize:"16px"}}>4 weeks</li>
+                    <li className="nav-range-item" onClick={() => setActive('medium')} style={{fontSize:"16px"}}>6 months</li>
+                    <li className="nav-range-item" onClick={() => setActive('long')} style={{fontSize:"16px"}}>All time</li>
                 </ul>
             </nav>
             {active === 'short' && <List.TrackList list={short}/>}

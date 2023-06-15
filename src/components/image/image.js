@@ -6,7 +6,7 @@ function ImageTrack({list, date}) {
             <div className="image-container">
                 {list.slice(0,3).map((data, i, arr) => {
                     return(
-                        i + 1 === arr.length ? <img className="img3" src={data.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img className="img1" src={data.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
+                        i + 1 === arr.length ? <img key={i} className="img3" src={data.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img key={i} className="img1" src={data.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
                     )})}
             </div>
             <div className="image-description">
@@ -24,7 +24,7 @@ function ImageArtist({list, date}) {
             <div className="image-container">
             {list.slice(0,3).map((data, i, arr) => {
                     return(
-                        i + 1 === arr.length ? <img className="img3" src={data.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img className="img1" src={data.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
+                        i + 1 === arr.length ? <img key={i} className="img3" src={data.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img key={i} className="img1" src={data.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
                     )})}
             </div>
             <div className="image-description">
@@ -65,7 +65,7 @@ function ImageRecently({list}) {
             <div className="image-container">
                 {list.slice(0,3).map((data, i, arr) => {
                     return(
-                        i + 1 === arr.length ? <img className="img3" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img className="img1" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
+                        i + 1 === arr.length ? <img key={i} className="img3" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img key={i} className="img1" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
                     )})}
             </div>
             <div className="image-description">

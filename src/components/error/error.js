@@ -5,7 +5,7 @@ function Error(status) {
         <div className="container error-section">
         <p>Ooops...</p>
         <p>Error! Status code: {status['code']}</p>
-        <p>Try again.</p>
+        <p>Refresh and try again.</p>
         </div>
     )
 }

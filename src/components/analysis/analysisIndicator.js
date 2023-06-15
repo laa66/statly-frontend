@@ -33,11 +33,11 @@ function AnalysisIndicator() {
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Acousticness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['acousticness'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['acousticness']}%</p>
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p><IndicatorText indicator={'acousticness'}/></p>
+                        <IndicatorText indicator={'acousticness'}/>
                     </div>
                 </div>
             </div>
@@ -45,12 +45,12 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p><IndicatorText indicator={'danceability'}/></p>
+                    <IndicatorText indicator={'danceability'}/>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Danceability</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['danceability'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['danceability']}%</p>
                         </div>
                     </div>
                     <div className="col-2">
@@ -67,11 +67,11 @@ function AnalysisIndicator() {
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Energy</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['energy'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['energy']}%</p>
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p><IndicatorText indicator={'energy'}/></p>
+                        <IndicatorText indicator={'energy'}/>
                     </div>
                 </div>
             </div>
@@ -79,12 +79,12 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p><IndicatorText indicator={'instrumentalness'}/></p>
+                    <IndicatorText indicator={'instrumentalness'}/>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Instrumentalness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['instrumentalness'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['instrumentalness']}%</p>
                         </div>
                     </div>
                     <div className="col-2">
@@ -101,11 +101,11 @@ function AnalysisIndicator() {
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Liveness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['liveness'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['liveness']}%</p>
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p><IndicatorText indicator={'liveness'}/></p>
+                        <IndicatorText indicator={'liveness'}/>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p><IndicatorText indicator={'loudness'}/></p>
+                    <IndicatorText indicator={'loudness'}/>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -135,11 +135,11 @@ function AnalysisIndicator() {
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Speechiness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['speechiness'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['speechiness']}%</p>
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p><IndicatorText indicator={'speechiness'}/></p>
+                        <IndicatorText indicator={'speechiness'}/>
                     </div>
                 </div>
             </div>
@@ -147,12 +147,12 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p><IndicatorText indicator={'valence'}/></p>
+                    <IndicatorText indicator={'valence'}/>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Valence</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['valence'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['valence']}%</p>
                         </div>
                     </div>
                     <div className="col-2">
@@ -173,7 +173,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p><IndicatorText indicator={'mainstream'}/></p>
+                        <IndicatorText indicator={'mainstream'}/>
                     </div>
                 </div>
             </div>
@@ -181,12 +181,12 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-6 analysis-column">
-                    <p><IndicatorText indicator={'boringness'}/></p>
+                    <IndicatorText indicator={'boringness'}/>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Boringness score</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['boringness']}</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['boringness']} points</p>
                         </div>
                     </div>
                     <div className="col-2">
@@ -207,7 +207,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-6 analysis-column">
-                        <p><IndicatorText indicator={'tempo'}/></p>
+                        <IndicatorText indicator={'tempo'}/>
                     </div>
                 </div>
             </div>

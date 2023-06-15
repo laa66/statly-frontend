@@ -4,60 +4,60 @@ function IndicatorText({indicator}) {
             {
                 (() => {
                     if (indicator === 'acousticness') {
-                        return (<div>
+                        return (<p>
                              Represents the likelihood of your tracks being acoustic. 
                              A lower value indicates a higher presence of electronic or synthesized sounds.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'energy') {
-                        return (<div>
+                        return (<p>
                             Measures the intensity and activity level of your tracks. 
                             Higher values indicate more energetic and lively music.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'danceability') {
-                        return (<div>
+                        return (<p>
                             A higher danceability score indicates that the music in your library has
                              a strong rhythmic foundation and catchy beats.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'instrumentalness') {
-                        return (<div>
+                        return (<p>
                              Indicates the likelihood of your tracks being instrumental without vocals. 
                              A higher value suggests a higher probability of instrumental tracks.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'liveness') {
-                        return (<div>
+                        return (<p>
                             Reflects the presence of a live audience or live performance elements in your tracks. 
                             Higher values indicate a higher chance of live recordings.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'loudness') {
-                        return (<div>
+                        return (<p>
                             Represents the overall volume level of your tracks.
                             Negative values indicate quieter tracks, while positive values represent louder ones.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'speechiness') {
-                        return (<div>
+                        return (<p>
                             Indicates the presence of spoken words or vocals in your tracks. 
                             Higher values suggest a higher proportion of spoken words.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'tempo') {
-                        return (<div>
+                        return (<p>
                             Represents average the beats per minute (BPM) of your tracks, 
                             indicating the speed or tempo of the music.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'valence') {
-                        return (<div>
+                        return (<p>
                             Reflects the musical positiveness or happiness of your tracks. 
                             Higher values indicate more positive or happier tracks.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'mainstream') {
-                        return (<div>
+                        return (<p>
                             Mainstream score indicates how closely your music aligns with mainstream trends. 
                             This score helps you understand the popularity or mainstream appeal of your music collection.
-                        </div>)
+                        </p>)
                     } else if (indicator === 'boringness') {
-                        return (<div>
+                        return (<p>
                             This indicator offers insights into the diversity and uniqueness of your tracks, 
                             allowing you to assess the breadth of your musical choices.
-                        </div>)
+                        </p>)
                     }
                 })()
             }

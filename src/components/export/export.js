@@ -32,7 +32,7 @@ function Export({postTrack}) {
             </div>
             <div>
                 <p>Take your music with you wherever you go.</p> 
-                <p style={{"font-size":"18px"}}>Create playlist based on your Top tracks and export them to your Spotify account, so you can listen on the go.</p>
+                <p style={{fontSize:"18px"}}>Create playlist based on your Top tracks and export them to your Spotify account, so you can listen on the go.</p>
             </div>
         </div>
     );

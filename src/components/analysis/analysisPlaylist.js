@@ -54,9 +54,9 @@ function AnalysisPlaylist() {
             </p>
             </div>
             {active === "playlists" &&  <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
-            {playlists.items?.map((data) => {
+            {playlists.items?.map((data, i) => {
                   return(
-                    <div className="playlist-item">
+                    <div key={i} className="playlist-item">
                         <img src={data.images[0].url} className="playlist-img" 
                         alt={"random"} onClick={() => togglePlaylistAndFetch(data.name, data.id, data.images[0].url)}/>
                         <div className="playlist-description"><b>{data.name}</b></div>
@@ -66,13 +66,13 @@ function AnalysisPlaylist() {
             {active === "playlist-analysis" && <div>
             <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
                     <div>
-                        <img src={currentPlaylist.image} className="playlist-img" alt={"random"}/>
+                        <img src={currentPlaylist.image} className="playlist-img-analysis" alt={"random"}/>
                         <div className="playlist-description"><b>{currentPlaylist.name}</b></div>
                     </div>
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Energy</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['energy'] * 100}%</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['energy']}%</p>
                         </div>
                     </div>
                     <div className="col-4 analysis-column">
@@ -84,7 +84,7 @@ function AnalysisPlaylist() {
                     <div className="col-4 analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Boringness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['boringness']}</p>
+                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['boringness']} points</p>
                         </div>
                     </div>
                     <div className="col-4 analysis-column">

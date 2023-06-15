@@ -31,7 +31,7 @@
     color: #b3b3b3;
 }
 
-.playlist-img {
+.playlist-img, .playlist-img-analysis {
     cursor: pointer;
     width: 200px;
     height: 200px;

@@ -42,7 +42,7 @@ function Dashboard() {
                                         Top genres</li>
                                     <li className="dashboard-list-item">
                                     <img className="image-position" src={score} alt="test" width={'30px'} height={'30px'}/>
-                                        Mainstream score</li>
+                                        Audio analysis</li>
                                 </ul>
                             </div>
                         </div>

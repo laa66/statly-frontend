@@ -49,7 +49,7 @@ export function Home() {
                         </div>
                         <div className="slide-content">
                             <img className="image" src={score} alt={"concert"} width={"600px"} height={"300px"} />
-                            <div className="centered">Mainstream score</div>
+                            <div className="centered">Audio analysis</div>
                         </div>
                         <div className="slide-content">
                             <img className="image" src={genres} alt={"concert"} width={"600px"} height={"300px"} />
