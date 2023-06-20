@@ -44,7 +44,7 @@ function Beta() {
                     <h1 className='beta-title'>Beta users</h1>
                     <div style={{ justifyContent: "center", display: "flex", marginBottom: "2%" }}>
                         <div className="button-submit" onClick={() => handleDelete()}
-                            style={{ textAlign: "center", width: "10%" }}>Delete all</div>
+                            style={{ textAlign: "center", width: '100px' }}>Delete all</div>
                     </div>
                     <table className="list" style={{ fontSize: "16px" }}>
                         {data.map((item, index) => {
