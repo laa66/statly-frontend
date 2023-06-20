@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/statly-frontend/static/css/main.3dbd2c76.css",
+    "main.js": "/statly-frontend/static/js/main.e5bd3675.js",
+    "static/media/concert.jpg": "/statly-frontend/static/media/concert.ad7bb886a4a455758f40.jpg",
+    "static/media/genres.jpg": "/statly-frontend/static/media/genres.6957bfbb8e858465ea8f.jpg",
+    "static/media/playlists.jpg": "/statly-frontend/static/media/playlists.c11bb788e315de7dde27.jpg",
+    "static/media/tracks.jpg": "/statly-frontend/static/media/tracks.9df8581c62cbcd19ca34.jpg",
+    "static/media/score.jpg": "/statly-frontend/static/media/score.f417c9df238e83a6aed6.jpg",
+    "static/media/Spotify_logo.png": "/statly-frontend/static/media/Spotify_logo.0c4ae91bae23217d39c9.png",
+    "static/media/iphone.png": "/statly-frontend/static/media/iphone.68d9ee5f44c57e7b17ef.png",
+    "index.html": "/statly-frontend/index.html",
+    "main.3dbd2c76.css.map": "/statly-frontend/static/css/main.3dbd2c76.css.map",
+    "main.e5bd3675.js.map": "/statly-frontend/static/js/main.e5bd3675.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dbd2c76.css",
+    "static/js/main.e5bd3675.js"
+  ]
+}
