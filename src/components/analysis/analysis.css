@@ -15,6 +15,11 @@
     font-size: 21px;
 }
 
+.analysis-image {
+    width: 100px;
+    height: 100px;
+}
+
 .analysis-name {
     font-size: 30px;
     color: #1db954;
@@ -60,7 +65,7 @@
 }
 
 .back-playlist-button {
-    max-width: 15%;
+    max-width: 100px;
     border-radius: 8px;
     padding: 10px 30px 10px 30px;
     font-size: 21px;
@@ -75,5 +80,40 @@
 .back-playlist-button:hover {
     box-shadow: #1db954 0 1px 30px;
     transition-duration: 1s;
+}
+
+@media (max-width: 767px) {
+    .analysis-column {
+        font-size: 16px;
+    }
+    
+    .analysis-name {
+        font-size: 21px;
+    }
+    
+    .analysis-percentage {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .analysis-image {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+@media (max-width: 577px) {
+    .analysis-column {
+        font-size: 12px;
+    }
+    
+    .analysis-name {
+        font-size: 14px;
+    }
+    
+    .analysis-percentage {
+        font-size: 16px;
+    }
 }
 

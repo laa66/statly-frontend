@@ -36,7 +36,7 @@ function Dashboard() {
                                         Top artists</li>
                                     <li className="dashboard-list-item">
                                     <img className="image-position" src={history} alt="test" width={'30px'} height={'30px'}/>
-                                        User listening history</li>
+                                        Listening history</li>
                                     <li className="dashboard-list-item">
                                     <img className="image-position" src={genre} alt="test" width={'30px'} height={'30px'}/>
                                         Top genres</li>
