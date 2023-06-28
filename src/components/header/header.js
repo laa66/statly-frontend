@@ -18,8 +18,8 @@ function Header() {
 
 function HeaderLogged() {
     return (
-        <div className="container header-logged">
-                <div className="row">
+        <div className="container-fluid header-logged">
+                <div className="row g-0">
                     <div className="col-sm-6 col-md-4 header-logo">
                         <Link to="/dashboard" className="link-item">
                             <img src={logo} alt="logo" width="150px" height="49px"/>
@@ -41,35 +41,7 @@ function HeaderLogged() {
                         </div>
                     </div>
                 </div>
-            <nav className="navbar navbar-expand-md">
-                <div className="container-fluid justify-content-center">
-                    <nav className="navbar navbar-dark navbar-expand-md">
-                    <button className="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    </nav>
-                    <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                        <ul className="navbar-nav mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link to="/track/top" className="link-item">Top tracks</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/artist/top" className="link-item">Top artists</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/genre/top" className="link-item">Top genres</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/user/analysis" className="link-item">Library analysis</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/user/history" className="link-item">Recently played</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="navbar-brand" style={{color:"#535353", marginLeft:"3%"}}> Hello, {localStorage.getItem('username')}</div>
-                </div>
-            </nav>
+   
             </div>
     );
 }

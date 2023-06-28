@@ -1,0 +1,16 @@
+.nav-item {
+    text-align: left;
+    color: #b3b3b3;
+    padding: 15px;
+    border-radius: 0px 10px 10px 0px;
+    margin: 10px 0px 0px 0px;
+    font-size: 21px;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background-color: #212121;
+    box-shadow: #212121 0 0 30px;
+    transition-duration: .5s;
+    color: #b3b3b3;
+}

@@ -18,6 +18,7 @@ import { Route, Routes } from "react-router-dom";
 
 import './slider.css';
 import './body.css';
+import WrapperPanel from '../panel/WrapperPanel';
 
 function Body() {
 
@@ -26,12 +27,12 @@ function Body() {
             <Routes>
                 <Route path="/" element={<div className="home"><HeaderState.Header/><Home/></div>}/>
                 <Route path="/callback" element={<div><HeaderState.Header/><Callback/></div>}/>
-                <Route path="/dashboard" element={<PrivateRoute><HeaderState.HeaderLogged/><Dashboard/></PrivateRoute>}/>
-                <Route path="/track/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Track/></PrivateRoute>}/>
-                <Route path="/artist/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Artist/></PrivateRoute>}/>
-                <Route path="/user/history" element={<PrivateRoute><HeaderState.HeaderLogged/><History/></PrivateRoute>}/>
-                <Route path="/genre/top" element={<PrivateRoute><HeaderState.HeaderLogged/><Genre/></PrivateRoute>}/>
-                <Route path="/user/analysis" element={<PrivateRoute><HeaderState.HeaderLogged/><Analysis/></PrivateRoute>}/>
+                <Route path="/dashboard" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Dashboard/>}/></PrivateRoute>}/>
+                <Route path="/track/top" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Track/>}/></PrivateRoute>}/>
+                <Route path="/artist/top" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Artist/>}/></PrivateRoute>}/>
+                <Route path="/user/history" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<History/>}/></PrivateRoute>}/>
+                <Route path="/genre/top" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Genre/>}/></PrivateRoute>}/>
+                <Route path="/user/analysis" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Analysis/>}/></PrivateRoute>}/>
                 <Route path="/user/account" element={<PrivateRoute><HeaderState.HeaderLogged/><Account/></PrivateRoute>}/>
                 <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
             </Routes>

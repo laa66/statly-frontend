@@ -4,7 +4,7 @@ import { getConfiguration } from "../../config";
 const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 const url = getConfiguration().apiUrl;
 
-export const deleteBetaUsers = () => fetch(url + '/user/beta/delete', {
+export const deleteBetaUsers = () => fetch(url + '/beta/delete', {
     method: 'DELETE',
     credentials: 'include',
     headers: {

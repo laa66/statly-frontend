@@ -47,7 +47,7 @@ function Artist() {
     if (hasError) return (<div><Error code={status}/></div>)
     return (
         <div className="panel animate-fade">
-            <Image.ImageArtist list={long} date={date}/>
+            <Image.ImageArtist list={short} date={date}/>
             <nav className="container">
                 <ul className="nav">
                     <li className="nav-range-item" onClick={() => setActive('short')} style={{fontSize:"16px"}}>4 weeks</li>

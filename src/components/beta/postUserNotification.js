@@ -4,7 +4,7 @@ import { getConfiguration } from "../../config";
 const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 const url = getConfiguration().apiUrl;
 
-export const postUserNotification = (name, mail, joinDate) => fetch(url + '/user/beta/notification', {
+export const postUserNotification = (name, mail, joinDate) => fetch(url + '/beta/notification', {
     method: 'POST',
     credentials: 'include',
     headers: {

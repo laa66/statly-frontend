@@ -5,14 +5,6 @@
     overflow: hidden;
 }
 
-.nav-item {
-    border-radius: 8px;
-    color: #b3b3b3;
-    margin: 25px 25px 50px 25px;
-    padding: 10px;
-    font-size: 21px;
-}
-
 @media (max-width: 1185px) {
     .nav-item {
         margin: 0 0 0 0;
@@ -36,13 +28,13 @@
     background-color: #1db954;
 }
 
-.nav-item:hover, .nav-range-item:hover {
+.nav-range-item:hover {
     cursor: pointer;
     color: black;
     border: line;
     background-color: #1db954;
-    box-shadow: #1db954 0 1px 20px;
-    transition-duration: .1s;
+    box-shadow: #1db954 0 1px 25px;
+    transition-duration: 0.5s;
 }
 
 .panel {
