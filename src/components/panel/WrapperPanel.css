@@ -1,10 +1,17 @@
+.nav-col {
+    z-index: 1;
+    background-color: #121212;
+    top: 12%;
+    position: sticky;
+}
+
 .nav-item {
     text-align: left;
     color: #b3b3b3;
     padding: 15px;
     border-radius: 0px 10px 10px 0px;
     margin: 10px 0px 0px 0px;
-    font-size: 21px;
+    font-size: 20px;
 }
 
 .nav-item:hover {

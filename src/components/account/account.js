@@ -21,6 +21,8 @@ function Account() {
 
     return (
         <div className="container panel" style={{textAlign:"center"}}>
+            <h1 style={{color:"#b3b3b3"}}>Profile Settings</h1>
+            <hr/>
             <h5 style={{marginBottom:"70px", color:"#1db954"}}>Here you can check your Spotify account settings and also delete your account in Statly-app.</h5>
             <div className="section-option">
                 <div className="col option-first" onClick={() => {window.location.href="https://www.spotify.com/us/account/overview/"}}>

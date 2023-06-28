@@ -16,6 +16,7 @@ function WrapperPanel({ component }) {
         <div>
             <div className="row g-0">
                 <div className="col">
+                    <div className="nav-col">
                     <div className="nav-item">
                         <img className="image-position" src={track} alt="test" width={'25px'} height={'25px'}/>
                         <Link to="/track/top" className="link-item">Top tracks</Link>
@@ -35,6 +36,7 @@ function WrapperPanel({ component }) {
                     <div className="nav-item">
                         <img className="image-position" src={history} alt="test" width={'25px'} height={'25px'}/>
                         <Link to="/user/history" className="link-item">Recently played</Link>
+                    </div>
                     </div>
                 </div>
                 <div className="col-lg-9">
