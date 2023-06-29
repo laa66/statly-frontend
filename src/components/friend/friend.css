@@ -1,0 +1,42 @@
+.friend-col {
+    margin-left: 20%;
+    z-index: 1;
+    background-color: #121212;
+    top: 11%;
+    position: sticky;
+}
+
+.friend-title {
+    text-align: left;
+    color: #b3b3b3;
+    padding: 15px;
+    border-radius: 10px 0px 0px 10px;
+    margin: 0px 0px 0px 0px;
+    font-size: 20px;
+}
+
+.friend-item {
+    text-align: left;
+    color: #b3b3b3;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    margin: 0px 0px 0px 0px;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.friend-item:hover {
+    cursor: pointer;
+    background-color: #212121;
+    box-shadow: #212121 0 0 30px;
+    transition-duration: .5s;
+    color: #b3b3b3;
+}
+
+.friend-image {
+    margin-right: 6%;
+    border-radius: 50%;
+    opacity: 90%;
+}
