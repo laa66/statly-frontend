@@ -94,10 +94,10 @@ export function Home() {
                     <div className="wrapper-form">
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="mb-3">
-                                <input type="text" className="form-control" id="username" name="username" aria-describedby="email-help" placeholder="Full name"/>
+                                <input type="text" className="beta-form-input form-control" id="username" name="username" aria-describedby="email-help" placeholder="Full name"/>
                             </div>
                             <div className="mb-3">
-                                <input type="email" className="form-control" id="email" name="email" placeholder="Email address"/>
+                                <input type="email" className="beta-form-input form-control" id="email" name="email" placeholder="Email address"/>
                                 <div id="email-help" className="form-text">We'll never share your data with anyone else.</div>
                             </div>
                             <button type="submit" className="register-button" 

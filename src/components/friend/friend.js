@@ -25,7 +25,7 @@ function Friend() {
     return (
         <div className="friend-col">
             <h2 className="friend-title">
-                <Link to="/track/top" className="link-item">Your friends</Link>
+                <Link to="/track/top" className="link-item">Your friends - {friends.size}</Link>
             </h2>
             {friends.users?.map((data, i) => {
                   return(

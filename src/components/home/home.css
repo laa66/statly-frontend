@@ -47,15 +47,15 @@
     justify-content: center;
 }
 
-.form-control {
+.beta-form-input {
     margin-top: 4%;
     border-color: #535353;
     background-color: #212121;
     color: #b3b3b3;
 }
 
-.form-control:focus {
-    box-shadow: #1db954 0 1px 5px;;
+.beta-form-input:focus {
+    box-shadow: #1db954 0 1px 5px;
     border-color: #1db954;
     color: #b3b3b3;
     background-color: #212121;
