@@ -21,6 +21,7 @@ import { Route, Routes } from "react-router-dom";
 
 import './slider.css';
 import './body.css';
+import PlaylistInsights from '../playlistInsights/playlistInsights';
 
 function Body() {
 
@@ -35,6 +36,7 @@ function Body() {
                 <Route path="/user/history" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<History/>}/></PrivateRoute>}/>
                 <Route path="/genre/top" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Genre/>}/></PrivateRoute>}/>
                 <Route path="/user/analysis" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Analysis/>}/></PrivateRoute>}/>
+                <Route path="/user/playlist" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<PlaylistInsights/>}/></PrivateRoute>}/>
                 <Route path="/user/account" element={<PrivateRoute><HeaderState.HeaderLogged/><Account/></PrivateRoute>}/>
                 <Route path="/user/search" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Search/>}/></PrivateRoute>}/>
                 <Route path="/user/profile" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Profile/>}/></PrivateRoute>}/>

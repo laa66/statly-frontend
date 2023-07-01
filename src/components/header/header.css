@@ -60,6 +60,7 @@
     border-color: #121212;
     background-color: #121212;
     border-radius: 8px 0 0 8px;
+    pointer-events: none;
 }
 
 .search-button-hidden {

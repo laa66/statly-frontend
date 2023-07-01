@@ -31,7 +31,7 @@ function HeaderLogged() {
     return (
         <div className="container-fluid header-logged" onMouseLeave={() => setShowBar(true)}>
             <div className="row g-0">
-                <div className="col-sm-6 col-md-4 header-logo">
+                <div className="col-sm header-logo">
                     <Link to="/dashboard" className="link-item">
                         <img src={logo} alt="logo" width="150px" height="49px" />
                     </Link>
@@ -39,13 +39,13 @@ function HeaderLogged() {
                 <div className="col-sm-6 col-md-4 header-content">
                     Hello, {localStorage.getItem('username')}
                 </div>
-                <div className="col-sm-12 col-md-4 header-account">
+                <div className="col-sm header-account">
                     <div className="dropdown">
                         <img className="user-image" src={localStorage.getItem('imageUrl')} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" />
                         <div className="user-search">
                             <div className="wrapper-form">
                                 {showBar && <div className="search-bar-hidden">
-                                    <input style={{ marginTop: "0" }} className="search-input-hidden form-control" id="username" name="username" aria-describedby="email-help" />
+                                    <input style={{ marginTop: "0" }} className="search-input-hidden form-control" id="username" name="username" aria-describedby="email-help"/>
                                     <button className="search-button-hidden" onMouseOver={() => setShowBar(false)}>
                                         <center>
                                             <img style={{ marginBottom: "8%", marginRight: "10%" }} width="25" height="25" src={search} alt="search--v1" />

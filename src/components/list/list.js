@@ -3,8 +3,6 @@ import React from 'react';
 import dot from '../../resources/icon-dot.png';
 import triangleUp from '../../resources/icon-triangle-up.png';
 import triangleDown from '../../resources/icon-triangle-down.png';
-import AnalysisIndicator from '../analysis/analysisIndicator';
-import AnalysisPlaylist from '../analysis/analysisPlaylist';
 
 function TrackList({list}) {
     return (
@@ -135,15 +133,6 @@ function GenreList({list}) {
     );
 }
 
-function Analysis() {
-    return (
-        <div className="container analysis-container">
-            <AnalysisIndicator/>
-            <AnalysisPlaylist/>
-        </div>
-    );
-}
-
 function HistoryList({list}) {
     return (
         <div className="container">
@@ -170,7 +159,7 @@ function HistoryList({list}) {
 }
 
 const exportedObject = {
-    TrackList, ArtistList, GenreList, HistoryList, Analysis
+    TrackList, ArtistList, GenreList, HistoryList
 }
 
 export default exportedObject;

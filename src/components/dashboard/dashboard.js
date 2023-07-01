@@ -1,7 +1,7 @@
 import dashboard from '../../resources/dashboard.png';
 import artist from '../../resources/artist.png';
 import track from '../../resources/track.png';
-import score from '../../resources/score.png';
+import library from '../../resources/library.png';
 import history from '../../resources/history.png';
 import genre from '../../resources/genre.png';
 
@@ -41,7 +41,7 @@ function Dashboard() {
                                     <img className="image-position" src={genre} alt="test" width={'30px'} height={'30px'}/>
                                         Top genres</li>
                                     <li className="dashboard-list-item">
-                                    <img className="image-position" src={score} alt="test" width={'30px'} height={'30px'}/>
+                                    <img className="image-position" src={library} alt="test" width={'30px'} height={'30px'}/>
                                         Audio analysis</li>
                                 </ul>
                             </div>
@@ -56,5 +56,4 @@ function Dashboard() {
             </div>
     );
 }
-
 export default Dashboard;
