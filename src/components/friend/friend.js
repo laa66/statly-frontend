@@ -30,7 +30,7 @@ function Friend() {
             {friends.users?.map((data, i) => {
                   return(
                       <div key={i} className="friend-item">
-                          <img className="friend-image" src={data.images[0].url} alt="test" width={'30px'} height={'30px'} onClick={{}} />
+                          <img className="friend-image" src={data.images[0].url} alt="test" width={'30px'} height={'30px'}/>
                           <Link to="/track/top" className="link-item">{data.display_name}</Link>
                       </div>
                   )})}

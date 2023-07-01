@@ -159,6 +159,7 @@ tr.track-row>td {
     inline-size: 80px;
     overflow-wrap: break-word;
     top: 100%;
+    width: 100%;
 }
 
 .genre-compare {

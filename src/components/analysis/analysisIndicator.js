@@ -28,7 +28,7 @@ function AnalysisIndicator() {
            <div className="container analysis-section">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <center><img className="analysis-image" src={indicators.images?.[0].url} alt="test"/></center>
+                        <center><img className="analysis-image" src={indicators.images?.length !== 0 ? indicators.images?.[0].url : "none"} alt="test"/></center>
                     </div>
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -54,7 +54,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[1].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[1].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[2].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[2].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -88,7 +88,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[3].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[3].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[4].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[4].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -122,7 +122,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[5].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[5].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[6].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[6].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -156,7 +156,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[7].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[7].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[8].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[8].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
@@ -190,7 +190,7 @@ function AnalysisIndicator() {
                         </div>
                     </div>
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[9].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[9].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                 </div>
             </div>
@@ -198,7 +198,7 @@ function AnalysisIndicator() {
             <div className="container analysis-section">
                 <div className="row">
                     <div className="col-lg-auto">
-                        <center><img src={indicators.images?.[10].url} alt="test" className="analysis-image"/></center>
+                        <center><img src={indicators.images?.length !== 0 ? indicators.images?.[10].url : "none"} alt="test" className="analysis-image"/></center>
                     </div>
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>

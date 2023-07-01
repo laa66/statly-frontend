@@ -13,12 +13,14 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import { Home } from '../home/home';
 import Beta from '../beta/beta';
+import WrapperPanel from '../panel/WrapperPanel';
+import Profile from '../profile/profile';
+import Search from '../search/search';
 
 import { Route, Routes } from "react-router-dom";
 
 import './slider.css';
 import './body.css';
-import WrapperPanel from '../panel/WrapperPanel';
 
 function Body() {
 
@@ -34,6 +36,8 @@ function Body() {
                 <Route path="/genre/top" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Genre/>}/></PrivateRoute>}/>
                 <Route path="/user/analysis" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Analysis/>}/></PrivateRoute>}/>
                 <Route path="/user/account" element={<PrivateRoute><HeaderState.HeaderLogged/><Account/></PrivateRoute>}/>
+                <Route path="/user/search" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Search/>}/></PrivateRoute>}/>
+                <Route path="/user/profile" element={<PrivateRoute><HeaderState.HeaderLogged/><WrapperPanel component={<Profile/>}/></PrivateRoute>}/>
                 <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
             </Routes>
         </div>
