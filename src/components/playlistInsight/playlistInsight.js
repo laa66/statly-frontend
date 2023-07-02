@@ -1,6 +1,6 @@
 import '../analysis/analysis.css';
 import { useState, useEffect } from 'react';
-import { fetchPlaylistAnalysis, fetchUserPlaylists } from './fetchPlaylistInsights.js';
+import { fetchPlaylistAnalysis, fetchUserPlaylists } from './fetchPlaylistInsight.js';
 import Error from '../error/error';
 
 function PlaylistInsights() {

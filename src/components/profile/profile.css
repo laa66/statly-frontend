@@ -1,0 +1,76 @@
+.profile-container {
+    margin-top: 2%;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+}
+
+.profile-img-container {
+   justify-content: right;
+}
+
+.name-container {
+    position: relative;
+}
+
+.follow-button {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 200px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 5px 5px 5px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #1db954;
+    border: line;
+    background-color: #121212;
+    transition-duration: .1s;
+    border: 2px solid #1db954;
+}
+
+.follow-button:hover {
+    box-shadow: #1db954 0 1px 10px;
+    transition-duration: 1s;
+}
+
+.profile-name {
+    margin: 0;
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    color: #b3b3b3;
+    font-size: 50px;
+}
+
+.profile-followers {
+    margin: 0;
+    position: absolute;
+    top: 75%;
+    transform: translateY(-50%);
+    color: #7d7d7d;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.profile-button {
+    margin-left: 1%;
+    text-align: center;
+    min-width: 100px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #7d7d7d;
+    border-bottom: 7px solid #121212;
+}
+
+.profile-button:hover {
+    cursor: pointer;
+    color: #b3b3b3;
+    border-bottom: 7px solid #1db954;
+    transition-duration: .8s;
+}

@@ -34,7 +34,7 @@ function Search() {
                   return(
                     <div key={i} className="search-item">
                         <img className="search-image" src={data?.images[0]?.url} alt="test" width={'60px'} height={'60px'}/>
-                        <Link to="/track/top" className="link-item">{data?.display_name}</Link>
+                        <Link to="/user/profile" state={{id: data.id}} className="link-item">{data?.display_name}</Link>
                     </div>
                   )})}
             </div>

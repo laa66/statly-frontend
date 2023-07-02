@@ -21,7 +21,7 @@ import { Route, Routes } from "react-router-dom";
 
 import './slider.css';
 import './body.css';
-import PlaylistInsights from '../playlistInsights/playlistInsights';
+import PlaylistInsights from '../playlistInsight/playlistInsight';
 
 function Body() {
 
