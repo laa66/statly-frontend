@@ -15,6 +15,12 @@ function Genre() {
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
 
+    const buttonStyle = {
+        cursor: "pointer",
+        color: "#b3b3b3",
+        borderBottom: "7px solid #1db954"
+    };
+
     useEffect(() => {
         fetchGenreShort().then((data) => {
             setShort(data.genres);
@@ -49,9 +55,9 @@ function Genre() {
             <Image.ImageGenre date={date}/>
             <nav className="container section-nav">
                 <ul className="nav">
-                    <li className="nav-range-item" onClick={() => setActive('short')} style={{fontSize:"16px"}}>4 weeks</li>
-                    <li className="nav-range-item" onClick={() => setActive('medium')} style={{fontSize:"16px"}}>6 months</li>
-                    <li className="nav-range-item" onClick={() => setActive('long')} style={{fontSize:"16px"}}>All time</li>
+                    <li className="profile-button" onClick={() => setActive('short')} style={active === 'short' ? buttonStyle : {}}>4 weeks</li>
+                    <li className="profile-button" onClick={() => setActive('medium')} style={active === 'medium' ? buttonStyle : {}}>6 months</li>
+                    <li className="profile-button" onClick={() => setActive('long')} style={active === 'long' ? buttonStyle : {}}>All time</li>
                 </ul>
             </nav>
             {active === 'short' && <List.GenreList list={short}/>}

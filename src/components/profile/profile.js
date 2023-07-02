@@ -1,13 +1,14 @@
 import './profile.css';
 import Error from '../error/error';
 import test from '../../resources/testuserimage.jpg'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { fetchProfile } from './fetchProfile';
 
 function Profile() {
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
-    
+
     const [active, setActive] = useState('stats');
     const [profile, setProfile] = useState([]);
 
@@ -20,8 +21,17 @@ function Profile() {
         borderBottom: "7px solid #1db954"
     };
 
+    useEffect(() => {
+        fetchProfile(id).then((data) => {
+            setProfile(data);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+            console.log(err.message);
+        // eslint-disable-next-line
+        })}, [location]);
+        console.log(profile)
     if (hasError) return (<div><Error code={status}/></div>);
-
     return (
         <div className="container profile-img-container">
             <div className="row mb-0">
@@ -29,8 +39,8 @@ function Profile() {
                     <img src={test} className="profile-img" alt={"random"}/>
                 </div>
                 <div className="col-md-7 name-container">
-                    <div className="profile-name"><b>Maxime Schulz</b></div>
-                    <div className="profile-followers"><b>50 followers | 30 following</b></div>
+                    <div className="profile-name"><b>{profile.username}</b></div>
+                    <div className="profile-followers"><b>{profile?.points} points | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
                 </div>
                 <div className="col-md-1">
                     <div className="follow-button">Follow</div>

@@ -17,6 +17,11 @@
     }
 }
 
+.section-nav {
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
 .nav-range-item {
     border-radius: 8px;
     margin: 25px 12px 50px 12px;
