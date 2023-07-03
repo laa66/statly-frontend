@@ -1,6 +1,7 @@
 import './profile.css';
 import Error from '../error/error';
-import test from '../../resources/testuserimage.jpg'
+import test from '../../resources/testuserimage.jpg';
+import Statistics from './statistics';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { fetchProfile } from './fetchProfile';
@@ -30,7 +31,7 @@ function Profile() {
             console.log(err.message);
         // eslint-disable-next-line
         })}, [location]);
-        console.log(profile)
+
     if (hasError) return (<div><Error code={status}/></div>);
     return (
         <div className="container profile-img-container">
@@ -54,9 +55,7 @@ function Profile() {
                     <li className="profile-button" style={active === 'battle' ? buttonStyle : {}} onClick={() => setActive('battle')}>Playlist battle</li>
                 </ul>
             </nav>
-                {active === 'stats' && <div className="stats-container">
-                    
-                </div>}
+                {active === 'stats' && <Statistics profile={profile}/>}
                 {active === 'matching' && <div className="matching-container">
                     
                 </div>}

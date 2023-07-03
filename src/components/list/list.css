@@ -113,7 +113,7 @@ tr.track-row>td {
 }
 
 .genre-bar-chart {
-    margin-top: 2%;
+    margin-top: 4%;
     color: #b3b3b3;
     flex-direction: row;
     justify-content: space-between;

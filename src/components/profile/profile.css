@@ -9,6 +9,7 @@
 
 .profile-img-container {
    justify-content: right;
+   min-height: 800px;
 }
 
 .name-container {
@@ -74,3 +75,36 @@
     border-bottom: 7px solid #1db954;
     transition-duration: .8s;
 }
+
+/* statistics section */
+
+.statistics-container {
+    margin-top: 1%;
+    color: #b3b3b3;
+}
+
+.index-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.track-col {
+    position: relative;
+}
+
+.main-name {
+    font-weight: 500;
+}
+
+.second-name {
+    color: #7d7d7d;
+}
+
+.scale-text {
+    color: #1db954;
+    font-size: 23px;
+}
+
