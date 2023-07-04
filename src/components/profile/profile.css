@@ -34,6 +34,29 @@
     border: 2px solid #1db954;
 }
 
+.unfollow-button {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 200px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 5px 5px 5px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #8C0500;
+    border: line;
+    background-color: #121212;
+    transition-duration: .1s;
+    border: 2px solid #8C0500;
+}
+
+.unfollow-button:hover {
+    box-shadow: #8C0500 0 1px 10px;
+    transition-duration: 1s;
+}
+
 .follow-button:hover {
     box-shadow: #1db954 0 1px 10px;
     transition-duration: 1s;

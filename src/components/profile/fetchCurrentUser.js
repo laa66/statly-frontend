@@ -2,7 +2,7 @@ import { getConfiguration } from "../../config";
 
 const url = getConfiguration().apiUrl;
 
-export const fetchFriends = () =>  fetch(url + '/user/me/following', {
+export const fetchCurrentUser = () =>  fetch(url + '/user/me', {
     method: 'GET',
     credentials: 'include'
 }).then((response) => {

@@ -4,8 +4,7 @@ import '../dashboard/dashboard.css';
 import Navigation from '../navigation/navigation';
 import Friend from '../friend/friend';
 
-function WrapperPanel({ component }) {
-
+function WrapperPanel({list, component}) {
     return (
         <div>
             <div className="row g-0">
@@ -16,7 +15,7 @@ function WrapperPanel({ component }) {
                     {component}
                 </div>
                 <div className="col">
-                    <Friend/>
+                    <Friend friends={list}/>
                </div>
             </div>
         </div>
