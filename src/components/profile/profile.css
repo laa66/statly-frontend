@@ -131,3 +131,13 @@
     font-size: 23px;
 }
 
+/* matching container */
+
+.matching-description {
+    font-size: 18px;
+    margin-bottom: 2%;
+}
+
+.matching-container {
+    margin-bottom: 8%;
+}

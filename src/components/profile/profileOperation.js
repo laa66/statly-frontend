@@ -30,3 +30,12 @@ export const unfollowUser = (id) => fetch(url + '/user/unfollow?user_id=' + id, 
     return response.json();
 });
 
+export const fetchMatch = (id) =>  fetch(url + '/api/analysis/match?user_id=' + id, {
+    method: 'GET',
+    credentials: 'include'
+}).then((response) => {
+    if (!response.ok) throw new Error(response.status);
+    return response.json(); 
+});
+
+

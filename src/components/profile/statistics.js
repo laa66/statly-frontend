@@ -53,6 +53,11 @@ function statistics({ profile }) {
                     </div>
                 </div>
             </div>
+            <div className="row" style={{color:"#7d7d7d", fontStyle:"italic"}}>
+                <div className="col">
+                    <p>* Based on your all-time statistics</p>
+                </div>
+            </div>
         </div>
     );
 }

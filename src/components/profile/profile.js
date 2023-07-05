@@ -1,7 +1,7 @@
 import './profile.css';
 import Error from '../error/error';
-import test from '../../resources/testuserimage.jpg';
 import Statistics from './statistics';
+import Matching from './matching';
 
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -69,11 +69,11 @@ function Profile({ callback }) {
         <div className="container profile-img-container">
             <div className="row mb-0">
                 <div className="col-md-2 image-container">
-                    <img src={test} className="profile-img" alt={"random"}/>
+                    <img src={profile.imageUrl} className="profile-img" alt={"random"}/>
                 </div>
                 <div className="col-md-7 name-container">
                     <div className="profile-name"><b>{profile.username}</b></div>
-                    <div className="profile-followers"><b>{profile?.points} points | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
+                    <div className="profile-followers"><b>76 rank | {profile?.points} points | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
                 </div>
                 <div className="col-md-1 animate-fade">
                     {followed && <div className="unfollow-button" onClick={() => handleUnfollow(id)}>Unfollow</div>}
@@ -89,9 +89,7 @@ function Profile({ callback }) {
                 </ul>
             </nav>
                 {active === 'stats' && <Statistics profile={profile}/>}
-                {active === 'matching' && <div className="matching-container">
-                    
-                </div>}
+                {active === 'matching' && <Matching profile={profile}/>}
                 {active === 'battle' && <div className="battle-container">
                     
                 </div>}
