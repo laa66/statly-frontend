@@ -1,7 +1,5 @@
 import { getConfiguration } from "../../config";
 
-//eslint-disable-next-line
-const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 const url = getConfiguration().apiUrl;
 
 export const fetchLibraryAnalysis = () =>  fetch(url + '/api/analysis/library', {

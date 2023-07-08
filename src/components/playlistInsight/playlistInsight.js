@@ -73,25 +73,25 @@ function PlaylistInsights() {
                     <div className="col-4 analysis-column">
                         <div style={{ textAlign: "center" }}>
                             <span className="analysis-name">Energy</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['energy']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['energy']}%</p>
                         </div>
                     </div>
                     <div className="col-4 analysis-column">
                         <div style={{ textAlign: "center" }}>
                             <span className="analysis-name">Mainstream</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['mainstream']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['mainstream']}%</p>
                         </div>
                     </div>
                     <div className="col-4 analysis-column">
                         <div style={{ textAlign: "center" }}>
                             <span className="analysis-name">Boringness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['boringness']} points</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['boringness']} points</p>
                         </div>
                     </div>
                     <div className="col-4 analysis-column">
                         <div style={{ textAlign: "center" }}>
                             <span className="analysis-name">Tempo</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['tempo']} BPM</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['tempo']} BPM</p>
                         </div>
                     </div>
 

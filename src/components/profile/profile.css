@@ -141,3 +141,34 @@
 .matching-container {
     margin-bottom: 8%;
 }
+
+/* playlist-battle container */
+.playlist-battle-container {
+
+}
+
+.playlist-row {
+    color: #b3b3b3;
+    text-align: center;
+}
+
+.carousel-button {
+    background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+    
+.playlist-cover-text {
+    margin-top: 2%;
+    color: #b3b3b3;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.playlist-mid {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 50%;
+}

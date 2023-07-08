@@ -12,6 +12,14 @@ export const fetchUserPlaylists = () =>  fetch(url + '/api/playlist/all', {
     return response.json(); 
 });
 
+export const fetchUserPlaylistsWithId = (id) =>  fetch(url + '/api/playlist/all?external_id=' + id, {
+    method: 'GET',
+    credentials: 'include'
+}).then((response) => {
+    if (!response.ok) throw new Error(response.status);
+    return response.json(); 
+});
+
 export const fetchPlaylistAnalysis = (name, id) => fetch(url + '/api/analysis/playlist', {
     method: 'POST',
     credentials: 'include',

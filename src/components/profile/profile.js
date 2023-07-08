@@ -2,6 +2,7 @@ import './profile.css';
 import Error from '../error/error';
 import Statistics from './statistics';
 import Matching from './matching';
+import PlaylistBattle from './playlistBattle';
 
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -90,9 +91,7 @@ function Profile({ callback }) {
             </nav>
                 {active === 'stats' && <Statistics profile={profile}/>}
                 {active === 'matching' && <Matching profile={profile}/>}
-                {active === 'battle' && <div className="battle-container">
-                    
-                </div>}
+                {active === 'battle' && <PlaylistBattle profile={profile}/>}
             </div>
         </div>
     );

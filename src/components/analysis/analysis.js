@@ -37,7 +37,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Acousticness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['acousticness']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['acousticness']}%</p>
                         </div>
                     </div>
                     <div className="col analysis-column">
@@ -54,7 +54,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Danceability</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['danceability']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['danceability']}%</p>
                         </div>
                     </div>
                     <div className="col-lg-auto">
@@ -71,7 +71,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Energy</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['energy']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['energy']}%</p>
                         </div>
                     </div>
                     <div className="col analysis-column">
@@ -88,7 +88,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Instrumentalness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['instrumentalness']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['instrumentalness']}%</p>
                         </div>
                     </div>
                     <div className="col-lg-auto">
@@ -105,7 +105,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Liveness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['liveness']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['liveness']}%</p>
                         </div>
                     </div>
                     <div className="col analysis-column">
@@ -122,7 +122,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Loudness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['loudness']}dB</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['loudness']}dB</p>
                         </div>
                     </div>
                     <div className="col-lg-auto">
@@ -139,7 +139,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Speechiness</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['speechiness']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['speechiness']}%</p>
                         </div>
                     </div>
                     <div className="col analysis-column">
@@ -156,7 +156,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Valence</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['valence']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['valence']}%</p>
                         </div>
                     </div>
                     <div className="col-lg-auto">
@@ -173,7 +173,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Mainstream</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['mainstream']}%</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['mainstream']}%</p>
                         </div>
                     </div>
                     <div className="col analysis-column">
@@ -190,7 +190,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Boringness score</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['boringness']} points</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['boringness']} points</p>
                         </div>
                     </div>
                     <div className="col-lg-auto">
@@ -207,7 +207,7 @@ function Analysis() {
                     <div className="col analysis-column">
                     <div style={{textAlign:"center"}}>
                             <span className="analysis-name">Tempo</span>
-                            <p className="analysis-percentage">{indicators.libraryAnalysis?.['tempo']} BPM</p>
+                            <p className="analysis-percentage">{indicators.analysis?.['tempo']} BPM</p>
                         </div>
                     </div>
                     <div className="col analysis-column">
