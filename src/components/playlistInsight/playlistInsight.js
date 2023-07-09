@@ -31,10 +31,10 @@ function PlaylistInsights() {
             name: name,
             image: image
         });
-        setActive('playlist-analysis');
         fetchPlaylistAnalysis(name, id).then((data) => {
             setIndicators(data);
-        }).catch((err) =>{
+        }).then(() => setActive('playlist-analysis'))
+        .catch((err) =>{
             setHasError(true);
             setStatus(err.message);
             console.log(err);

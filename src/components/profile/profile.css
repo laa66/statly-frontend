@@ -144,7 +144,8 @@
 
 /* playlist-battle container */
 .playlist-battle-container {
-
+    justify-content: center;
+    display: flex;
 }
 
 .playlist-row {
@@ -169,6 +170,15 @@
 .playlist-mid {
     justify-content: center;
     display: flex;
-    margin: auto;
-    width: 50%;
+    align-items: center;
+    width: auto;
+}
+
+.loser-text {
+    font-size: 23px;
+    color: #8C0500;
+}
+
+.nick-text {
+    color: #7d7d7d;
 }

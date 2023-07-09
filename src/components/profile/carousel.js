@@ -16,7 +16,7 @@ const Carousel = ({ playlistType , playlist, callbackInc, callbackDec }) => {
   return ( 
     <CarouselProvider
       naturalSlideWidth={150}
-      naturalSlideHeight={120}
+      naturalSlideHeight={90}
       totalSlides={playlist.total}>
       <Slider>
       {playlist.items?.map((data, i) => {
