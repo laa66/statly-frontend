@@ -74,7 +74,7 @@ function Profile({ callback }) {
                 </div>
                 <div className="col-md-7 name-container">
                     <div className="profile-name"><b>{profile.username}</b></div>
-                    <div className="profile-followers"><b>76 rank | {profile?.points} points | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
+                    <div className="profile-followers"><b><span style={{color:"#1db954"}}>{profile?.points} points</span> | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
                 </div>
                 <div className="col-md-1 animate-fade">
                     {followed && <div className="unfollow-button" onClick={() => handleUnfollow(id)}>Unfollow</div>}
@@ -85,8 +85,8 @@ function Profile({ callback }) {
             <nav className="container section-nav">
                 <ul className="nav">
                     <li className="profile-button" style={active === 'stats' ? buttonStyle : {}} onClick={() => setActive('stats')}>Statistics</li>
-                    <li className="profile-button" style={active === 'matching' ? buttonStyle : {}} onClick={() => setActive('matching')}>Matching</li>
-                    <li className="profile-button" style={active === 'battle' ? buttonStyle : {}} onClick={() => setActive('battle')}>Playlist battle</li>
+                    {profile.id === Number(currentUser.id) ? <li/> : <li className="profile-button" style={active === 'matching' ? buttonStyle : {}} onClick={() => setActive('matching')}>Matching</li>}
+                    {profile.id === Number(currentUser.id) ? <li/> : <li className="profile-button" style={active === 'battle' ? buttonStyle : {}} onClick={() => setActive('battle')}>Playlist battle</li>}
                 </ul>
             </nav>
                 {active === 'stats' && <Statistics profile={profile}/>}

@@ -25,21 +25,23 @@ function Rank() {
         <div className="rank-container container-sm">
             <center><h1>User ranking</h1></center>
             <div className="row mt-4 mb-2">
-                <div className="col-sm-1">
+                <div className="col-sm-1 rank-index-col">
                     <span className="rank-index title-rank">#</span>
                 </div>
                 <div className="col-sm-9">
-                    <span style={{ marginLeft: "-7%" }} className="rank-index title-rank">User</span>
+                    <span className="rank-index title-rank">User</span>
                 </div>
-                <div className="col-sm-2 rank-points">
+                <div className="col-sm-2 title-rank" style={{color:"#1db954"}}>
                     <span>Points</span>
                 </div>
             </div>
             {ranking?.map((data, index) => {
                 return (
                     <Link to="/user/profile" state={{ id: data.id }} key={data + index} className="row mb-2 link-item">
-                        <div className="col-sm-10">
-                            <span className="rank-index">{index + 1}</span>
+                        <div className="col-sm-1 rank-index-col">
+                            <span className="rank-index" style={{fontSize:"19px"}}>{index + 1}</span>
+                        </div>
+                        <div className="col-sm-9">
                             <img className="rank-image" src={data?.images[0].url} alt="profile" width="40px" height="40px" />
                             <span className="rank-user">{data.display_name}</span>
                         </div>

@@ -56,20 +56,21 @@ function PlaylistBattle({ profile }) {
     if (hasError) return (<div><Error code={status}/></div>);
     return (
         <div>
-            {!result && <div className="row playlist-battle-container">
-                <div className="col-md-4 playlist-row">
-                    <h5 className="mb-3">Your playlists</h5>
-                    {playlists.total === 0 ? <div>There is no playlists in your account.</div> :               
-                    <Carousel playlist={playlists} callbackInc={incrementPlaylistIndex} callbackDec={decrementPlaylistIndex} playlistType={'user'} />
-                    }</div>
-                <div className="col-md-4 playlist-mid">
-                    <button onClick={() => handlePlaylistBattle(playlists.items[firstPlaylistIndex], playlists.items[secondPlaylistIndex])} className="back-playlist-button" style={{ border: "none" }}>Start</button>
-                </div>
-                <div className="col-md-4 playlist-row">
-                    <h5 className="mb-3">Opponent playlists</h5>
-                    {battlePlaylists.total === 0 ? <div>There is no playlists in opponent account.</div> : 
-                    <Carousel playlist={battlePlaylists} callbackInc={incrementPlaylistIndex} callbackDec={decrementPlaylistIndex} playlistType={'opponent'} />
-                    }</div>
+            {!result && <div>
+                {playlists.total === 0 || battlePlaylists.total === 0 ? <h4 className="mt-3" style={{color:"#7d7d7d"}}><center>There are no playlists on your or opponent account.</center></h4> : <div className="row playlist-battle-container">
+                    <div className="col-md-4 playlist-row">
+                        <h5 className="mb-3">Your playlists</h5>
+                        <Carousel playlist={playlists} callbackInc={incrementPlaylistIndex} callbackDec={decrementPlaylistIndex} playlistType={'user'} />
+                    </div>
+                    <div className="col-md-4 playlist-mid">
+                        <button onClick={() => handlePlaylistBattle(playlists.items[firstPlaylistIndex], battlePlaylists.items[secondPlaylistIndex])}
+                            className="back-playlist-button" style={{ border: "none" }}>Start</button>
+                    </div>
+                    <div className="col-md-4 playlist-row">
+                        <h5 className="mb-3">Opponent playlists</h5>
+                        <Carousel playlist={battlePlaylists} callbackInc={incrementPlaylistIndex} callbackDec={decrementPlaylistIndex} playlistType={'opponent'} />
+                    </div>
+                </div>}
             </div>}
             {result && <div className="row playlist-row">
                 {battleResult.result === 0 ? <div/> : <div className="col-md-4">
