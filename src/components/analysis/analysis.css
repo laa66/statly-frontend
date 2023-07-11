@@ -1,6 +1,7 @@
 .analysis-container {
     margin-top: 3%;
     color: #b3b3b3;
+    min-height: 750px;
 }
 
 .analysis-section {
@@ -34,6 +35,7 @@
     font-size: 18px;
     text-align: center;
     color: #b3b3b3;
+    min-height: 750px;
 }
 
 .playlist-img, .playlist-img-analysis {

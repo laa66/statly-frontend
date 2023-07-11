@@ -59,7 +59,7 @@ function PlaylistBattle({ profile }) {
             {!result && <div className="row playlist-battle-container">
                 <div className="col-md-4 playlist-row">
                     <h5 className="mb-3">Your playlists</h5>
-                    {playlists.total === 0 ? <div>There is no playlists in opponent account.</div> :               
+                    {playlists.total === 0 ? <div>There is no playlists in your account.</div> :               
                     <Carousel playlist={playlists} callbackInc={incrementPlaylistIndex} callbackDec={decrementPlaylistIndex} playlistType={'user'} />
                     }</div>
                 <div className="col-md-4 playlist-mid">

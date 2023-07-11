@@ -21,6 +21,7 @@ import { Route, Routes } from "react-router-dom";
 import './slider.css';
 import './body.css';
 import PlaylistInsights from '../playlistInsight/playlistInsight';
+import Rank from '../rank/rank';
 
 function Body() {
     return (
@@ -39,6 +40,7 @@ function Body() {
                 <Route path="/user/search" element={<PrivateRoute><WrapperBody component={<Search/>}/></PrivateRoute>}/>
                 <Route path="/user/profile" element={<PrivateRoute><WrapperBody withCallback={true}/></PrivateRoute>}/>
                 <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
+                <Route path="/rank" element={<PrivateRoute><WrapperBody component={<Rank/>}/></PrivateRoute>}/>
             </Routes>
         </div>
     );

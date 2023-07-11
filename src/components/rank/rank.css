@@ -1,0 +1,42 @@
+.rank-container {
+    min-height: 750px;
+    color: #b3b3b3;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.rank-index {
+    color: #7d7d7d;
+    font-weight: 500;
+    font-size: 21px;
+    margin-right: 2%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.rank-image {
+    margin-right: 2%;
+    border-radius: 50%;
+    opacity: 90%;
+}
+
+.rank-user {
+    color: #7d7d7d;
+    vertical-align: middle;
+}
+
+.rank-user:hover {
+    color: #b3b3b3;
+}
+
+.rank-points {
+    font-weight: 500;
+    color: #1db954;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.title-rank {
+    color: #b3b3b3;
+}

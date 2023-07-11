@@ -4,6 +4,7 @@ import library from '../../resources/library.png';
 import history from '../../resources/history.png';
 import genre from '../../resources/genre.png';
 import playlist from '../../resources/playlist.png';
+import rank from '../../resources/user-rank.png';
 
 import './navigation.css';
 
@@ -40,6 +41,10 @@ function Navigation() {
                 <img className="image-position" src={genre} alt="test" width={'25px'} height={'25px'} />
                 <Link to="/genre/top" state={{ item: "genre" }} className="link-item">Top genres</Link>
             </div>
+            <div className="nav-item" style={active === 'history' ? itemStyle : {}}>
+                <img className="image-position" src={history} alt="test" width={'25px'} height={'25px'} />
+                <Link to="/user/history" state={{ item: "history" }} className="link-item">Recently played</Link>
+            </div>
             <div className="nav-item" style={active === 'library' ? itemStyle : {}}>
                 <img className="image-position" src={library} alt="test" width={'25px'} height={'25px'} />
                 <Link to="/user/analysis" state={{ item: "library" }} className="link-item">Library analysis</Link>
@@ -48,9 +53,9 @@ function Navigation() {
                 <img className="image-position" src={playlist} alt="test" width={'25px'} height={'25px'} />
                 <Link to="/user/playlist" state={{ item: "playlist" }} className="link-item">Playlist insights</Link>
             </div>
-            <div className="nav-item" style={active === 'history' ? itemStyle : {}}>
-                <img className="image-position" src={history} alt="test" width={'25px'} height={'25px'} />
-                <Link to="/user/history" state={{ item: "history" }} className="link-item">Recently played</Link>
+            <div className="nav-item" style={active === 'rank' ? itemStyle : {}}>
+                <img className="image-position" src={rank} alt="test" width={'25px'} height={'25px'} />
+                <Link to="/rank" state={{ item: "rank" }} className="link-item">User ranking</Link>
             </div>
         </div>
     );
