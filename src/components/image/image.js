@@ -11,8 +11,8 @@ function ImageTrack({list, date}) {
             </div>
             <div className="image-description">
                 <h1>Discover your favorite tracks with ease</h1>
-                <p style={{color:"#7d7d7d"}}>Our Top Tracks section highlights your most-played tracks, so you can keep the music going.</p>
-                <p className='arrows-description'>The arrows show the change in the tracks ranking since your last visit on {date}.</p>
+                <p style={{color:"#7d7d7d"}}>Our Top Tracks section highlights your most-played tracks, so you can keep the music going</p>
+                <p className='arrows-description'>{date === null ? <div/> : 'The arrows show the change in the tracks ranking since your last visit on ' + date}</p>
             </div>
         </div>
     );
@@ -29,8 +29,8 @@ function ImageArtist({list, date}) {
             </div>
             <div className="image-description">
                 <h1>Explore your musical taste</h1>
-                <p style={{color:"#7d7d7d"}}>Our Top Artist section showcases your most-played artists, so you can dive deeper into their catalog and discover new tracks.</p>
-                <p className='arrows-description'>The arrows show the change in the artists ranking since your last visit on {date}.</p>
+                <p style={{color:"#7d7d7d"}}>Our Top Artist section showcases your most-played artists, so you can dive deeper into their catalog and discover new tracks</p>
+                <p className='arrows-description'>{date === null ? <div/> : 'The arrows show the change in the artists ranking since your last visit on ' + date}</p>
             </div>
         </div>
     );
@@ -41,8 +41,8 @@ function ImageGenre({date}) {
         <div className="container">
             <div className="image-description">
                 <h1>Discover the breadth of your musical interests</h1>
-                <p style={{color:"#7d7d7d"}}>Our Top Genres section highlights the genres you listen to most frequently, so you can explore new artists and tracks within those genres.</p>
-                <p className='arrows-description'>The arrows show the change in the genres ranking since your last visit on {date}.</p>
+                <p style={{color:"#7d7d7d"}}>Our Top Genres section highlights the genres you listen to most frequently, so you can explore new artists and tracks within those genres</p>
+                <p className='arrows-description'>{date === null ? <div/> : 'The arrows show the change in the genres ranking since your last visit on ' + date}</p>
             </div>
         </div>
     );

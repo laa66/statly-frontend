@@ -14,7 +14,6 @@ export const followUser = (id) => fetch(url + '/user/follow?user_id=' + id, {
     if (!response.ok) {
         throw new Error('HTTP status ' + response.status);
     }
-    return response.json();
 });
 
 export const unfollowUser = (id) => fetch(url + '/user/unfollow?user_id=' + id, {
@@ -27,7 +26,6 @@ export const unfollowUser = (id) => fetch(url + '/user/unfollow?user_id=' + id, 
     if (!response.ok) {
         throw new Error('HTTP status ' + response.status);
     }
-    return response.json();
 });
 
 export const fetchMatch = (id) =>  fetch(url + '/api/analysis/match?user_id=' + id, {

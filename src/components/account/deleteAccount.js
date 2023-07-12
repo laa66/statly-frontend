@@ -14,5 +14,4 @@ export const deleteAccount = () => fetch(url + '/user/me/delete', {
     if (!response.ok) {
         throw new Error('HTTP status ' + response.status);
     }
-    return response.json();
 });

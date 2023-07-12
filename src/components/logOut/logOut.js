@@ -12,5 +12,9 @@ export const logOut = () => {
     headers: {
         'X-XSRF-TOKEN': csrfToken
     }
-    }).then((response) => response.json());
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('HTTP status ' + response.status);
+        }
+    });
 }
