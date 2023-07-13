@@ -39,7 +39,7 @@ function Beta() {
     if (hasError) return (<div><Error code={status}/></div>)
     return (
         <div>
-            <div className='container'>
+            <div className='container mt-5'>
                 <div className='beta-section'>
                     <h1 className='beta-title'>Beta users</h1>
                     <div style={{ justifyContent: "center", display: "flex", marginBottom: "2%" }}>

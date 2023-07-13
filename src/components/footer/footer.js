@@ -24,7 +24,7 @@ function footer() {
                     <ul>
                         <li className="footer-title">Socials</li>
                         <li>Instagram</li>
-                        <li>GitHub</li>
+                        <li><a href="https://github.com/laa66" className="link-item">GitHub</a></li>
                     </ul>
                 </div>
                 <div className="col">

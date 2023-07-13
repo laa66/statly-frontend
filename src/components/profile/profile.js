@@ -28,6 +28,8 @@ function Profile({ callback }) {
     };
 
     useEffect(() => {
+        setActive('stats');
+        window.scrollTo(0, 0);
         fetchProfile(id).then((data) => {
             setProfile(data);
         }).catch((err) => {
@@ -49,20 +51,17 @@ function Profile({ callback }) {
         setFollowed(profile.followers?.some(e => e.id === currentUser.id));
     }, [profile.followers, currentUser.id]);
 
-    const sleep = ms => new Promise(
-        resolve => setTimeout(resolve, ms)
-      );
-
     const handleFollow = (id) => {
-        followUser(id);
-        setFollowed(true);
-        sleep(500).then(() => callback())
+        followUser(id)
+            .then(() => setFollowed(true))
+                .then(() => callback());
+
     }
 
     const handleUnfollow = (id) => {
-        unfollowUser(id);
-        setFollowed(false);
-        sleep(500).then(() => callback())
+        unfollowUser(id)
+            .then(() => setFollowed(false))
+                .then(() => callback());
     }
 
     if (hasError) return (<div><Error code={status}/></div>);
