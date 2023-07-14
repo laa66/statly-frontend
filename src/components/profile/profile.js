@@ -68,14 +68,14 @@ function Profile({ callback }) {
     return (
         <div className="container profile-img-container">
             <div className="row mb-0">
-                <div className="col-md-2 image-container">
+                <div className="col-md-1 image-container">
                     <img src={profile.imageUrl} className="profile-img" alt={"random"}/>
                 </div>
                 <div className="col-md-7 name-container">
                     <div className="profile-name"><b>{profile.username}</b></div>
                     <div className="profile-followers"><b><span style={{color:"#1db954"}}>{profile?.points} points</span> | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
                 </div>
-                <div className="col-md-1 animate-fade">
+                <div className="col-md-4 button-container animate-fade"> 
                     {followed && <div className="unfollow-button" onClick={() => handleUnfollow(id)}>Unfollow</div>}
                     {!followed && currentUser.id !== id && <div className="follow-button" onClick={() => handleFollow(id)}>Follow</div>}
                 </div>

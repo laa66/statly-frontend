@@ -3,23 +3,29 @@
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 .profile-img-container {
-   justify-content: right;
-   min-height: 800px;
+    margin-top: 2%;
+    justify-content: right;
+    min-height: 800px;
 }
 
 .name-container {
     position: relative;
 }
 
+.button-container {
+    justify-content: center;
+    display: flex;
+}
+
 .follow-button {
     margin: 0;
     position: absolute;
-    top: 25%;
+    top: 20%;
     transform: translateY(-50%);
     width: 200px;
     text-align: center;
@@ -37,7 +43,7 @@
 .unfollow-button {
     margin: 0;
     position: absolute;
-    top: 25%;
+    top: 20%;
     transform: translateY(-50%);
     width: 200px;
     text-align: center;
@@ -65,7 +71,7 @@
 .profile-name {
     margin: 0;
     position: absolute;
-    top: 52%;
+    top: 28%;
     transform: translateY(-50%);
     color: #b3b3b3;
     font-size: 50px;
@@ -74,7 +80,7 @@
 .profile-followers {
     margin: 0;
     position: absolute;
-    top: 75%;
+    top: 60%;
     transform: translateY(-50%);
     color: #7d7d7d;
     font-size: 18px;
@@ -146,6 +152,14 @@
 .playlist-battle-container {
     justify-content: center;
     display: flex;
+}
+
+.playlist-title {
+    color: #b3b3b3;
+}
+
+.playlist-battle-description {
+    margin-top: 7%;
 }
 
 .playlist-row {

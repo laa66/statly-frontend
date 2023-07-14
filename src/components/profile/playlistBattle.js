@@ -56,6 +56,10 @@ function PlaylistBattle({ profile }) {
     if (hasError) return (<div><Error code={status}/></div>);
     return (
         <div>
+            <div className="matching-description playlist-title">
+                <h3>Library matching</h3>
+                <div>This functionality allows users to engage in friendly competition and compare the characteristics of their playlists, ultimately rewarding them with points based on the outcome.</div>
+            </div>
             {!result && <div>
                 {playlists.total === 0 || battlePlaylists.total === 0 ? <h4 className="mt-3" style={{color:"#7d7d7d"}}><center>There are no playlists on your or opponent account.</center></h4> : <div className="row playlist-battle-container">
                     <div className="col-md-4 playlist-row">
@@ -166,6 +170,11 @@ function PlaylistBattle({ profile }) {
                     <h4 className="nick-text">{battleResult.loserProfile?.username}</h4>
                 </div>}
             </div>}
+            <div className="row playlist-battle-description" style={{color:"#7d7d7d", fontStyle:"italic"}}>
+                <div className="col">
+                    <span>* The overall score is determined by combining the Mainstream Score and Boringness Score - sum of valence, tempo, danceability and energy. If the user wins the battle, they will gain points equal to the difference in overall scores between the two users. On the other hand, if the user loses the battle, the difference in overall scores will be subtracted from their total points.</span>
+                </div>
+            </div>
         </div>
     );
 }
