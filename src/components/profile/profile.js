@@ -30,19 +30,12 @@ function Profile({ callback }) {
     useEffect(() => {
         setActive('stats');
         window.scrollTo(0, 0);
-        fetchProfile(id).then((data) => {
-            setProfile(data);
-        }).catch((err) => {
-            setHasError(true);
-            setStatus(err.message);
-            console.log(err.message);
-        })
+        handleRenderProfile();
         fetchCurrentUser().then((data) => {
             setCurrentUser(data);
         }).catch((err) => {
             setHasError(true);
             setStatus(err.message);
-            console.log(err.message);
         })
     // eslint-disable-next-line
     }, [location]);
@@ -51,17 +44,28 @@ function Profile({ callback }) {
         setFollowed(profile.followers?.some(e => e.id === currentUser.id));
     }, [profile.followers, currentUser.id]);
 
+    const handleRenderProfile = () => {
+        fetchProfile(id)
+            .then((data) => {
+                setProfile(data);
+            }).catch((err) => {
+                setHasError(true);
+                setStatus(err.message);
+            })
+    }
+
     const handleFollow = (id) => {
         followUser(id)
             .then(() => setFollowed(true))
-                .then(() => callback());
-
+            .then(() => callback())
+            .then(() => handleRenderProfile());
     }
 
     const handleUnfollow = (id) => {
         unfollowUser(id)
             .then(() => setFollowed(false))
-                .then(() => callback());
+            .then(() => callback())
+            .then(() => handleRenderProfile());
     }
 
     if (hasError) return (<div><Error code={status}/></div>);
@@ -90,7 +94,7 @@ function Profile({ callback }) {
             </nav>
                 {active === 'stats' && <Statistics profile={profile}/>}
                 {active === 'matching' && <Matching profile={profile}/>}
-                {active === 'battle' && <PlaylistBattle profile={profile}/>}
+                {active === 'battle' && <PlaylistBattle profile={profile} callback={handleRenderProfile}/>}
             </div>
         </div>
     );

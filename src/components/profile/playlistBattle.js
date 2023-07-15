@@ -6,7 +6,7 @@ import { makePlaylistBattle } from "./makePlaylistBattle";
 
 import Carousel from "./carousel";
 
-function PlaylistBattle({ profile }) {
+function PlaylistBattle({ profile, callback }) {
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
 
@@ -50,7 +50,7 @@ function PlaylistBattle({ profile }) {
         .catch((err) => {
             setHasError(true);
             setStatus(err.message);
-        })
+        }).then(() => callback());
     }
     
     if (hasError) return (<div><Error code={status}/></div>);
