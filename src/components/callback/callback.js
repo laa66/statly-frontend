@@ -12,6 +12,7 @@ function Callback() {
                 localStorage.setItem('imageUrl', 'https://graph.facebook.com/' + url + '/picture')
             } else localStorage.setItem('imageUrl', params.get('url'));
             
+            localStorage.setItem('userId', params.get('user_id'));
             localStorage.setItem('username', params.get('name'));
             localStorage.setItem('userLogged', true);
         }

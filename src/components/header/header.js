@@ -21,13 +21,13 @@ function Header() {
 function HeaderLogged() {
     const [showBar, setShowBar] = useState(true);
     const navigate = useNavigate();
+    const id = localStorage.getItem('userId');
 
     const handleSearch = (event) => {
         event.preventDefault();
         var username = event.target.username.value;
         navigate("/user/search", { state: { username }});
     }
-
     return (
         <div className="container-fluid header-logged" onMouseLeave={() => setShowBar(true)}>
             <div className="row g-0">
@@ -65,6 +65,7 @@ function HeaderLogged() {
                         </div>
                         <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark animate-bar" aria-labelledby="dropdownMenuButton1">
                             <li><h6 className="dropdown-header">{localStorage.getItem('username')}</h6></li>
+                            <li className="dropdown-item dropdown-link-item"><Link to="/user/profile" state={{ id: id }} className="link-item">Your profile</Link></li>
                             {localStorage.getItem('username') === getConfiguration().roleUsername ? <li className="dropdown-item dropdown-link-item"><Link to="/admin/beta" className="link-item">Control panel</Link></li> : null}
                             <li className="dropdown-item dropdown-link-item"><Link to="/user/account" className="link-item">Account</Link></li>
                             <li><hr className="dropdown-divider" /></li>

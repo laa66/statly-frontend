@@ -3,6 +3,9 @@ import Error from '../error/error';
 import Statistics from './statistics';
 import Matching from './matching';
 import PlaylistBattle from './playlistBattle';
+import twitter from '../../resources/twitter.png';
+import facebook from '../../resources/facebook.png';
+import instagram from '../../resources/instagram.png';
 
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -26,6 +29,11 @@ function Profile({ callback }) {
         color: "#b3b3b3",
         borderBottom: "7px solid #1db954"
     };
+
+    const disableSocialStyle = {
+        cursor: "default",
+        opacity: "15%"
+    }
 
     useEffect(() => {
         setActive('stats');
@@ -76,7 +84,15 @@ function Profile({ callback }) {
                     <img src={profile.imageUrl} className="profile-img" alt={"random"}/>
                 </div>
                 <div className="col-md-7 name-container">
-                    <div className="profile-name"><b>{profile.username}</b></div>
+                    <div className="profile-name w-100">
+                        <b className="me-3">{profile.username}</b>
+                        {profile?.linkIg !== null ? <img src={instagram} alt={'insta'} className="profile-social-img" onClick={() => window.open(profile.linkIg, "_blank", "noreferrer")}/> : 
+                            <img src={instagram} alt={'insta'} className="profile-social-img" style={disableSocialStyle}/>}
+                        {profile?.linkFb !== null ? <img src={facebook} alt={'fb'} className="profile-social-img" onClick={() => window.open(profile.linkFb, "_blank", "noreferrer")}/> :
+                            <img src={facebook} alt={'fb'} className="profile-social-img" style={disableSocialStyle}/>}
+                        {profile?.linkTwitter !== null ? <img src={twitter} alt={'twitter'} className="profile-social-img" onClick={() => window.open(profile.linkTwitter, "_blank", "noreferrer")}/> : 
+                            <img src={twitter} alt={'twitter'} className="profile-social-img" style={disableSocialStyle}/>}
+                    </div>
                     <div className="profile-followers"><b><span style={{color:"#1db954"}}>{profile?.points} points</span> | {profile.followers?.length} followers | {profile.following?.length} following</b></div>
                 </div>
                 <div className="col-md-4 button-container animate-fade"> 
