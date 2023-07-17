@@ -4,7 +4,8 @@ function statistics({ profile }) {
             <div className="row">
                 <div className="col-md-3">
                 <h3 className="mb-4">Top tracks</h3>
-                {profile.topTracks?.slice(0, 5).map((data, index) => {
+                {profile.topTracks === null ? <div>No data</div> : 
+                profile.topTracks?.slice(0, 5).map((data, index) => {
                         return(
                             <div key={data + index} className="row mb-2">
                                 <div className="col-sm-1 index-col">
@@ -20,7 +21,8 @@ function statistics({ profile }) {
                 </div>
                 <div className="col-md-3">
                     <h3 className="mb-4">Top artists</h3>
-                    {profile.topArtists?.slice(0, 5).map((data, index) => {
+                    {profile.topArtists === null ? <div>No data</div> :
+                    profile.topArtists?.slice(0, 5).map((data, index) => {
                         return (
                             <div key={data + index} className="row mb-3">
                                 <div className="col-sm-1 index-col">

@@ -9,7 +9,7 @@ function WrapperPanel({list, component}) {
         <div>
             <div className="row g-0">
                 <div className="col">
-                    <Navigation/>
+                    <Navigation hidden={"nav-col no-mob"}/>
                 </div>
                 <div className="col-lg-9">
                     {component}

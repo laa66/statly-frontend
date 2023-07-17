@@ -11,7 +11,7 @@ import './navigation.css';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-function Navigation() {
+function Navigation({ hidden }) {
     const location = useLocation();
     const { item } = location.state === null ? "none" : location.state;
     const [active, setActive] = useState();
@@ -28,7 +28,7 @@ function Navigation() {
     }, [location]);
 
     return (
-        <div className="nav-col">
+        <div className={hidden}>
             <div className="nav-item" style={active === 'track' ? itemStyle : {}}>
                 <img className="image-position" src={track} alt="test" width={'25px'} height={'25px'}/>
                 <Link to="/track/top" state={{ item: "track" }} className="link-item">Top tracks</Link>

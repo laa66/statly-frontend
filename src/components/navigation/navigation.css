@@ -1,3 +1,10 @@
+@media (max-width: 1200px) {
+    .no-mob {
+        display: none;
+    }
+}
+
+
 .nav-col {
     z-index: 1;
     background-color: #121212;

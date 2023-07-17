@@ -17,19 +17,23 @@
     font-size: 26px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
+    .user-search{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+
     .header-content {
         display: none;
     }
 
-    .header-account {
-        max-width: 50%;
-    }
-
     .header-logo {
-        max-width: 50%;
+        display: none;
     }
 }
+
 
 @media (min-width: 768px) {
     .navbar-brand {
