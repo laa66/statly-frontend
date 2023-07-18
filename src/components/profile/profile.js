@@ -84,8 +84,8 @@ function Profile({ callback }) {
                     <img src={profile.imageUrl} className="profile-img" alt={"random"}/>
                 </div>
                 <div className="col-md-7 name-container">
-                    <div className="profile-name w-100">
-                        <b className="me-3">{profile.username}</b>
+                    <div className="profile-name">
+                        <b className="me-3 profile-username">{profile.username}</b>
                         {profile?.linkIg !== null ? <img src={instagram} alt={'insta'} className="profile-social-img" onClick={() => window.open(profile.linkIg, "_blank", "noreferrer")}/> : 
                             <img src={instagram} alt={'insta'} className="profile-social-img" style={disableSocialStyle}/>}
                         {profile?.linkFb !== null ? <img src={facebook} alt={'fb'} className="profile-social-img" onClick={() => window.open(profile.linkFb, "_blank", "noreferrer")}/> :
@@ -100,7 +100,7 @@ function Profile({ callback }) {
                     {!followed && currentUser.id !== id && <div className="follow-button" onClick={() => handleFollow(id)}>Follow</div>}
                 </div>
             </div>
-            <div className="row">
+            <div className="row section-row">
             <nav className="container section-nav">
                 <ul className="nav">
                     <li className="profile-button" style={active === 'stats' ? buttonStyle : {}} onClick={() => setActive('stats')}>Statistics</li>

@@ -8,6 +8,12 @@
     width: 50%;
 }
 
+@media (max-width: 1199px) {
+    .input-row {
+        width: 100%;
+    }
+}
+
 .label-settings {
     font-weight: 600;
     justify-content: left;

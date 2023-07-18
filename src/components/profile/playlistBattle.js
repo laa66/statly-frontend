@@ -78,36 +78,36 @@ function PlaylistBattle({ profile, callback }) {
             </div>}
             {result && <div className="row playlist-row">
                 {battleResult.result === 0 ? <div/> : <div className="col-md-4">
+                <h4 className="nick-text">{battleResult.winnerProfile?.username}</h4>
                     <div className="row row-cols-3 main-name" style={{ fontSize: "18px" }}>
                         <div className="col mb-4 w-100">
                             <div className="scale-text" style={{fontSize:"36px"}}>{battleResult.winner?.score} pts</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Mainstream</span>
-                            <div className="scale-text">{battleResult.winner?.battlerAnalysis['mainstream']}%</div>
+                            <span className="battle-title result-battle-col">Mainstream</span>
+                            <div className="scale-text battle-title">{battleResult.winner?.battlerAnalysis['mainstream']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Boringness</span>
-                            <div className="scale-text">{battleResult.winner.battlerAnalysis?.['boringness']} pts</div>
+                            <span className="battle-title result-battle-col">Boringness</span>
+                            <div className="scale-text battle-title">{battleResult.winner.battlerAnalysis?.['boringness']} pts</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Danceability</span>
-                            <div className="scale-text">{battleResult.winner.battlerAnalysis?.['danceability']}%</div>
+                            <span className="battle-title result-battle-col">Danceability</span>
+                            <div className="scale-text battle-title">{battleResult.winner.battlerAnalysis?.['danceability']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Energy</span>
-                            <div className="scale-text">{battleResult.winner.battlerAnalysis?.['energy']}%</div>
+                            <span className="battle-title result-battle-col">Energy</span>
+                            <div className="scale-text battle-title">{battleResult.winner.battlerAnalysis?.['energy']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Valence</span>
-                            <div className="scale-text">{battleResult.winner.battlerAnalysis?.['valence']}%</div>
+                            <span className="battle-title result-battle-col">Valence</span>
+                            <div className="scale-text battle-title">{battleResult.winner.battlerAnalysis?.['valence']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Tempo</span>
-                            <div className="scale-text">{battleResult.winner.battlerAnalysis?.['tempo']} BPM</div>
+                            <span className="battle-title result-battle-col">Tempo</span>
+                            <div className="scale-text battle-title">{battleResult.winner.battlerAnalysis?.['tempo']} BPM</div>
                         </div>
                     </div>
-                    <h4 className="nick-text">{battleResult.winnerProfile?.username}</h4>
                 </div>}
                 {battleResult.result === 0 ? <div className="col-md-12">
                     <h2 className="mb-3">{battleResult.result === 0 ? <div>No contest!</div>: <div>{battleResult.winnerProfile?.username} wins!</div>}</h2>
@@ -138,36 +138,36 @@ function PlaylistBattle({ profile, callback }) {
                     </div>
                 </div>}
                 {battleResult.result === 0 ? <div/> : <div className="col-md-4">
+                    <h4 className="nick-text">{battleResult.loserProfile?.username}</h4>
                     <div className="row row-cols-3 main-name" style={{ fontSize: "18px" }}>
                         <div className="col mb-4 w-100">
                             <div className="loser-text" style={{fontSize:"36px"}}>{battleResult.loser?.score} pts</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Mainstream</span>
-                            <div className="loser-text">{battleResult.loser.battlerAnalysis?.['mainstream']}%</div>
+                            <span className="battle-title result-battle-col">Mainstream</span>
+                            <div className="loser-text battle-title">{battleResult.loser.battlerAnalysis?.['mainstream']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Boringness</span>
-                            <div className="loser-text">{battleResult.loser.battlerAnalysis?.['boringness']} pts</div>
+                            <span className="battle-title result-battle-col">Boringness</span>
+                            <div className="loser-text battle-title">{battleResult.loser.battlerAnalysis?.['boringness']} pts</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Danceability</span>
-                            <div className="loser-text">{battleResult.loser.battlerAnalysis?.['danceability']}%</div>
+                            <span className="battle-title result-battle-col">Danceability</span>
+                            <div className="loser-text battle-title">{battleResult.loser.battlerAnalysis?.['danceability']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Energy</span>
-                            <div className="loser-text">{battleResult.loser.battlerAnalysis?.['energy']}%</div>
+                            <span className="battle-title result-battle-col">Energy</span>
+                            <div className="loser-text battle-title">{battleResult.loser.battlerAnalysis?.['energy']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Valence</span>
-                            <div className="loser-text">{battleResult.loser.battlerAnalysis?.['valence']}%</div>
+                            <span className="battle-title result-battle-col">Valence</span>
+                            <div className="loser-text battle-title">{battleResult.loser.battlerAnalysis?.['valence']}%</div>
                         </div>
                         <div className="col mb-3">
-                            <span>Tempo</span>
-                            <div className="loser-text">{battleResult.loser.battlerAnalysis?.['tempo']} BPM</div>
+                            <span className="battle-title result-battle-col">Tempo</span>
+                            <div className="loser-text battle-title">{battleResult.loser.battlerAnalysis?.['tempo']} BPM</div>
                         </div>
                     </div>
-                    <h4 className="nick-text">{battleResult.loserProfile?.username}</h4>
                 </div>}
             </div>}
             <div className="row playlist-battle-description" style={{color:"#7d7d7d", fontStyle:"italic"}}>

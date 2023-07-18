@@ -14,11 +14,11 @@ const Carousel = ({ playlistType , playlist, callbackInc, callbackDec }) => {
   }
 
   return ( 
-    <CarouselProvider
+    <CarouselProvider className="playlist-carousel" touchEnabled={false} dragEnabled={false}
       naturalSlideWidth={150}
       naturalSlideHeight={90}
       totalSlides={playlist.total}>
-      <Slider>
+      <Slider className="playlist-slider">
       {playlist.items?.map((data, i) => {
                     return (
                         <div key={i}>
@@ -26,7 +26,7 @@ const Carousel = ({ playlistType , playlist, callbackInc, callbackDec }) => {
                         </div>
                     )})}
       </Slider>
-      <div style={{justifyContent:"center", display:"flex"}}>
+      <div style={{justifyContent:"center", display:"flex"}} className="playlist-buttons">
         <ButtonBack onClick={() => handleIndex('-')} className="carousel-button"><img src={left} alt={"left arrow"} width={"40px"} height={"40px"}/></ButtonBack>
         <ButtonNext onClick={() => handleIndex('+')} className="carousel-button"><img src={right} alt={"right arrow"} width={"40px"} height={"40px"}/></ButtonNext>
       </div>

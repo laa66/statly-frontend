@@ -7,6 +7,11 @@
     height: 100px;
 }
 
+.profile-username {
+    overflow: elipsis;
+    text-wrap: nowrap;
+}
+
 .profile-img-container {
     margin-top: 2%;
     justify-content: right;
@@ -75,6 +80,7 @@
     transform: translateY(-50%);
     color: #b3b3b3;
     font-size: 50px;
+    width: 100%;
 }
 
 .profile-followers {
@@ -97,8 +103,8 @@
 .profile-button {
     margin-left: 1%;
     text-align: center;
-    min-width: 100px;
-    padding: 10px;
+    min-width: 50px;
+    padding: 7px;
     font-size: 20px;
     cursor: pointer;
     color: #7d7d7d;
@@ -112,8 +118,76 @@
     transition-duration: .8s;
 }
 
-/* statistics section */
+@media (max-width: 768px) {
+    .section-row {
+        margin-top: 15%;
+    }
 
+    .follow-button {
+        top: 115px;
+    }
+
+    .unfollow-button {
+        top: 115px;
+    }
+
+    .image-container {
+        margin-top: 50px;
+    }
+
+    .profile-followers {
+        margin-top: 40px;
+    }
+    
+    .matching-description {
+        font-size: 14px;
+    }
+
+    .profile-button {
+        font-size: 16px;
+    }
+
+    .col-matching {
+        margin-left: 12%;
+        font-size: 14px;
+  
+    }
+
+    .playlist-mid {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .profile-data-box {
+        margin-bottom: 40px;
+    }
+
+}
+
+@media (max-width: 432px) {
+    .matching-container {
+        margin-top: 20px;
+    }
+
+    .profile-name {
+        margin-top: 34px;
+        width: 50%;
+    }
+
+    .section-row {
+        margin-top: 30%;
+    }
+
+    .col-matching {
+        margin-bottom: 10px;
+    }
+
+    .col-statistics {
+        margin-bottom: 10px;
+    }
+}
+
+/* statistics section */
 .statistics-container {
     margin-top: 1%;
     color: #b3b3b3;
@@ -147,11 +221,11 @@
 /* matching container */
 
 .matching-description {
-    font-size: 18px;
     margin-bottom: 2%;
 }
 
 .matching-container {
+    font-size: 18px;
     margin-bottom: 8%;
 }
 
@@ -202,4 +276,23 @@
 
 .nick-text {
     color: #7d7d7d;
+}
+
+.playlist-carousel {
+    min-height: 90px;
+}
+
+.playlist-slider {
+    min-height: 230px;
+}
+
+.result-battle-col {
+    justify-content: center;
+    display: flex;
+}
+
+@media (max-width: 1439px) {
+    .battle-title {
+        font-size: 14px;
+    }
 }

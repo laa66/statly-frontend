@@ -26,16 +26,16 @@ function Matching({ profile }) {
                 <h3>Library matching</h3>
                 <div>Here you can check how similar your music taste is to that of this user</div>
             </div>
-            <div className="row main-name text-center matching-container" style={{ fontSize: "18px" }}>
-                <div className="col-md-2">
+            <div className="row main-name text-center matching-container">
+                <div className="col-2 col-matching">
                     <span>Artist matching</span>
                     <div className="scale-text">{match?.['artist']}%</div>
                 </div>
-                <div className="col-md-2">
+                <div className="col-2 col-matching">
                     <span>Track matching</span>
                     <div className="scale-text">{match?.['track']}%</div>
                 </div>
-                <div className="col-md-2">
+                <div className="col-2 col-matching">
                     <span>Genre matching</span>
                     <div className="scale-text">{match?.['genre']}%</div>
                 </div>
