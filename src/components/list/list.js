@@ -8,36 +8,77 @@ function TrackList({list}) {
     return (
         <div className="container">
             <div className="list-container">
-                <table className="list">
+                <div className="list mobile-track">
                     {list.map((data, index) => {
-                        return(
-                        <tbody key={data + index} onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
-                            <tr className="track-row" title={'rank ' + (data.difference === null ? 'not available' : data.difference)}>
-                                <th className="col-first" style={{width:"3%"}}>{index+1}</th>
-                                <td><div className="col-second"><img className="track-img" src={data.album.images[2].url} alt={"test"}/><b>{data.name}</b></div></td>
-                                <td className="col-third" style={{width:"50%"}}>{data.artists.map((artist, i, arr) => {
-                                    return (i + 1 === arr.length ? artist.name : artist.name + ", ")
-                                })}</td>
-                                <td className="col-number">
-                                    <span className="compare-number">{
-                                        (() => {
-                                            if (data.difference > 0) {
-                                                return (<div>{'+' + data.difference}</div>)
-                                            }
-                                            else if (data.difference < 0) {
-                                                return (<div>{data.difference}</div>)
-                                            }
-                                        })()
-                                    }</span>
-                                </td>
-                                <td className="col-fourth" style={{width:"3%"}}>{
+                        return (
+                            <div key={data + 34 + index} className="row mb-2 mt-3 ms-4">
+                                <div className="col-2 index-col">
+                                    <span>{index + 1}</span>
+                                    <img className="track-img ms-3" src={data.album.images[2].url} alt={"test"} />
+                                </div>
+                                <div className="col-9 track-col">
+                                    <div className="main-name">{data.name}</div>
+                                    <div className="second-name">{data.artists.map((artist, i, arr) => {
+                                        return (i + 1 === arr.length ? artist.name : artist.name + ", ")
+                                    })}</div>
+                                </div>
+                                <div className="col-1 d-flex align-items-center">
+                                    <div className="justify-content-center d-flex">{
                                         (() => {
                                             if (data.difference === null) {
-                                                return (<img src={dot} className="compare-icon" alt='dot' width={'15px'} height={'15px'}/>)
+                                                return (<img src={dot} alt='dot' width={'15px'} height={'15px'} />)
                                             }
                                             else if (data.difference === 0) {
                                                 return (
-                                                    <img src={dot} className="compare-icon" alt='dot' width={'15px'} height={'15px'}/>
+                                                    <img src={dot} alt='dot' width={'15px'} height={'15px'} />
+                                                )
+                                            } else if (data.difference > 0) {
+                                                return (
+                                                    <img src={triangleUp} alt='up' width={'15px'} height={'15px'} />
+                                                )
+                                            } else {
+                                                return (
+                                                    <img src={triangleDown} alt='down' width={'15px'} height={'15px'}></img>
+                                                )
+                                            }
+                                        })()
+                                    }
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+                <table className="list no-mobile-track">
+                    {list.map((data, index) => {
+                        return (
+                            <tbody key={data + index} onClick={() => { window.open(data.external_urls.spotify, "_blank", "noreferrer") }}>
+                                <tr className="track-row" title={'rank ' + (data.difference === null ? 'not available' : data.difference)}>
+                                    <th className="col-first" style={{ width: "3%" }}>{index + 1}</th>
+                                    <td><div className="col-second"><img className="track-img" src={data.album.images[2].url} alt={"test"} /><b>{data.name}</b></div></td>
+                                    <td className="col-third" style={{ width: "50%" }}>{data.artists.map((artist, i, arr) => {
+                                        return (i + 1 === arr.length ? artist.name : artist.name + ", ")
+                                    })}</td>
+                                    <td className="col-number">
+                                        <span className="compare-number">{
+                                            (() => {
+                                                if (data.difference > 0) {
+                                                    return (<div>{'+' + data.difference}</div>)
+                                                }
+                                                else if (data.difference < 0) {
+                                                    return (<div>{data.difference}</div>)
+                                                }
+                                            })()
+                                        }</span>
+                                    </td>
+                                    <td className="col-fourth" style={{ width: "3%" }}>{
+                                        (() => {
+                                            if (data.difference === null) {
+                                                return (<img src={dot} className="compare-icon" alt='dot' width={'15px'} height={'15px'} />)
+                                            }
+                                            else if (data.difference === 0) {
+                                                return (
+                                                    <img src={dot} className="compare-icon" alt='dot' width={'15px'} height={'15px'} />
                                                 )
                                             } else if (data.difference > 0) {
                                                 return (
@@ -50,9 +91,11 @@ function TrackList({list}) {
                                             }
                                         })()
                                     }
-                                </td>
-                            </tr>
-                    </tbody>)})}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        )
+                    })}
                 </table>
             </div>
         </div>
@@ -65,7 +108,7 @@ function ArtistList({list}) {
             <div className="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 row-cols-xl-4 row-cols-xl-5">
                 {list.map((data, index) => {
                   return(
-                    <div key={index} title={'rank ' + (data.difference === null ? 'not available' : data.difference)} className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
+                    <div key={index + 3} title={'rank ' + (data.difference === null ? 'not available' : data.difference)} className="col list-row" onClick={() => {window.open(data.external_urls.spotify, "_blank", "noreferrer")}}>
                         <img className="artist-img" src={data.images[1].url} alt={"test"}/>
                         <div className="artist-text">{index+1}</div>
                           <div className="artist-description"><b>{

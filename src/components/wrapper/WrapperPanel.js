@@ -1,5 +1,4 @@
 import '../header/header.css';
-import '../dashboard/dashboard.css';
 
 import Navigation from '../navigation/navigation';
 import Friend from '../friend/friend';

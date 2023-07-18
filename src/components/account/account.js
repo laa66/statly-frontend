@@ -52,7 +52,7 @@ function Account() {
         <div className="container panel" style={{textAlign:"center"}}>
             <h1 style={{color:"#b3b3b3"}}>Account Settings</h1>
             <hr/>
-            <h5 style={{marginBottom:"70px", color:"#7d7d7d"}}>Here you can check your Spotify account settings, add social links and also delete your account in Statly-app.</h5>
+            <h5 style={{marginBottom:"70px", color:"#7d7d7d"}}>Here you can check your Spotify account settings, add social links and also delete your account in Statly-app</h5>
             <form onSubmit={handleSubmit} autoComplete="off">
                 <div className="link-container">
                     <div className="row input-row">

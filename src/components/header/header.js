@@ -30,7 +30,7 @@ function HeaderLogged() {
                     <MobileNavigation/>
                 </div>
                 <div className="col-sm header-logo">
-                    <Link to="/dashboard" className="link-item">
+                    <Link to="/" className="link-item">
                         <img src={logo} alt="logo" width="150px" height="49px" />
                     </Link>
                 </div>

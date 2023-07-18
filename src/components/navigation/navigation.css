@@ -17,6 +17,10 @@
     position: sticky;
 }
 
+.image-position {
+    margin-right: 5%;
+}
+
 .nav-item {
     text-align: left;
     color: #7d7d7d;

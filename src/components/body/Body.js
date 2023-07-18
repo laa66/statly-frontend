@@ -1,7 +1,6 @@
 import HeaderState from '../header/header';
 
 import '../wrapper/panel.css';
-import Dashboard from '../dashboard/dashboard';
 import Track from '../track/track';
 import Artist from "../artist/artist";
 import Genre from "../genre/genre";
@@ -29,7 +28,6 @@ function Body() {
             <Routes>
                 <Route path="/" element={<div className="home"><HeaderState.Header/><Home/></div>}/>
                 <Route path="/callback" element={<div><HeaderState.Header/><Callback/></div>}/>
-                <Route path="/dashboard" element={<PrivateRoute><WrapperBody component={<Dashboard/>}/></PrivateRoute>}/>
                 <Route path="/track/top" element={<PrivateRoute><WrapperBody component={<Track/>}/></PrivateRoute>}/>
                 <Route path="/artist/top" element={<PrivateRoute><WrapperBody component={<Artist/>}/></PrivateRoute>}/>
                 <Route path="/user/history" element={<PrivateRoute><WrapperBody component={<History/>}/></PrivateRoute>}/>

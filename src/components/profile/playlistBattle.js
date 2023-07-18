@@ -44,7 +44,6 @@ function PlaylistBattle({ profile, callback }) {
     
     const handlePlaylistBattle = (playlist, playlistBattle) => {
         makePlaylistBattle(profile.id, playlist, playlistBattle).then((data) => {
-            console.log(data);
             setBattleResult(data);
         }).then(() => setResult(true))
         .catch((err) => {

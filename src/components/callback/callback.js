@@ -20,7 +20,7 @@ function Callback() {
 
     return(
         <div>
-            <Navigate to="/dashboard"/>
+            <Navigate to="/track/top" state={{ item: "track" }}/>
         </div>
     );
 }

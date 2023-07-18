@@ -22,6 +22,16 @@
         text-overflow: ellipsis;
         overflow: hidden;
     }
+
+    .no-mobile-track {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-track {
+        display: none;
+    }
 }
 
 .compare-icon {
