@@ -5,6 +5,7 @@ import history from '../../resources/history.png';
 import genre from '../../resources/genre.png';
 import playlist from '../../resources/playlist.png';
 import rank from '../../resources/user-rank.png';
+import search from '../../resources/search.png';
 
 import './navigation.css';
 
@@ -29,6 +30,10 @@ function Navigation({ hidden }) {
 
     return (
         <div className={hidden}>
+            <div className="nav-item nav-search-item" style={active === 'search' ? itemStyle : {}}>
+                <img className="image-position" src={search} alt="test" width={'25px'} height={'25px'}/>
+                <Link to="/user/search" state={{ item: "search" }} className="link-item">Search</Link>
+            </div>
             <div className="nav-item" style={active === 'track' ? itemStyle : {}}>
                 <img className="image-position" src={track} alt="test" width={'25px'} height={'25px'}/>
                 <Link to="/track/top" state={{ item: "track" }} className="link-item">Top tracks</Link>

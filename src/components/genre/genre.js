@@ -53,7 +53,7 @@ function Genre() {
     return (
         <div className="panel animate-fade">
             <Image.ImageGenre date={date}/>
-            <nav className="container section-nav">
+            <nav className="container section-nav mb-5">
                 <ul className="nav">
                     <li className="profile-button" onClick={() => setActive('short')} style={active === 'short' ? buttonStyle : {}}>4 weeks</li>
                     <li className="profile-button" onClick={() => setActive('medium')} style={active === 'medium' ? buttonStyle : {}}>6 months</li>

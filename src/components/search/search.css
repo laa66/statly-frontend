@@ -34,3 +34,7 @@
     border-radius: 50%;
     opacity: 90%;
 }
+
+.search-box {
+    max-width: 80%;
+}

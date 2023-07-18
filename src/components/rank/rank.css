@@ -42,5 +42,12 @@
 .title-rank {
     font-weight: 500;
     color: #b3b3b3;
-    font-size: 21px
+    font-size: 21px;
+}
+
+@media (max-width: 768px) {
+    .rank-container {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
 }

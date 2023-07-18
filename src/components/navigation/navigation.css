@@ -4,6 +4,11 @@
     }
 }
 
+@media (min-width: 1199px) {
+    .nav-search-item {
+        display: none;
+    }
+}
 
 .nav-col {
     z-index: 1;
