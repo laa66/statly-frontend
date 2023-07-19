@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/statly-frontend/static/css/main.ffb7e4c5.css",
-    "main.js": "/statly-frontend/static/js/main.c79e080b.js",
+    "main.css": "/statly-frontend/static/css/main.b0cb0638.css",
+    "main.js": "/statly-frontend/static/js/main.27b6d2aa.js",
     "static/media/concert.jpg": "/statly-frontend/static/media/concert.ad7bb886a4a455758f40.jpg",
     "static/media/genres.jpg": "/statly-frontend/static/media/genres.6957bfbb8e858465ea8f.jpg",
     "static/media/playlists.jpg": "/statly-frontend/static/media/playlists.c11bb788e315de7dde27.jpg",
@@ -10,11 +10,11 @@
     "static/media/Spotify_logo.png": "/statly-frontend/static/media/Spotify_logo.0c4ae91bae23217d39c9.png",
     "static/media/iphone.png": "/statly-frontend/static/media/iphone.68d9ee5f44c57e7b17ef.png",
     "index.html": "/statly-frontend/index.html",
-    "main.ffb7e4c5.css.map": "/statly-frontend/static/css/main.ffb7e4c5.css.map",
-    "main.c79e080b.js.map": "/statly-frontend/static/js/main.c79e080b.js.map"
+    "main.b0cb0638.css.map": "/statly-frontend/static/css/main.b0cb0638.css.map",
+    "main.27b6d2aa.js.map": "/statly-frontend/static/js/main.27b6d2aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffb7e4c5.css",
-    "static/js/main.c79e080b.js"
+    "static/css/main.b0cb0638.css",
+    "static/js/main.27b6d2aa.js"
   ]
 }
