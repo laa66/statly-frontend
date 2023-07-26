@@ -1,27 +1,27 @@
 import { useEffect } from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { fetchCurrentUser } from "../profile/fetchCurrentUser";
 
 function Callback() {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
-
+    const navigate = useNavigate();
     useEffect(() => {
-        if (localStorage.getItem('username') === null && localStorage.getItem('imageUrl') === null) {
-            if (params.has('ext')) {
-                let url = params.get('url').split('profilepic/?asid=')[1];
-                localStorage.setItem('imageUrl', 'https://graph.facebook.com/' + url + '/picture')
-            } else localStorage.setItem('imageUrl', params.get('url'));
-            
-            localStorage.setItem('userId', params.get('user_id'));
-            localStorage.setItem('username', params.get('name'));
-            localStorage.setItem('userLogged', true);
+        if (sessionStorage.getItem('jwt') === null) {
+            var token = params.get('jwt');
+            sessionStorage.setItem('jwt', token);
         }
-    });
+        fetchCurrentUser().then((data) => {
+            sessionStorage.setItem('userLogged', true);
+            sessionStorage.setItem('userId', data.id);
+            sessionStorage.setItem('username', data.display_name);
+            sessionStorage.setItem('imageUrl', data.images[0].url)
+        }).then(() => navigate('/track/top', { state: {item: 'track'}}));
+        //eslint-disable-next-line
+    }, []);
 
     return(
-        <div>
-            <Navigate to="/track/top" state={{ item: "track" }}/>
-        </div>
+        <div/>
     );
 }
 

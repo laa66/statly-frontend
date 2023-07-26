@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-    const logged = localStorage.getItem('userLogged');
+    const logged = sessionStorage.getItem('userLogged');
     if (logged === null || logged === false) {
       return <Navigate to="/" replace/>;
     }

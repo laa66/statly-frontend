@@ -7,13 +7,12 @@ import iphone from '../../resources/iphone.png';
 import spotifylogo from '../../resources/Spotify_logo.png';
 import './home.css'
 
-import { getConfiguration } from '../../config';
 import { useRef, useState } from 'react';
 import { postBetaUser } from './postBetaUser';
+import { AuthRequest } from '../request/apiUrl';
 
 
 export function Home() {
-    const url = getConfiguration().apiUrl;
     const beta = useRef(null);
     const executeScroll = () => beta.current.scrollIntoView();
     const [showConfirmation, setShowConfirmation] = useState("Register");
@@ -81,7 +80,7 @@ export function Home() {
                     <div className="col-sm">
                         <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
                         <img className="iphone-logo logo-position" src={spotifylogo} alt="spotifylogo" width={"157px"} height={"47px"} />
-                        <button className="iphone-button button-position" onClick={() => window.location.href = url + '/user/auth'}>Login with Spotify</button>
+                        <button className="iphone-button button-position" onClick={() => window.location.href = AuthRequest.Auth}>Login with Spotify</button>
                         <button className="iphone-button-2 button-position-2" onClick={executeScroll}>Join Beta</button>
                     </div>
                 </div>

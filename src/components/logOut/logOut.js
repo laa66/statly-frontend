@@ -6,6 +6,7 @@ const url = getConfiguration().apiUrl;
 
 export const logOut = () => {
     localStorage.clear();
+    sessionStorage.clear();
     fetch(url + '/logout', {
     method: 'POST',
     credentials: 'include',

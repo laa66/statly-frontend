@@ -13,7 +13,7 @@ function Account() {
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
     const [profile, setProfile] = useState([]);
-    const id = localStorage.getItem('userId');
+    const id = sessionStorage.getItem('userId');
 
     const navigate = useNavigate();
 

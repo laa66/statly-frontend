@@ -21,7 +21,7 @@ function Header() {
 
 function HeaderLogged() {
     const [showBar, setShowBar] = useState(true);
-    const id = localStorage.getItem('userId');
+    const id = sessionStorage.getItem('userId');
 
     return (
         <div className="container-fluid header-logged" onMouseLeave={() => setShowBar(true)}>
@@ -35,16 +35,16 @@ function HeaderLogged() {
                     </Link>
                 </div>
                 <div className="col-sm-6 col-md-4 header-content">
-                    Hello, {localStorage.getItem('username')}
+                    Hello, {sessionStorage.getItem('username')}
                 </div>
                 <div className="col header-account">
                     <div className="dropdown">
-                        <img className="user-image" src={localStorage.getItem('imageUrl')} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" />
+                        <img className="user-image" src={sessionStorage.getItem('imageUrl')} alt="userImage" width={'40px'} height={'40px'} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" />
                         <Search setShowBar={setShowBar} showBar={showBar}/>
                         <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark animate-bar" aria-labelledby="dropdownMenuButton1">
-                            <li><h6 className="dropdown-header">{localStorage.getItem('username')}</h6></li>
+                            <li><h6 className="dropdown-header">{sessionStorage.getItem('username')}</h6></li>
                             <li className="dropdown-item dropdown-link-item"><Link to="/user/profile" state={{ id: id }} className="link-item">Your profile</Link></li>
-                            {localStorage.getItem('username') === getConfiguration().roleUsername ? <li className="dropdown-item dropdown-link-item"><Link to="/admin/beta" className="link-item">Control panel</Link></li> : null}
+                            {sessionStorage.getItem('username') === getConfiguration().roleUsername ? <li className="dropdown-item dropdown-link-item"><Link to="/admin/beta" className="link-item">Control panel</Link></li> : null}
                             <li className="dropdown-item dropdown-link-item"><Link to="/user/account" className="link-item">Account</Link></li>
                             <li><hr className="dropdown-divider" /></li>
                             <li className="dropdown-item dropdown-link-item" onClick={logOut}><Link to="/" className="link-item">Sign Out</Link></li>
