@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { fetchCurrentUser } from "../profile/fetchCurrentUser";
+import { getRequest } from "../request/getRequest";
+import { GetRequest } from "../request/apiUrl";
 
 function Callback() {
     const location = useLocation();
@@ -11,7 +12,7 @@ function Callback() {
             var token = params.get('jwt');
             sessionStorage.setItem('jwt', token);
         }
-        fetchCurrentUser().then((data) => {
+        getRequest(GetRequest.CurrentUser).then((data) => {
             sessionStorage.setItem('userLogged', true);
             sessionStorage.setItem('userId', data.id);
             sessionStorage.setItem('username', data.display_name);

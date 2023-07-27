@@ -13,6 +13,8 @@ export const postCreatePlaylist = (range) => fetch(PostRequest.PlaylistCreate + 
 export const postNotification = (name, mail, joinDate) => fetch(PostRequest.Notification, {
     method: 'POST',
     headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
         Authorization: 'Bearer ' + sessionStorage.getItem('jwt')
     },
     body: JSON.stringify({
@@ -27,6 +29,8 @@ export const postNotification = (name, mail, joinDate) => fetch(PostRequest.Noti
 export const postPlaylistBattle = (id, playlist, playlistBattle) => fetch(PostRequest.PlaylistBattle + id, {
     method: 'POST',
     headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
         Authorization: 'Bearer ' + sessionStorage.getItem('jwt')
     },
     body: JSON.stringify({

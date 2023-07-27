@@ -1,10 +1,11 @@
 import './beta.css'
 import Error from '../error/error';
 
-import { fetchBetaUsers } from './fetchBeta';
 import { useEffect, useState } from 'react';
-import { postUserNotification } from './postUserNotification';
-import { deleteBetaUsers } from  './deleteBetaUsers';
+import { DeleteRequest, GetRequest } from '../request/apiUrl';
+import { getRequest } from '../request/getRequest';
+import { postNotification } from '../request/postRequest';
+import { deleteRequest } from '../request/deleteRequest';
 
 function Beta() {
     const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ function Beta() {
     const [status, setStatus] = useState();
 
     const handleDelete = () => {
-        deleteBetaUsers().catch((err) => {
+        deleteRequest(DeleteRequest.BetaUsers).catch((err) => {
             setHasError(true);
             setStatus(err.message);
         });
@@ -20,14 +21,14 @@ function Beta() {
     }
     
     const handleSubmit = (name, email, date) => {
-        postUserNotification(name, email, date).catch((err) => {
+        postNotification(name, email, date).catch((err) => {
             setHasError(true);
             setStatus(err.message);
         });
     }
 
     useEffect(() => {
-        fetchBetaUsers().then((data) => {
+        getRequest(GetRequest.BetaUsers).then((data) => {
             setData(data);
         }).catch((err) => {
             setHasError(true);

@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { deleteAccount } from "./deleteAccount";
 import { logOut } from '../logOut/logOut';
 import { Link } from "react-router-dom";
 import Error from "../error/error";
 
 import './account.css';
 import { useState, useEffect } from "react";
-import { fetchProfile } from "../profile/fetchProfile";
-import { postLink } from "./postLink";
+import { getRequestParam } from "../request/getRequest";
+import { DeleteRequest, GetRequest } from "../request/apiUrl";
+import { deleteRequest } from "../request/deleteRequest";
+import { putSocialLink } from "../request/putRequest";
 
 function Account() {
     const [hasError, setHasError] = useState(false);
@@ -23,7 +24,7 @@ function Account() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        fetchProfile(id)
+        getRequestParam(GetRequest.Profile, Number(id))
         .then((data) => {
             setProfile(data);
         }).catch((err) => {
@@ -33,7 +34,7 @@ function Account() {
     }, [id]);
 
     const handleDelete = () => {
-        deleteAccount();
+        deleteRequest(DeleteRequest.Account)
         sleep(2000).then(() => {
             logOut()
         });
@@ -44,7 +45,7 @@ function Account() {
         var instagram = event.target.instagram.value;
         var facebook = event.target.facebook.value;
         var twitter = event.target.twitter.value;
-        postLink(instagram, facebook, twitter);
+        putSocialLink(instagram, facebook, twitter);
     }
 
     if (hasError) return (<div><Error code={status}/></div>);

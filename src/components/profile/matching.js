@@ -1,7 +1,8 @@
-import { fetchMatch } from "./profileOperation";
 import Error from "../error/error";
 
 import { useEffect, useState } from "react";
+import { getRequestParam } from "../request/getRequest";
+import { GetRequest } from "../request/apiUrl";
 
 function Matching({ profile }) {
     const [match, setMatch] = useState([]);
@@ -9,7 +10,7 @@ function Matching({ profile }) {
     const [status, setStatus] = useState();
 
     useEffect(() => {
-        fetchMatch(profile.id).then((data) => {
+        getRequestParam(GetRequest.Match, profile.id).then((data) => {
             setMatch(data);
         }).catch((err) => {
             setHasError(true);

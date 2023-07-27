@@ -12,6 +12,8 @@ export const putFollowUnfollow = (url, id) => fetch(url + id, {
 export const putSocialLink = (ig, fb, twitter) => fetch(PutRequest.SocialLink, {
     method: 'PUT',
     headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
         Authorization: 'Bearer ' + sessionStorage.getItem('jwt')
     },
     body: JSON.stringify({

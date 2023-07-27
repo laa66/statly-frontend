@@ -9,9 +9,9 @@ import instagram from '../../resources/instagram.png';
 
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { fetchProfile } from './fetchProfile';
-import { fetchCurrentUser } from './fetchCurrentUser';
-import { followUser, unfollowUser } from './profileOperation';
+import { getRequest, getRequestParam } from '../request/getRequest';
+import { GetRequest, PutRequest } from '../request/apiUrl';
+import { putFollowUnfollow } from '../request/putRequest';
 
 function Profile({ callback }) {
     const [hasError, setHasError] = useState(false);
@@ -39,7 +39,7 @@ function Profile({ callback }) {
         setActive('stats');
         window.scrollTo(0, 0);
         handleRenderProfile();
-        fetchCurrentUser().then((data) => {
+        getRequest(GetRequest.CurrentUser).then((data) => {
             setCurrentUser(data);
         }).catch((err) => {
             setHasError(true);
@@ -53,7 +53,7 @@ function Profile({ callback }) {
     }, [profile.followers, currentUser.id]);
 
     const handleRenderProfile = () => {
-        fetchProfile(id)
+        getRequestParam(GetRequest.Profile, id)
             .then((data) => {
                 setProfile(data);
             }).catch((err) => {
@@ -63,14 +63,14 @@ function Profile({ callback }) {
     }
 
     const handleFollow = (id) => {
-        followUser(id)
+        putFollowUnfollow(PutRequest.Follow, id)
             .then(() => setFollowed(true))
             .then(() => callback())
             .then(() => handleRenderProfile());
     }
 
     const handleUnfollow = (id) => {
-        unfollowUser(id)
+        putFollowUnfollow(PutRequest.Unfollow, id)
             .then(() => setFollowed(false))
             .then(() => callback())
             .then(() => handleRenderProfile());

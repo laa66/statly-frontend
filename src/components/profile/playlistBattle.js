@@ -1,10 +1,11 @@
 import Error from "../error/error";
 
 import { useState, useEffect } from "react";
-import { fetchUserPlaylists, fetchUserPlaylistsWithId } from "../playlistInsight/fetchPlaylistInsight";
-import { makePlaylistBattle } from "./makePlaylistBattle";
 
 import Carousel from "./carousel";
+import { getRequest, getRequestParam } from "../request/getRequest";
+import { GetRequest } from "../request/apiUrl";
+import { postPlaylistBattle } from "../request/postRequest";
 
 function PlaylistBattle({ profile, callback }) {
     const [hasError, setHasError] = useState(false);
@@ -20,13 +21,13 @@ function PlaylistBattle({ profile, callback }) {
     let [secondPlaylistIndex, setSecondPlaylistIndex] = useState(0);
 
     useEffect(() => {
-        fetchUserPlaylists().then((data) => {
+        getRequest(GetRequest.UserPlaylists).then((data) => {
             setPlaylists(data);
         }).catch((err) => {
             setHasError(true);
             setStatus(err.message);
         })
-        fetchUserPlaylistsWithId(profile.externalId).then((data) => {
+        getRequestParam(GetRequest.UserPlaylistsId, profile.externalId).then((data) => {
             setBattlePlaylists(data);
         }).catch((err) => {
             setHasError(true);
@@ -43,7 +44,7 @@ function PlaylistBattle({ profile, callback }) {
     }
     
     const handlePlaylistBattle = (playlist, playlistBattle) => {
-        makePlaylistBattle(profile.id, playlist, playlistBattle).then((data) => {
+        postPlaylistBattle(profile.id, playlist, playlistBattle).then((data) => {
             setBattleResult(data);
         }).then(() => setResult(true))
         .catch((err) => {
@@ -56,7 +57,7 @@ function PlaylistBattle({ profile, callback }) {
     return (
         <div>
             <div className="matching-description playlist-title">
-                <h3>Library matching</h3>
+                <h3>Playlist battle</h3>
                 <div>This functionality allows users to engage in friendly competition and compare the characteristics of their playlists, ultimately rewarding them with points based on the outcome.</div>
             </div>
             {!result && <div>
