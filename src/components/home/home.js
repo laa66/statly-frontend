@@ -8,8 +8,8 @@ import spotifylogo from '../../resources/Spotify_logo.png';
 import './home.css'
 
 import { useRef, useState } from 'react';
-import { postBetaUser } from './postBetaUser';
 import { AuthRequest } from '../request/apiUrl';
+import { getBetaUser } from '../request/getRequest';
 
 
 export function Home() {
@@ -26,7 +26,7 @@ export function Home() {
         event.preventDefault();
         var username = event.target.username.value;
         var email = event.target.email.value;
-        postBetaUser(username, email);
+        getBetaUser(username, email);
         setDisable(true);
     }
 

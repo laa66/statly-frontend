@@ -1,7 +1,9 @@
 import '../analysis/analysis.css';
 import { useState, useEffect } from 'react';
-import { fetchPlaylistAnalysis, fetchUserPlaylists } from './fetchPlaylistInsight.js';
 import Error from '../error/error';
+import { getRequest } from '../request/getRequest';
+import { GetRequest } from '../request/apiUrl';
+import { postPlaylistAnalysis } from '../request/postRequest';
 
 function PlaylistInsights() {
 
@@ -18,7 +20,7 @@ function PlaylistInsights() {
     const[status, setStatus] = useState();
 
     useEffect(() => {
-        fetchUserPlaylists().then((data) => {
+        getRequest(GetRequest.UserPlaylists).then((data) => {
             setPlaylists(data);
         }).catch((err) => {
             setHasError(true);
@@ -31,7 +33,7 @@ function PlaylistInsights() {
             name: name,
             image: image
         });
-        fetchPlaylistAnalysis(name, id).then((data) => {
+        postPlaylistAnalysis(name, id).then((data) => {
             setIndicators(data);
         }).then(() => setActive('playlist-analysis'))
         .catch((err) =>{

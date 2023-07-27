@@ -2,10 +2,11 @@ import HeaderState from '../header/header';
 import Profile from '../profile/profile';
 import WrapperPanel from './WrapperPanel';
 
-import { fetchFriends } from '../friend/fetchFriends.js';
 import Error from '../error/error';
 
 import { useState, useEffect } from 'react';
+import { getRequest } from '../request/getRequest';
+import { GetRequest } from '../request/apiUrl';
 
 function WrapperBody({ component, withCallback }) {
     const [hasError, setHasError] = useState(false);
@@ -13,7 +14,7 @@ function WrapperBody({ component, withCallback }) {
     const [friends, setFriends] = useState([]);
 
     const fetchFriendsList = () => {
-        fetchFriends().then((data) => {
+        getRequest(GetRequest.Friends).then((data) => {
             setFriends(data);
         }).catch((err) => {
             setHasError(true);
@@ -22,7 +23,7 @@ function WrapperBody({ component, withCallback }) {
         })}
 
     useEffect(() => {
-        fetchFriends().then((data) => {
+        getRequest(GetRequest.Friends).then((data) => {
             setFriends(data);
         }).catch((err) => {
             setHasError(true);

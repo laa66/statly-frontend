@@ -5,7 +5,8 @@ import IndicatorText from './indicatorText';
 import Error from '../error/error';
 
 import { useEffect, useState } from 'react';
-import { fetchLibraryAnalysis } from './fetchAnalysis';
+import { getRequest } from '../request/getRequest';
+import { GetRequest } from '../request/apiUrl';
 
 
 function Analysis() {
@@ -15,7 +16,7 @@ function Analysis() {
     const [status, setStatus] = useState();
 
     useEffect(() => {
-        fetchLibraryAnalysis().then((data) => {
+        getRequest(GetRequest.LibraryAnalysis).then((data) => {
             setIndicators(data);
         }).catch((err) => {
             setHasError(true);

@@ -2,8 +2,9 @@ import Image from '../image/image';
 import List from '../list/list';
 import Error from '../error/error';
 
-import { fetchHistory } from './fetchHistory';
 import { useEffect, useState } from 'react';
+import { getRequest } from '../request/getRequest';
+import { GetRequest } from '../request/apiUrl';
 
 function History() {
     const [history, setHistory] = useState([]);
@@ -11,7 +12,7 @@ function History() {
     const [status, setStatus] = useState();
 
     useEffect(() => {
-        fetchHistory().then((data) => {
+        getRequest(GetRequest.History).then((data) => {
             setHistory(data.items);
         }).catch((err) => {
             setHasError(true);

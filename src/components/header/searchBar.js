@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import search from '../../resources/icon-search.png';
 
-function Search({ showBar, setShowBar, hidden }) {
+function Search({ showBar, setShowBar }) {
     const navigate = useNavigate();
 
     const handleSearch = (event) => {

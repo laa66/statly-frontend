@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import './rank.css';
 import Error from '../error/error';
-import { fetchUserRanking } from './fetchUserRanking';
 import { Link } from 'react-router-dom';
+import { getRequest } from '../request/getRequest';
+import { GetRequest } from '../request/apiUrl';
 
 function Rank() {
     const [hasError, setHasError] = useState(false);
@@ -11,7 +12,7 @@ function Rank() {
     const [ranking, setRanking] = useState([]);
 
     useEffect(() => {
-        fetchUserRanking().then((data) => {
+        getRequest(GetRequest.UserRanking).then((data) => {
             setRanking(data);
         }).catch((err) => {
             setHasError(true);

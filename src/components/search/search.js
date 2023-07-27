@@ -2,8 +2,9 @@ import './search.css';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { fetchResults } from './fetchResults.js';
 import Error from '../error/error';
+import { getRequestParam } from '../request/getRequest';
+import { GetRequest } from '../request/apiUrl';
 
 function Search() {
     const [hasError, setHasError] = useState(false);
@@ -21,7 +22,7 @@ function Search() {
     }
 
     useEffect(() => {
-        fetchResults(username).then((data) => {
+        getRequestParam(GetRequest.Search, username).then((data) => {
             setResults(data);
         }).catch((err) => {
             setHasError(true);

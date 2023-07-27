@@ -27,7 +27,7 @@ export const GetRequest = {
 
 export const PostRequest = {
     Notification: url + '/beta/notification',
-    LogOut: url + '/logout',
+    Logout: url + '/logout',
     PlaylistAnalysis: url + '/api/analysis/playlist',
     PlaylistBattle: url + '/api/analysis/battle?user_id=',
     PlaylistCreate: url + '/api/playlist/create?range=',
