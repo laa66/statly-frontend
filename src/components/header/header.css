@@ -17,13 +17,13 @@
     font-size: 26px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .user-search{
         display: none;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
 
     .header-content {
         display: none;

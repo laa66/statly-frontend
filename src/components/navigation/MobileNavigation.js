@@ -32,7 +32,7 @@ export const MobileNavigation = () => {
                 </div>
             </nav>
             <div className={menuClass}>
-                <Navigation/>
+                <Navigation callback={updateMenu}/>
             </div>
         </div>
     )

@@ -26,7 +26,7 @@ function HeaderLogged() {
     return (
         <div className="container-fluid header-logged" onMouseLeave={() => setShowBar(true)}>
             <div className="row g-0">
-                <div className="header-nav col 	d-xl-none">
+                <div className="header-nav col d-xxl-none">
                     <MobileNavigation/>
                 </div>
                 <div className="col-sm header-logo">

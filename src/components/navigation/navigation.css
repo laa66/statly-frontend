@@ -1,10 +1,10 @@
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .no-mob {
         display: none;
     }
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 1400px) {
     .nav-search-item {
         display: none;
     }

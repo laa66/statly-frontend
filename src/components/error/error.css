@@ -4,3 +4,10 @@
     text-align: center;
     margin-bottom: 15%;
 }
+
+@media (max-width: 768px) {
+    .error-section {
+        font-size: 21px;
+        min-height: 500px;
+    }
+}
