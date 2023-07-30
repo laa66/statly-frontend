@@ -27,7 +27,7 @@ function Body() {
         <div>
             <Routes>
                 <Route path="/" element={<div className="home"><HeaderState.Header/><Home/></div>}/>
-                <Route path="/callback" element={<div><HeaderState.Header/><Callback/></div>}/>
+                <Route path="/callback" element={<div><Callback/></div>}/>
                 <Route path="/track/top" element={<PrivateRoute><WrapperBody component={<Track/>}/></PrivateRoute>}/>
                 <Route path="/artist/top" element={<PrivateRoute><WrapperBody component={<Artist/>}/></PrivateRoute>}/>
                 <Route path="/user/history" element={<PrivateRoute><WrapperBody component={<History/>}/></PrivateRoute>}/>
