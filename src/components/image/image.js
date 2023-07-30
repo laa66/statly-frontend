@@ -68,7 +68,7 @@ function ImageRecently({list}) {
                         i + 1 === arr.length ? <img key={i} className="img3" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/> : <img key={i} className="img1" src={data.track.album.images[1].url} alt={"first"} width={"150px"} height={"150px"}/>
                     )})}
             </div>
-            <div className="image-description">
+            <div className="image-description mb-4">
                 <h1>Never miss a beat</h1>
                 <div style={{color:"#7d7d7d"}}>Our Recently Played section keeps track of the songs you've listened to recently, so you can easily revisit your favorites.</div>
             </div>

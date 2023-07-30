@@ -8,8 +8,8 @@ import spotifylogo from '../../resources/Spotify_logo.png';
 import './home.css'
 
 import { useRef, useState } from 'react';
-import { AuthRequest } from '../request/apiUrl';
 import { getBetaUser } from '../request/getRequest';
+import Popup from './popup';
 
 
 export function Home() {
@@ -17,6 +17,7 @@ export function Home() {
     const executeScroll = () => beta.current.scrollIntoView();
     const [showConfirmation, setShowConfirmation] = useState("Register");
     const [disable, setDisable] = useState(false);
+    const [buttonPopup, setButtonPopup] = useState(false);
     
     const toggleConfirmation = () => {
         setShowConfirmation("Thank you!");
@@ -62,6 +63,7 @@ export function Home() {
                 </div>
             </div>
             <div className="container section-two">
+                
                 <div className="row">
                     <div className="col-sm">
                         <div className="container section-description">
@@ -80,9 +82,10 @@ export function Home() {
                     <div className="col-sm">
                         <center><img src={iphone} alt="iphone" width="240px" height="450px" /></center>
                         <img className="iphone-logo logo-position" src={spotifylogo} alt="spotifylogo" width={"157px"} height={"47px"} />
-                        <button className="iphone-button button-position" onClick={() => window.location.href = AuthRequest.Auth}>Login with Spotify</button>
+                        <button className="iphone-button button-position" onClick={() => setButtonPopup(true)}>Login with Spotify</button>
                         <button className="iphone-button-2 button-position-2" onClick={executeScroll}>Join Beta</button>
                     </div>
+                    <Popup trigger={buttonPopup} callbackTrigger={setButtonPopup}/>
                 </div>
             </div>
             <div className="container test-section" ref={beta}>

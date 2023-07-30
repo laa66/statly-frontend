@@ -28,10 +28,7 @@ function Callback() {
 
         //eslint-disable-next-line
     }, []);
-    if (hasError) return (<Error status={{
-        code: '401',
-        message: params.get('error')
-    }} />)
+    if (hasError) return (<Error code={401} />)
     return (
         <div/>
     );

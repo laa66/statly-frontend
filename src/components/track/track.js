@@ -29,7 +29,7 @@ function Track() {
         }).catch((err) => {
             setHasError(true);
             setStatus(err.message)
-            console.log(err);
+            console.log(err.message);
         })}, [active]);
 
     if (hasError) return (<div><Error code={status}/></div>)
