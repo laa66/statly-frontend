@@ -26,7 +26,7 @@ function PlaylistInsights() {
             setHasError(true);
             setStatus(err.message);
             console.log(err.message);
-        })}, []);
+        }).then(() => window.scrollTo(0, 0))}, []);
 
     const togglePlaylistAndFetch = (name, id, image) => {
         setCurrentPlaylist({

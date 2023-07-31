@@ -28,7 +28,7 @@ function Artist() {
             setHasError(true);
             setStatus(err.message);
             console.log(err.message);
-        })}, [active]);
+        }).then(() => window.scrollTo(0, 0))}, [active]);
 
     if (hasError) return (<div><Error code={status}/></div>)
     return (

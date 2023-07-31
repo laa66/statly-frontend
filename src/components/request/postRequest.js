@@ -5,9 +5,10 @@ export const postCreatePlaylist = (range) => fetch(PostRequest.PlaylistCreate + 
     headers: {
         Authorization: 'Bearer ' + sessionStorage.getItem('jwt')
     },
-}).then((response) => {
-    if (response.status !== 201) throw new Error(response.status);
-    return response.json();
+}).then(async (response) => {
+    let body = await response.json();
+    if (response.status !== 201) throw new Error(response.status + '&' + body.message);
+    return body;
 });
 
 export const postNotification = (name, mail, joinDate) => fetch(PostRequest.Notification, {
@@ -37,9 +38,10 @@ export const postPlaylistBattle = (id, playlist, playlistBattle) => fetch(PostRe
         playlist: playlist,
         playlistBattle: playlistBattle
     })
-}).then((response) => {
-    if (!response.ok) throw new Error(response.status);
-    return response.json();
+}).then(async (response) => {
+    let body = await response.json();
+    if (!response.ok) throw new Error(response.status + '&' + body.message);
+    return body;
 });
 
 export const postPlaylistAnalysis = (name, id) => fetch(PostRequest.PlaylistAnalysis, {
@@ -53,9 +55,10 @@ export const postPlaylistAnalysis = (name, id) => fetch(PostRequest.PlaylistAnal
         name: name,
         id: id
     })
-}).then((response) => {
-    if (!response.ok) throw new Error(response.status);
-    return response.json();
+}).then(async (response) => {
+    let body = await response.json();
+    if (!response.ok) throw new Error(response.status + '&' + body.message);
+    return body;
 });
 
 export const postLogout = () => fetch(PostRequest.Logout, {

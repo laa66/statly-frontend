@@ -28,7 +28,7 @@ function Callback() {
 
         //eslint-disable-next-line
     }, []);
-    if (hasError) return (<Error code={401} />)
+    if (hasError) return (<Error code={401}/>)
     return (
         <div/>
     );

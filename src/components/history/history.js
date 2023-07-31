@@ -18,7 +18,7 @@ function History() {
             setHasError(true);
             setStatus(err.message);
             console.log(err.message);
-        })}, []);
+        }).then(() => window.scrollTo(0, 0))}, []);
 
     if (hasError) return (<div><Error code={status}/></div>)
     return (
