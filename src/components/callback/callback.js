@@ -14,10 +14,8 @@ function Callback() {
 
     useEffect(() => {
         if (params.has('jwt')) {
-            if (sessionStorage.getItem('jwt') === null) {
-                var token = params.get('jwt');
-                sessionStorage.setItem('jwt', token);
-            }
+            var token = params.get('jwt');
+            sessionStorage.setItem('jwt', token);
             getRequest(GetRequest.CurrentUser).then((data) => {
                 sessionStorage.setItem('userLogged', true);
                 sessionStorage.setItem('userId', data.id);

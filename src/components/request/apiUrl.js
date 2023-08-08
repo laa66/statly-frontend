@@ -9,16 +9,16 @@ export const AuthRequest = {
 
 export const GetRequest = {
     CurrentUser: url + '/user/me',
-    LibraryAnalysis: url + '/api/analysis/library',
+    LibraryAnalysis: url + '/api/spotify/analysis/library',
     Friends: url + '/user/me/following',
-    Genre: url + '/api/top/genres?range=',
-    Artist: url + '/api/top/artists?range=',
-    Track: url + '/api/top/tracks?range=',
-    History: url + '/api/recently',
-    UserPlaylists: url + '/api/playlist/all',
-    UserPlaylistsId: url + '/api/playlist/all?external_id=',
+    Genre: url + '/api/spotify/genres/top?range=',
+    Artist: url + '/api/spotify/artists/top?range=',
+    Track: url + '/api/spotify/tracks/top?range=',
+    History: url + '/api/spotify/tracks/history',
+    UserPlaylists: url + '/api/spotify/playlist/all',
+    UserPlaylistsId: url + '/api/spotify/playlist/all?external_id=',
     Profile: url + '/user/profile?user_id=',
-    Match: url + '/api/analysis/match?user_id=',
+    Match: url + '/api/spotify/analysis/match?user_id=',
     UserRanking: url + '/user/rank',
     Search: url + '/user/search?username=',
     BetaUsers: url + '/beta/all',
@@ -28,9 +28,9 @@ export const GetRequest = {
 export const PostRequest = {
     Notification: url + '/beta/notification',
     Logout: url + '/user/logout',
-    PlaylistAnalysis: url + '/api/analysis/playlist',
-    PlaylistBattle: url + '/api/analysis/battle?user_id=',
-    PlaylistCreate: url + '/api/playlist/create?range=',
+    PlaylistAnalysis: url + '/api/spotify/analysis/playlist',
+    PlaylistBattle: url + '/api/spotify/analysis/battle?user_id=',
+    PlaylistCreate: url + '/api/spotify/playlist/create?range=',
 
 }
 
