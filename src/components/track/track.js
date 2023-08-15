@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { getRequestParam } from '../request/getRequest';
 import { GetRequest } from '../request/apiUrl';
 import { postCreatePlaylist } from '../request/postRequest';
+import { currentLocation } from '../location/location';
 
 function Track() {
     const [active, setActive] = useState('short');
@@ -15,12 +16,20 @@ function Track() {
     const [date, setDate] = useState([]);
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
+    const [hasLocation, setHasLocation] = useState(false);
 
     const buttonStyle = {
         cursor: "pointer",
         color: "#b3b3b3",
         borderBottom: "7px solid #1db954"
     };
+
+    useEffect(() => {
+        if (!hasLocation) {
+            currentLocation();
+            setHasLocation(true);
+        }
+    }, [hasLocation])
 
     useEffect(() => {
         getRequestParam(GetRequest.Track, active).then((data) => {
@@ -33,6 +42,7 @@ function Track() {
         }).then(() => window.scrollTo(0, 0))}, [active]);
 
     if (hasError) return (<div><Error code={status}/></div>)
+
     return (
         <div className="panel animate-fade">
             <Image.ImageTrack list={tracks} date={date}/>
@@ -43,6 +53,7 @@ function Track() {
                     <li className="profile-button" onClick={() => setActive('long')} style={active === 'long' ? buttonStyle : {}}>All time</li>
                 </ul>
             </nav>
+        
             {active === 'short' && <List.TrackList list={tracks}/>}
             {active === 'medium' && <List.TrackList list={tracks}/>}
             {active === 'long' && <List.TrackList list={tracks}/>}

@@ -10,16 +10,16 @@ export const AuthRequest = {
 export const GetRequest = {
     CurrentUser: url + '/user/me',
     LibraryAnalysis: url + '/api/spotify/analysis/library',
-    Friends: url + '/user/me/following',
+    Friends: url + '/member/me/following',
     Genre: url + '/api/spotify/genres/top?range=',
     Artist: url + '/api/spotify/artists/top?range=',
     Track: url + '/api/spotify/tracks/top?range=',
     History: url + '/api/spotify/tracks/history',
     UserPlaylists: url + '/api/spotify/playlist/all',
     UserPlaylistsId: url + '/api/spotify/playlist/all?external_id=',
-    Profile: url + '/user/profile?user_id=',
+    Profile: url + '/member/profile?user_id=',
     Match: url + '/api/spotify/analysis/match?user_id=',
-    UserRanking: url + '/user/rank',
+    UserRanking: url + '/member/rank',
     Search: url + '/user/search?username=',
     BetaUsers: url + '/beta/all',
     BetaJoin: url + '/beta/join?name='
@@ -31,13 +31,13 @@ export const PostRequest = {
     PlaylistAnalysis: url + '/api/spotify/analysis/playlist',
     PlaylistBattle: url + '/api/spotify/analysis/battle?user_id=',
     PlaylistCreate: url + '/api/spotify/playlist/create?range=',
-
+    Location: url + '/member/location'
 }
 
 export const PutRequest = {
-    SocialLink: url + '/user/links',
-    Follow: url + '/user/follow?user_id=',
-    Unfollow: url + '/user/unfollow?user_id='
+    SocialLink: url + '/member/links',
+    Follow: url + '/member/follow?user_id=',
+    Unfollow: url + '/member/unfollow?user_id='
 }
 
 export const DeleteRequest = {

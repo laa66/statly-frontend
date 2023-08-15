@@ -65,9 +65,24 @@ export const postLogout = () => fetch(PostRequest.Logout, {
     method: 'POST',
     headers: {
         Authorization: 'Bearer ' + sessionStorage.getItem('jwt')
-    },
+    }
 }).then(response => {
     if (!response.ok) throw new Error(response.status);
+});
+
+export const postLocation = (longitude, latitude) => fetch(PostRequest.Location, {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer ' + sessionStorage.getItem('jwt'),
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        longitude: longitude,
+        latitude: latitude
+    })
+}).then(response => {
+    if (response.status !== 204) throw new Error(response.status);
 });
 
 
