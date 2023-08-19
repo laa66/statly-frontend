@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { getRequestParam } from '../request/getRequest';
 import { GetRequest } from '../request/apiUrl';
 import { postCreatePlaylist } from '../request/postRequest';
-import { currentLocation } from '../location/location';
+import { currentLocation } from '../location/currentLocation';
 
 function Track() {
     const [active, setActive] = useState('short');

@@ -21,6 +21,7 @@ import './slider.css';
 import './body.css';
 import PlaylistInsights from '../playlistInsight/playlistInsight';
 import Rank from '../rank/rank';
+import Location from '../location/location';
 
 function Body() {
     return (
@@ -39,6 +40,7 @@ function Body() {
                 <Route path="/user/profile" element={<PrivateRoute><WrapperBody withCallback={true}/></PrivateRoute>}/>
                 <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
                 <Route path="/rank" element={<PrivateRoute><WrapperBody component={<Rank/>}/></PrivateRoute>}/>
+                <Route path="/location" element={<PrivateRoute><WrapperBody component={<Location/>}/></PrivateRoute>}/>
             </Routes>
         </div>
     );

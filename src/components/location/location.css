@@ -1,0 +1,81 @@
+.location-section {
+    min-height: 750px;
+}
+
+.world-img {
+    margin-top: 40px;
+    width: 1146px;
+    height: 560px;
+    opacity: .6;
+}
+
+.location-buttons {
+    position: absolute;
+    top: 36%;
+    left: 30%;
+    z-index: 1;
+}
+
+.location-section {
+    position: relative;
+}
+
+.location-description {
+    opacity: 0.85;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #121212;
+    position: absolute;
+    top: 15%;
+    left: 31%;
+    height: 250px;
+    width: 500px;
+    z-index: 0;
+}
+
+.location-description-inner {
+    margin: 15px 15px 0px 15px;
+    
+}
+
+.match-users-button {
+    background-color: #1db954;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #121212;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    width: 12rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.nearby-users-button {
+    background-color: #00A573;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #121212;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    width: 12rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
