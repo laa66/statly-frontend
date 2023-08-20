@@ -22,7 +22,8 @@ export const GetRequest = {
     UserRanking: url + '/member/rank',
     Search: url + '/user/search?username=',
     BetaUsers: url + '/beta/all',
-    BetaJoin: url + '/beta/join?name='
+    BetaJoin: url + '/beta/join?name=',
+    MatchUserLocation: url + '/api/location/users/matching'
 }
 
 export const PostRequest = {

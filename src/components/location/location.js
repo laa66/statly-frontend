@@ -1,6 +1,7 @@
 import './location.css';
 import worldmap from '../../resources/worldmap.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Location() {
     const [showDescription, setShowDescription] = useState(false);
@@ -18,7 +19,7 @@ function Location() {
     }
 
     const mapStyle = {
-        opacity: 0.75
+        opacity: 0.45
     };
 
     return (
@@ -30,10 +31,14 @@ function Location() {
                     <img src={worldmap} style={mapHighlight ? mapStyle : null} className="world-img animate-fate" alt="world-map" />
                     <div className="row location-buttons">
                         <div className="col ms-5">
-                            <button onMouseOver={onMouseOverButton} className="match-users-button">Find matching users</button>
+                            <button onMouseOver={onMouseOverButton} className="match-users-button">
+                                <Link to="/location/match" className="link-item">Find matching users</Link>
+                            </button>
                         </div>
                         <div className="col me-5">
-                            <button onMouseOver={onMouseOverButton} className="nearby-users-button">Find nearby users</button>
+                            <button onMouseOver={onMouseOverButton} className="nearby-users-button">
+                                <Link to="/location/nearby" className="link-item">Find nearby users</Link>
+                            </button>
                         </div>
                     </div>
                     {showDescription && <div onMouseLeave={onMouseLeaveButton} className="location-description animate-fade">
