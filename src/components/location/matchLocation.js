@@ -4,6 +4,7 @@ import { GetRequest } from '../request/apiUrl';
 import { getRequest } from '../request/getRequest';
 import { useState } from 'react';
 import Error from '../error/error';
+import Map from './LocationMap';
 
 function MatchLocation() {
     const [hasError, setHasError] = useState(false);
@@ -18,7 +19,7 @@ function MatchLocation() {
             setStatus(err.message);
         });
     // eslint-disable-next-line
-    }, [])
+    }, []);
 
     if (hasError) return (<div><Error code={status}/></div>);
     return (
@@ -48,7 +49,7 @@ function MatchLocation() {
                         })}
                     </div>
                     <div className="col-xl-8">
-
+                        <Map data={users}/>
                     </div>
                     <div className="col-xl-2">
                         {users?.slice(6).map((data, i) => {
