@@ -80,3 +80,40 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+
+.map-popup {
+    width: 150px;
+    height: 85px;
+    font-size: 14px;
+    color: #121212;
+}
+
+.map-popup-line {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.map-popup-title {
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    display: flex;
+    justify-content: left;
+    margin: auto;
+    width: 70%;
+}
+
+.map-popup-img {
+    display: flex;
+    justify-content: left;
+}
+
+.popup-background {
+    background-color: wheat;
+}
