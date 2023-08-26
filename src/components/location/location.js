@@ -2,6 +2,7 @@ import './location.css';
 import worldmap from '../../resources/worldmap.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Location() {
     const [showDescription, setShowDescription] = useState(false);
@@ -21,6 +22,8 @@ function Location() {
     const mapStyle = {
         opacity: 0.45
     };
+
+    useEffect(() => window.scrollTo(0, 0));
 
     return (
         <div className="location-container animate-fade">

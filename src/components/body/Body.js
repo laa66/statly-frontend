@@ -23,6 +23,7 @@ import PlaylistInsights from '../playlistInsight/playlistInsight';
 import Rank from '../rank/rank';
 import Location from '../location/location';
 import MatchLocation from '../location/matchLocation';
+import NearbyLocation from '../location/nearbyLocation';
 
 function Body() {
     return (
@@ -42,7 +43,8 @@ function Body() {
                 <Route path="/admin/beta" element={<AdminRoute><HeaderState.HeaderLogged/><Beta/></AdminRoute>}/>
                 <Route path="/rank" element={<PrivateRoute><WrapperBody component={<Rank/>}/></PrivateRoute>}/>
                 <Route path="/location" element={<PrivateRoute><WrapperBody component={<Location/>}/></PrivateRoute>}/>
-                <Route path="/location/match" element={<PrivateRoute><WrapperBody component={<MatchLocation/>}/></PrivateRoute>}/>                
+                <Route path="/location/match" element={<PrivateRoute><WrapperBody component={<MatchLocation/>}/></PrivateRoute>}/>      
+                <Route path="/location/nearby" element={<PrivateRoute><WrapperBody component={<NearbyLocation/>}/></PrivateRoute>}/>                
             </Routes>
         </div>
     );

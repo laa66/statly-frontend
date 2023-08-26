@@ -5,7 +5,7 @@ import basemarkericon from '../../resources/basemarkericon.png';
 import markericon from '../../resources/markericon.png';
 import { useState } from 'react';
 
-function LocationMap({data}) {
+function LocationMap({data, mapZoom}) {
     
     const [user, setUser] = useState(null);
     const coordinates = [];
@@ -27,7 +27,7 @@ function LocationMap({data}) {
         <>
             {data.length > 0 && <Map
                 style={{ width: '1450px', height: '700px' }}
-                initialViewState={{ zoom: 1.5, longitude: data[0]?.coordinates.longitude, latitude: data[0]?.coordinates.latitude}}
+                initialViewState={{ zoom: mapZoom, longitude: data[0]?.coordinates.longitude, latitude: data[0]?.coordinates.latitude}}
                 mapboxAccessToken="pk.eyJ1IjoibGFhNjYiLCJhIjoiY2xrc2pudDFuMDA4cTNnbnBlMHM5YW0wNSJ9.zt1xEp0w7pgucF75qiqE3A"
                 mapStyle="mapbox://styles/mapbox/dark-v11">
                 <Marker longitude={data[0]?.coordinates.longitude} latitude={data[0]?.coordinates.latitude}>
@@ -69,8 +69,8 @@ function LocationMap({data}) {
                                 {user.display_name}
                             </div>
                             <div className="map-popup-line">{user.location.features[0].text}, {user.location.features[1].text}</div>
-                        <div className="map-popup-line">Match - {user.match}%</div>
-                        <div className="map-popup-line">Distance - {parseInt(user.distance * 0.001)}km</div>
+                        {user.match !== null ? <div className="map-popup-line">Match - {user.match}%</div> : <></>}
+                        <div className="map-popup-line">Distance - {parseInt(user.distance)}km</div>
                         </div>
                     </div>
                     

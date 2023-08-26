@@ -23,7 +23,8 @@ export const GetRequest = {
     Search: url + '/user/search?username=',
     BetaUsers: url + '/beta/all',
     BetaJoin: url + '/beta/join?name=',
-    MatchUserLocation: url + '/api/location/users/matching'
+    MatchingUsersLocation: url + '/api/location/users/matching',
+    NearbyUsersLocation: url + '/api/location/users/nearby'
 }
 
 export const PostRequest = {
