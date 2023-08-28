@@ -1,12 +1,28 @@
 import Map, { Popup } from 'react-map-gl';
 import { Layer, Source, Marker } from 'react-map-gl';
+import Error from '../error/error';
 
 import basemarkericon from '../../resources/basemarkericon.png';
 import markericon from '../../resources/markericon.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { GetRequest } from '../request/apiUrl';
+import { getRequest } from '../request/getRequest';
 
 function LocationMap({data, mapZoom}) {
-    
+    const [hasError, setHasError] = useState(false);
+    const [status, setStatus] = useState();
+    const [mapToken, setMapToken] = useState(null);
+
+    useEffect(() => {
+        getRequest(GetRequest.MapToken).then((data) => {
+            setMapToken(data);
+        }).catch((err) => {
+            setHasError(true);
+            setStatus(err.message);
+        }).then(() => window.scrollTo(0, 0));
+    // eslint-disable-next-line
+    }, []);
+
     const [user, setUser] = useState(null);
     const coordinates = [];
     const layerStyle = {
@@ -23,12 +39,13 @@ function LocationMap({data, mapZoom}) {
         }
     };
     
+    if (hasError) return (<div><Error code={status}/></div>);
     return (
         <>
             {data.length > 0 && <Map
                 style={{ width: '1450px', height: '700px' }}
                 initialViewState={{ zoom: mapZoom, longitude: data[0]?.coordinates.longitude, latitude: data[0]?.coordinates.latitude}}
-                mapboxAccessToken="pk.eyJ1IjoibGFhNjYiLCJhIjoiY2xrc2pudDFuMDA4cTNnbnBlMHM5YW0wNSJ9.zt1xEp0w7pgucF75qiqE3A"
+                mapboxAccessToken={mapToken.token}
                 mapStyle="mapbox://styles/mapbox/dark-v11">
                 <Marker longitude={data[0]?.coordinates.longitude} latitude={data[0]?.coordinates.latitude}>
                     <img src={basemarkericon} alt="marker-icon" width={'40px'} height={'40px'} />

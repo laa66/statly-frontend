@@ -24,7 +24,8 @@ export const GetRequest = {
     BetaUsers: url + '/beta/all',
     BetaJoin: url + '/beta/join?name=',
     MatchingUsersLocation: url + '/api/location/users/matching',
-    NearbyUsersLocation: url + '/api/location/users/nearby'
+    NearbyUsersLocation: url + '/api/location/users/nearby',
+    MapToken: url + '/api/location/token'
 }
 
 export const PostRequest = {
