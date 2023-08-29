@@ -7,6 +7,7 @@ import markericon from '../../resources/markericon.png';
 import { useEffect, useState } from 'react';
 import { GetRequest } from '../request/apiUrl';
 import { getRequest } from '../request/getRequest';
+import mapboxgl from 'mapbox-gl';
 
 function LocationMap({data, mapZoom}) {
     const [hasError, setHasError] = useState(false);
@@ -22,6 +23,9 @@ function LocationMap({data, mapZoom}) {
         }).then(() => window.scrollTo(0, 0));
     // eslint-disable-next-line
     }, []);
+
+    // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+    mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
     const [user, setUser] = useState(null);
     const coordinates = [];
