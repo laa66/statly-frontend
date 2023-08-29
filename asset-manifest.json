@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/statly-frontend/static/css/main.424fd19f.css",
-    "main.js": "/statly-frontend/static/js/main.832c04c9.js",
+    "main.css": "/statly-frontend/static/css/main.1fa8958c.css",
+    "main.js": "/statly-frontend/static/js/main.7981103e.js",
+    "static/js/483.70715ef3.chunk.js": "/statly-frontend/static/js/483.70715ef3.chunk.js",
     "static/media/concert.jpg": "/statly-frontend/static/media/concert.ad7bb886a4a455758f40.jpg",
     "static/media/genres.jpg": "/statly-frontend/static/media/genres.6957bfbb8e858465ea8f.jpg",
     "static/media/playlists.jpg": "/statly-frontend/static/media/playlists.c11bb788e315de7dde27.jpg",
     "static/media/tracks.jpg": "/statly-frontend/static/media/tracks.9df8581c62cbcd19ca34.jpg",
     "static/media/score.jpg": "/statly-frontend/static/media/score.f417c9df238e83a6aed6.jpg",
+    "static/media/worldmap.png": "/statly-frontend/static/media/worldmap.2ce93e7765807310008d.png",
     "static/media/Spotify_logo.png": "/statly-frontend/static/media/Spotify_logo.0c4ae91bae23217d39c9.png",
     "static/media/iphone.png": "/statly-frontend/static/media/iphone.68d9ee5f44c57e7b17ef.png",
     "index.html": "/statly-frontend/index.html",
-    "main.424fd19f.css.map": "/statly-frontend/static/css/main.424fd19f.css.map",
-    "main.832c04c9.js.map": "/statly-frontend/static/js/main.832c04c9.js.map"
+    "main.1fa8958c.css.map": "/statly-frontend/static/css/main.1fa8958c.css.map",
+    "main.7981103e.js.map": "/statly-frontend/static/js/main.7981103e.js.map",
+    "483.70715ef3.chunk.js.map": "/statly-frontend/static/js/483.70715ef3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.424fd19f.css",
-    "static/js/main.832c04c9.js"
+    "static/css/main.1fa8958c.css",
+    "static/js/main.7981103e.js"
   ]
 }
