@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/statly-frontend/static/css/main.1fa8958c.css",
-    "main.js": "/statly-frontend/static/js/main.7981103e.js",
-    "static/js/483.70715ef3.chunk.js": "/statly-frontend/static/js/483.70715ef3.chunk.js",
+    "main.js": "/statly-frontend/static/js/main.ac01fbca.js",
+    "static/js/mapbox-gl-csp-worker.b9ba244e.worker.js": "/statly-frontend/static/js/mapbox-gl-csp-worker.b9ba244e.worker.js",
     "static/media/concert.jpg": "/statly-frontend/static/media/concert.ad7bb886a4a455758f40.jpg",
     "static/media/genres.jpg": "/statly-frontend/static/media/genres.6957bfbb8e858465ea8f.jpg",
     "static/media/playlists.jpg": "/statly-frontend/static/media/playlists.c11bb788e315de7dde27.jpg",
@@ -13,11 +13,10 @@
     "static/media/iphone.png": "/statly-frontend/static/media/iphone.68d9ee5f44c57e7b17ef.png",
     "index.html": "/statly-frontend/index.html",
     "main.1fa8958c.css.map": "/statly-frontend/static/css/main.1fa8958c.css.map",
-    "main.7981103e.js.map": "/statly-frontend/static/js/main.7981103e.js.map",
-    "483.70715ef3.chunk.js.map": "/statly-frontend/static/js/483.70715ef3.chunk.js.map"
+    "main.ac01fbca.js.map": "/statly-frontend/static/js/main.ac01fbca.js.map"
   },
   "entrypoints": [
     "static/css/main.1fa8958c.css",
-    "static/js/main.7981103e.js"
+    "static/js/main.ac01fbca.js"
   ]
 }
