@@ -24,10 +24,10 @@ function Beta() {
         postNotification(name, email, date).catch((err) => {
             setHasError(true);
             setStatus(err.message);
-        });
+        }).then(() => handleGetBetaUsers());
     }
 
-    useEffect(() => {
+    const handleGetBetaUsers = () => {
         getRequest(GetRequest.BetaUsers).then((data) => {
             setData(data);
         }).catch((err) => {
@@ -35,6 +35,10 @@ function Beta() {
             setStatus(err.message);
             console.log(err.message)
         })
+    }
+
+    useEffect(() => {
+        handleGetBetaUsers();
     }, []);
 
     if (hasError) return (<div><Error code={status}/></div>)
@@ -64,7 +68,8 @@ function Beta() {
                                             { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })
                                             .format(Date.parse(new Date(item.date).toLocaleString("en-US", { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })))}</td>
                                         <td>
-                                            <div className="button-submit" onClick={() => handleSubmit(item.fullName, item.email, null)} style={{ textAlign: "center" }}>Send</div>
+                                            {!item.active && <div className="button-submit" onClick={() => handleSubmit(item.fullName, item.email, null)} style={{ textAlign: "center" }}>Activate</div>}
+                                            {item.active && <div className="button-submit" style={{ opacity:"0.2", textAlign: "center" }}>Activated</div>}
                                         </td>
                                     </tr>
                                 </tbody>)
