@@ -29,16 +29,16 @@ function Location() {
         <div className="location-container animate-fade">
             <div className="image-description">
                 <h1>Music-Matched Connections</h1>
+                <div style={{ color: "#7d7d7d" }}>Discover fellow users whose music taste aligns with yours and explore their locations.</div>
                 <div className="container location-section">
-                    <div style={{ color: "#7d7d7d" }}>Discover fellow users whose music taste aligns with yours and explore their locations.</div>
-                    <img src={worldmap} style={mapHighlight ? mapStyle : null} className="world-img animate-fate" alt="world-map" />
-                    <div className="row location-buttons">
-                        <div className="col ms-5">
+                <img src={worldmap} style={mapHighlight ? mapStyle : null} className="world-img animate-fate" alt="world-map" />
+                    <div className="row row-cols-1 row-cols-sm-2 gy-3 location-buttons">
+                        <div className="col">
                             <button onMouseOver={onMouseOverButton} className="match-users-button">
                                 <Link to="/location/match" className="link-item">Find matching users</Link>
                             </button>
                         </div>
-                        <div className="col me-5">
+                        <div className="col">
                             <button onMouseOver={onMouseOverButton} className="nearby-users-button">
                                 <Link to="/location/nearby" className="link-item">Find nearby users</Link>
                             </button>

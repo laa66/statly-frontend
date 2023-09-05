@@ -47,7 +47,7 @@ function LocationMap({data, mapZoom}) {
     return (
         <>
             {data.length > 0 && <Map
-                style={{ width: '1450px', height: '700px' }}
+                style={{ height: window.innerHeight-175}}
                 initialViewState={{ zoom: mapZoom, longitude: data[0]?.coordinates.longitude, latitude: data[0]?.coordinates.latitude}}
                 mapboxAccessToken={mapToken.token}
                 mapStyle="mapbox://styles/mapbox/dark-v11">

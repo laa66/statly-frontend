@@ -4,21 +4,36 @@
 
 .world-img {
     margin-top: 40px;
-    width: 1146px;
+    max-width: 1146px;
     height: 560px;
     opacity: .6;
+}
+
+@media only screen and (max-device-width: 1540px ) {
+    .world-img {
+        max-width: 800px;
+        height: 391px;
+    }
+}
+
+@media only screen and (max-device-width: 810px) {
+    .world-img {
+        max-width: 320px;
+        height: 156px;
+    }
 }
 
 .location-buttons {
     position: absolute;
     top: 36%;
-    left: 30%;
     z-index: 1;
 }
 
 .location-section {
     position: relative;
     min-height: 750px;
+    justify-content: center;
+    display: flex;
 }
 
 .location-description {
@@ -36,7 +51,6 @@
 
 .location-description-inner {
     margin: 15px 15px 0px 15px;
-    
 }
 
 .match-users-button {
