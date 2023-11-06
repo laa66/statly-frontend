@@ -1,26 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { logOut } from '../logOut/logOut';
-import { Link } from "react-router-dom";
 import Error from "../error/error";
 
 import './account.css';
 import { useState, useEffect } from "react";
 import { getRequestParam } from "../request/getRequest";
-import { DeleteRequest, GetRequest } from "../request/apiUrl";
-import { deleteRequest } from "../request/deleteRequest";
+import { GetRequest } from "../request/apiUrl";
 import { putSocialLink } from "../request/putRequest";
+import DeletePopup from "./deletePopup";
 
 function Account() {
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
     const [profile, setProfile] = useState([]);
+    const [deletePopup, setDeletePopup] = useState(false);
     const id = sessionStorage.getItem('userId');
 
     const navigate = useNavigate();
-
-    const sleep = ms => new Promise(
-        resolve => setTimeout(resolve, ms)
-      );
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -32,13 +27,6 @@ function Account() {
             setStatus(err.message);
         })
     }, [id]);
-
-    const handleDelete = () => {
-        deleteRequest(DeleteRequest.Account)
-        sleep(2000).then(() => {
-            logOut()
-        });
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -84,8 +72,9 @@ function Account() {
                 </div>
             </form>
             <div style={{display:"flex", justifyContent:"center", marginTop:"80px"}}>
-                <div className="button-delete" onClick={() => handleDelete()}><Link to="/" className="link-item">I want to delete my Statly account</Link></div>
+                <div className="button-delete" onClick={() => setDeletePopup(true)}>I want to delete my Statly account</div>
             </div>
+            <DeletePopup trigger={deletePopup} callbackTrigger={setDeletePopup}/>
             <div style={{marginTop:"30px", display:"flex", justifyContent:"center"}}>
                 <div className="button-back" onClick={() => navigate(-1)} style={{textAlign:"center"}}>Back</div>
             </div>

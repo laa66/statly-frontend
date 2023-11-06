@@ -94,3 +94,33 @@
     border: 5px solid #1db954;
     transition-duration: .5s;
 }
+
+.popup-btn {
+    position: absolute;
+    border-radius: 8px;
+    padding: 15px 45px 15px 45px;
+    font-size: 21px;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    border: none;
+    box-shadow: #00A573 0 1px 15px;
+    background-color: #00A573;
+    transition-duration: .6s;
+}
+
+.popup-btn:hover {
+    box-shadow: #1db954 0 1px 25px;
+    transition-duration: .6s;
+}
+
+.popup-btn-yes-position {
+    background-color: #1db954;
+    top: 265px;
+    right: 380px;
+}
+
+.popup-btn-no-position {
+    top: 265px;
+    right: 130px;
+}
