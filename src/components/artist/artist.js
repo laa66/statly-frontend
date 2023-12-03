@@ -23,7 +23,7 @@ function Artist() {
     useEffect(() => {
         getRequestParam(GetRequest.Artist, active).then((data) => {
             setArtists(data.items);
-            setDate(data.date);
+            setDate(data.lastVisit);
         }).catch((err) => {
             setHasError(true);
             setStatus(err.message);

@@ -34,7 +34,7 @@ function Track() {
     useEffect(() => {
         getRequestParam(GetRequest.Track, active).then((data) => {
             setTracks(data.items);
-            setDate(data.date);
+            setDate(data.lastVisit);
         }).catch((err) => {
             setHasError(true);
             setStatus(err.message)

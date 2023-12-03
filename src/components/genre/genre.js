@@ -22,7 +22,7 @@ function Genre() {
     useEffect(() => {
         getRequestParam(GetRequest.Genre, active).then((data) => {
             setGenres(data.genres);
-            setDate(data.date);
+            setDate(data.lastVisit);
         }).catch((err) => {
             setHasError(true);
             setStatus(err.message);
