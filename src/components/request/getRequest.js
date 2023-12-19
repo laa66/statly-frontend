@@ -23,7 +23,8 @@ export const getRequestParam = (url, param) =>  fetch(url + param, {
 });
 
 
-export const getBetaUser = (username, email) =>  fetch(GetRequest.BetaJoin + username + '&email=' + email, {
+export const getBetaUser = (username, email, phoneNumber) =>  fetch(GetRequest.BetaJoin + username 
+    + '&email=' + email + "&phone_number=" + phoneNumber, {
     method: 'GET'
 }).then(async (response) => {
     let body = await response.json();

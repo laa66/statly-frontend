@@ -27,7 +27,8 @@ export function Home() {
         event.preventDefault();
         var username = event.target.username.value;
         var email = event.target.email.value;
-        getBetaUser(username, email);
+        var phoneNumber = event.target.phoneNumber.value;
+        getBetaUser(username, email, phoneNumber);
         setDisable(true);
     }
 
@@ -92,7 +93,7 @@ export function Home() {
             <h1 className="test-section-title">Sign up as a beta-tester!</h1>
             <div className="row">
                 <div className="col test-section-description-1">
-                    <p>Please provide full name and email associated with your Spotify account</p>
+                    <p>Please provide full name, email and phone number associated with your Spotify account</p>
                     <div className="wrapper-form">
                         <form onSubmit={handleSubmit} autoComplete="off">
                             <div className="mb-3">
@@ -100,6 +101,9 @@ export function Home() {
                             </div>
                             <div className="mb-3">
                                 <input type="email" className="beta-form-input form-control" id="email" name="email" placeholder="Email address"/>
+                            </div>
+                            <div className="mb-3">
+                                <input type="tel" pattern="^\d{9}$" className="beta-form-input form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone number"/>
                                 <div id="email-help" className="form-text">We'll never share your data with anyone else.</div>
                             </div>
                             <button type="submit" className="register-button" 
