@@ -11,12 +11,10 @@ import { currentLocation } from '../location/currentLocation';
 
 function Track() {
     const [active, setActive] = useState('short');
-
     const [tracks, setTracks] = useState([]);
     const [date, setDate] = useState([]);
     const [hasError, setHasError] = useState(false);
     const [status, setStatus] = useState();
-    const [hasLocation, setHasLocation] = useState(false);
 
     const buttonStyle = {
         cursor: "pointer",
@@ -25,11 +23,11 @@ function Track() {
     };
 
     useEffect(() => {
-        if (!hasLocation) {
+        if (!sessionStorage.getItem('hasLocation')) {
             currentLocation();
-            setHasLocation(true);
+            sessionStorage.setItem('hasLocation', true);
         }
-    }, [hasLocation])
+    })
 
     useEffect(() => {
         getRequestParam(GetRequest.Track, active).then((data) => {
